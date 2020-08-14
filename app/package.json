@@ -10,14 +10,7 @@
   "dependencies": {
     "core-js": "^3.3.2",
     "vue": "^2.6.10",
-    "web3": "^1.2.11",
-    "@openzeppelin/contracts": "^3.0.0",
-    "@truffle/hdwallet-provider": "1.0.18",
-    "@uniswap/v2-core": "^1.0.1",
-    "@uniswap/v2-periphery": "^1.1.0-beta.0",
-    "openzeppelin-solidity": "^2.2.0",
-    "truffle-hdwallet-provider": "^1.0.17",
-    "truffle-security": "^1.7.1"
+    "web3": "^1.2.11"
   },
   "devDependencies": {
     "@fortawesome/fontawesome-free": "^5.11.2",
