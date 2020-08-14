@@ -1,0 +1,48 @@
+.label {
+    @apply .block .label .font-bold .text-base .text-dark-grey-blue-two .mb-2;
+}
+
+.input {
+    @apply .border .border-pale-grey-three .text-dark-blue-grey .rounded .shadow .p-3 .w-full;
+
+    &:focus {
+        @apply .outline-none;
+    }
+}
+
+.input-group {
+    @apply .border .border-pale-grey-three .text-dark-blue-grey .rounded .shadow .p-0 .w-full;
+
+    .input {
+        @apply .border-none .border-transparent .shadow-none;
+    }
+
+    .addon {
+        @apply .w-12 .inline-flex .items-center .justify-center .text-bluey-grey .font-bold;
+    }
+}
+
+
+.button-select {
+    @apply .p-1 .border .border-pale-grey-three .rounded .shadow;
+}
+
+.button-select-option {
+    @apply .w-full .py-1 .px-1 .text-base .font-bold .rounded  .text-dark-grey-blue-two .bg-white;
+
+    &:focus {
+        @apply .outline-none;
+    }
+
+    &.active {
+        @apply .text-ultramarine .bg-pale-grey-three;
+    }
+}
+
+#custom-date-time-picker-wrapper {
+    #custom-date-time-picker-input {
+        border: none !important;
+
+        @apply .h-12;
+    }
+}

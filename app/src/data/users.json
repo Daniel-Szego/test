@@ -1,0 +1,53 @@
+[
+  {
+    "id": 1,
+    "name": "Galaxis PM",
+    "email": "pm@galaxis.network",
+    "password": "pm",
+    "role": "pm",
+    "accounts": [
+      {
+        "type": "kovan",
+        "address": "0x29a6f394Dc7a00Cf3A5732080092842b5790F453"
+      },
+      {
+        "type": "ganache",
+        "address": "0x0248Bcc0C962A6A4B1D2F7dBdc37919a47304aDB"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Galaxis Investor",
+    "email": "investor@galaxis.network",
+    "password": "investor",
+    "role": "investor",
+    "accounts": [
+      {
+        "type": "kovan",
+        "address": "0x7C4fcE10c2578F8e207573a5EB3d12815052f9B1"
+      },
+      {
+        "type": "ganache",
+        "address": "0x7C4fcE10c2578F8e207573a5EB3d12815052f9B1"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Galaxis Trader",
+    "email": "trader@galaxis.network",
+    "password": "trader",
+    "role": "trader",
+    "accounts": [
+      {
+        "type": "kovan",
+        "address": "0xA393F3f2143348CbB6d34f526AbFe05A966DBd5E"
+      },
+      {
+        "type": "ganache",
+        "address": "0x7C4fcE10c2578F8e207573a5EB3d12815052f9B1"
+      }
+    ]
+  }
+]

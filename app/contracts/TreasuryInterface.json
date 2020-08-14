@@ -1,0 +1,746 @@
+{
+  "contractName": "TreasuryInterface",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "address payable",
+          "name": "_to",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "withdraw",
+      "outputs": [],
+      "stateMutability": "payable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "getBalance",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_tknAddress",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "_to",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "transfer",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.6.5+commit.f956cc89\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"name\":\"getBalance\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_tknAddress\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_to\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"_amount\",\"type\":\"uint256\"}],\"name\":\"transfer\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address payable\",\"name\":\"_to\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"_amount\",\"type\":\"uint256\"}],\"name\":\"withdraw\",\"outputs\":[],\"stateMutability\":\"payable\",\"type\":\"function\"}],\"devdoc\":{\"author\":\"Solidity Services\",\"methods\":{\"getBalance()\":{\"details\":\"...\"},\"transfer(address,address,uint256)\":{\"details\":\"...\",\"params\":{\"_amount\":\"the amount of token to transfer\",\"_tknAddress\":\"token address to transfer\",\"_to\":\"transfer to the address\"}},\"withdraw(address,uint256)\":{\"details\":\"...\",\"params\":{\"_amount\":\"the amount to send\",\"_to\":\"sending the ether to\"}}},\"title\":\"Galaxis: Treasury interface\"},\"userdoc\":{\"methods\":{\"getBalance()\":{\"notice\":\"VIEWSgetting balance of the treasury\"},\"transfer(address,address,uint256)\":{\"notice\":\"transfer from treasury\"},\"withdraw(address,uint256)\":{\"notice\":\"TRANSACTIONSwithdraw ether from the treasury contract\"}},\"notice\":\"Handles token and ether funds\"}},\"settings\":{\"compilationTarget\":{\"/home/dsz/git/galaxistest/galaxis/contracts/Treasury/TreasuryInterface.sol\":\"TreasuryInterface\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/home/dsz/git/galaxistest/galaxis/contracts/Treasury/TreasuryInterface.sol\":{\"keccak256\":\"0x9e3243511cccfa20a63a39c100c36aee4367bee0656f3c780bc590a320be8ef0\",\"urls\":[\"bzz-raw://979375103683e8333bf72374e07fef3678b550f94b462d29f6faae288ed0e58a\",\"dweb:/ipfs/QmRcsZLfrTZJM2agx8kygRNRzAgdGetxo4fHT2w8cN6v5S\"]}},\"version\":1}",
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "immutableReferences": {},
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "pragma solidity ^0.6.0;\n\n/// @author Solidity Services\n/// @title Galaxis: Treasury interface\n/// @notice Handles token and ether funds\ninterface TreasuryInterface {\n\n    /// TRANSACTIONS\n\n    /// @notice withdraw ether from the treasury contract\n    /// @dev ...\n    /// @param _to sending the ether to\n    /// @param _amount the amount to send\n    function withdraw(address payable _to, uint _amount) external payable;\n\n    /// VIEWS\n\n    /// @notice getting balance of the treasury\n    /// @dev ...\n    function getBalance() external view returns (uint);\n\n    /// @notice transfer from treasury\n    /// @dev ...\n    /// @param _tknAddress token address to transfer\n    /// @param _to transfer to the address\n    /// @param _amount the amount of token to transfer\n    function transfer(address _tknAddress, address _to, uint _amount) external;\n\n}",
+  "sourcePath": "/home/dsz/git/galaxistest/galaxis/contracts/Treasury/TreasuryInterface.sol",
+  "ast": {
+    "absolutePath": "/home/dsz/git/galaxistest/galaxis/contracts/Treasury/TreasuryInterface.sol",
+    "exportedSymbols": {
+      "TreasuryInterface": [
+        3271
+      ]
+    },
+    "id": 3272,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 3245,
+        "literals": [
+          "solidity",
+          "^",
+          "0.6",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:36"
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "documentation": {
+          "id": 3246,
+          "nodeType": "StructuredDocumentation",
+          "src": "25:111:36",
+          "text": "@author Solidity Services\n @title Galaxis: Treasury interface\n @notice Handles token and ether funds"
+        },
+        "fullyImplemented": false,
+        "id": 3271,
+        "linearizedBaseContracts": [
+          3271
+        ],
+        "name": "TreasuryInterface",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": null,
+            "documentation": {
+              "id": 3247,
+              "nodeType": "StructuredDocumentation",
+              "src": "171:174:36",
+              "text": "TRANSACTIONS\n @notice withdraw ether from the treasury contract\n @dev ...\n @param _to sending the ether to\n @param _amount the amount to send"
+            },
+            "functionSelector": "f3fef3a3",
+            "id": 3254,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "withdraw",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 3252,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 3249,
+                  "name": "_to",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 3254,
+                  "src": "368:19:36",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address_payable",
+                    "typeString": "address payable"
+                  },
+                  "typeName": {
+                    "id": 3248,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "368:15:36",
+                    "stateMutability": "payable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address_payable",
+                      "typeString": "address payable"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 3251,
+                  "name": "_amount",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 3254,
+                  "src": "389:12:36",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 3250,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "389:4:36",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "367:35:36"
+            },
+            "returnParameters": {
+              "id": 3253,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "419:0:36"
+            },
+            "scope": 3271,
+            "src": "350:70:36",
+            "stateMutability": "payable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": {
+              "id": 3255,
+              "nodeType": "StructuredDocumentation",
+              "src": "426:75:36",
+              "text": "VIEWS\n @notice getting balance of the treasury\n @dev ..."
+            },
+            "functionSelector": "12065fe0",
+            "id": 3260,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getBalance",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 3256,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "525:2:36"
+            },
+            "returnParameters": {
+              "id": 3259,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 3258,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 3260,
+                  "src": "551:4:36",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 3257,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "551:4:36",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "550:6:36"
+            },
+            "scope": 3271,
+            "src": "506:51:36",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": {
+              "id": 3261,
+              "nodeType": "StructuredDocumentation",
+              "src": "563:202:36",
+              "text": "@notice transfer from treasury\n @dev ...\n @param _tknAddress token address to transfer\n @param _to transfer to the address\n @param _amount the amount of token to transfer"
+            },
+            "functionSelector": "beabacc8",
+            "id": 3270,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "transfer",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 3268,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 3263,
+                  "name": "_tknAddress",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 3270,
+                  "src": "788:19:36",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 3262,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "788:7:36",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 3265,
+                  "name": "_to",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 3270,
+                  "src": "809:11:36",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 3264,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "809:7:36",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 3267,
+                  "name": "_amount",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 3270,
+                  "src": "822:12:36",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 3266,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "822:4:36",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "787:48:36"
+            },
+            "returnParameters": {
+              "id": 3269,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "844:0:36"
+            },
+            "scope": 3271,
+            "src": "770:75:36",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "scope": 3272,
+        "src": "136:712:36"
+      }
+    ],
+    "src": "0:848:36"
+  },
+  "legacyAST": {
+    "absolutePath": "/home/dsz/git/galaxistest/galaxis/contracts/Treasury/TreasuryInterface.sol",
+    "exportedSymbols": {
+      "TreasuryInterface": [
+        3271
+      ]
+    },
+    "id": 3272,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 3245,
+        "literals": [
+          "solidity",
+          "^",
+          "0.6",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:36"
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "documentation": {
+          "id": 3246,
+          "nodeType": "StructuredDocumentation",
+          "src": "25:111:36",
+          "text": "@author Solidity Services\n @title Galaxis: Treasury interface\n @notice Handles token and ether funds"
+        },
+        "fullyImplemented": false,
+        "id": 3271,
+        "linearizedBaseContracts": [
+          3271
+        ],
+        "name": "TreasuryInterface",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": null,
+            "documentation": {
+              "id": 3247,
+              "nodeType": "StructuredDocumentation",
+              "src": "171:174:36",
+              "text": "TRANSACTIONS\n @notice withdraw ether from the treasury contract\n @dev ...\n @param _to sending the ether to\n @param _amount the amount to send"
+            },
+            "functionSelector": "f3fef3a3",
+            "id": 3254,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "withdraw",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 3252,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 3249,
+                  "name": "_to",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 3254,
+                  "src": "368:19:36",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address_payable",
+                    "typeString": "address payable"
+                  },
+                  "typeName": {
+                    "id": 3248,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "368:15:36",
+                    "stateMutability": "payable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address_payable",
+                      "typeString": "address payable"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 3251,
+                  "name": "_amount",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 3254,
+                  "src": "389:12:36",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 3250,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "389:4:36",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "367:35:36"
+            },
+            "returnParameters": {
+              "id": 3253,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "419:0:36"
+            },
+            "scope": 3271,
+            "src": "350:70:36",
+            "stateMutability": "payable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": {
+              "id": 3255,
+              "nodeType": "StructuredDocumentation",
+              "src": "426:75:36",
+              "text": "VIEWS\n @notice getting balance of the treasury\n @dev ..."
+            },
+            "functionSelector": "12065fe0",
+            "id": 3260,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getBalance",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 3256,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "525:2:36"
+            },
+            "returnParameters": {
+              "id": 3259,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 3258,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 3260,
+                  "src": "551:4:36",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 3257,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "551:4:36",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "550:6:36"
+            },
+            "scope": 3271,
+            "src": "506:51:36",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": {
+              "id": 3261,
+              "nodeType": "StructuredDocumentation",
+              "src": "563:202:36",
+              "text": "@notice transfer from treasury\n @dev ...\n @param _tknAddress token address to transfer\n @param _to transfer to the address\n @param _amount the amount of token to transfer"
+            },
+            "functionSelector": "beabacc8",
+            "id": 3270,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "transfer",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 3268,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 3263,
+                  "name": "_tknAddress",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 3270,
+                  "src": "788:19:36",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 3262,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "788:7:36",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 3265,
+                  "name": "_to",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 3270,
+                  "src": "809:11:36",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 3264,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "809:7:36",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 3267,
+                  "name": "_amount",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 3270,
+                  "src": "822:12:36",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 3266,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "822:4:36",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "787:48:36"
+            },
+            "returnParameters": {
+              "id": 3269,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "844:0:36"
+            },
+            "scope": 3271,
+            "src": "770:75:36",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "scope": 3272,
+        "src": "136:712:36"
+      }
+    ],
+    "src": "0:848:36"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.6.5+commit.f956cc89.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.2.2-next.0",
+  "updatedAt": "2020-08-13T15:10:44.458Z",
+  "devdoc": {
+    "author": "Solidity Services",
+    "methods": {
+      "getBalance()": {
+        "details": "..."
+      },
+      "transfer(address,address,uint256)": {
+        "details": "...",
+        "params": {
+          "_amount": "the amount of token to transfer",
+          "_tknAddress": "token address to transfer",
+          "_to": "transfer to the address"
+        }
+      },
+      "withdraw(address,uint256)": {
+        "details": "...",
+        "params": {
+          "_amount": "the amount to send",
+          "_to": "sending the ether to"
+        }
+      }
+    },
+    "title": "Galaxis: Treasury interface"
+  },
+  "userdoc": {
+    "methods": {
+      "getBalance()": {
+        "notice": "VIEWSgetting balance of the treasury"
+      },
+      "transfer(address,address,uint256)": {
+        "notice": "transfer from treasury"
+      },
+      "withdraw(address,uint256)": {
+        "notice": "TRANSACTIONSwithdraw ether from the treasury contract"
+      }
+    },
+    "notice": "Handles token and ether funds"
+  }
+}

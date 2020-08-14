@@ -1,0 +1,129 @@
+{
+  "contractName": "GX_ZeroXInterface",
+  "abi": [],
+  "metadata": "{\"compiler\":{\"version\":\"0.6.5+commit.f956cc89\"},\"language\":\"Solidity\",\"output\":{\"abi\":[],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/home/dsz/git/galaxistest/galaxis/contracts/DexInterfaces/ZeroXInterface.sol\":\"GX_ZeroXInterface\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/home/dsz/git/galaxistest/galaxis/contracts/DexInterfaces/ZeroXInterface.sol\":{\"keccak256\":\"0x6d2f165151a0f34f7e3972648f782cafdcf36aa53e8d4748b19ac4669a3140c0\",\"urls\":[\"bzz-raw://7cee3dc6a16370257b6cdb0bb3b39324a68cd74e78d2dacd8dfd06646bfc0fd2\",\"dweb:/ipfs/QmdwHbVF8mpkUUbHxsTER7zFBFzuGcfMguf74zNG8u1znk\"]},\"@openzeppelin/contracts/token/ERC20/IERC20.sol\":{\"keccak256\":\"0x6cc1cb934a3ac2137a7dcaed018af9e235392236ceecfd3687259702b9c767ad\",\"urls\":[\"bzz-raw://0055fa88138cd1c3c6440370f8580f85857f8fe9dec41c99af9eafbeb8d9c3ce\",\"dweb:/ipfs/QmX1xDh8vwGLLCH8ti45eXjQ7Wcxv1FEGTR3jkFnd5Nv6F\"]}},\"version\":1}",
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "immutableReferences": {},
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "pragma solidity ^0.6.0;\n\nimport \"@openzeppelin/contracts/token/ERC20/IERC20.sol\";\n\ninterface GX_ZeroXInterface {\n\n\n}\n",
+  "sourcePath": "/home/dsz/git/galaxistest/galaxis/contracts/DexInterfaces/ZeroXInterface.sol",
+  "ast": {
+    "absolutePath": "/home/dsz/git/galaxistest/galaxis/contracts/DexInterfaces/ZeroXInterface.sol",
+    "exportedSymbols": {
+      "GX_ZeroXInterface": [
+        1140
+      ]
+    },
+    "id": 1141,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 1138,
+        "literals": [
+          "solidity",
+          "^",
+          "0.6",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:13"
+      },
+      {
+        "absolutePath": "@openzeppelin/contracts/token/ERC20/IERC20.sol",
+        "file": "@openzeppelin/contracts/token/ERC20/IERC20.sol",
+        "id": 1139,
+        "nodeType": "ImportDirective",
+        "scope": 1141,
+        "sourceUnit": 4189,
+        "src": "25:56:13",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 1140,
+        "linearizedBaseContracts": [
+          1140
+        ],
+        "name": "GX_ZeroXInterface",
+        "nodeType": "ContractDefinition",
+        "nodes": [],
+        "scope": 1141,
+        "src": "83:33:13"
+      }
+    ],
+    "src": "0:117:13"
+  },
+  "legacyAST": {
+    "absolutePath": "/home/dsz/git/galaxistest/galaxis/contracts/DexInterfaces/ZeroXInterface.sol",
+    "exportedSymbols": {
+      "GX_ZeroXInterface": [
+        1140
+      ]
+    },
+    "id": 1141,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 1138,
+        "literals": [
+          "solidity",
+          "^",
+          "0.6",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:13"
+      },
+      {
+        "absolutePath": "@openzeppelin/contracts/token/ERC20/IERC20.sol",
+        "file": "@openzeppelin/contracts/token/ERC20/IERC20.sol",
+        "id": 1139,
+        "nodeType": "ImportDirective",
+        "scope": 1141,
+        "sourceUnit": 4189,
+        "src": "25:56:13",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 1140,
+        "linearizedBaseContracts": [
+          1140
+        ],
+        "name": "GX_ZeroXInterface",
+        "nodeType": "ContractDefinition",
+        "nodes": [],
+        "scope": 1141,
+        "src": "83:33:13"
+      }
+    ],
+    "src": "0:117:13"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.6.5+commit.f956cc89.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.2.2-next.0",
+  "updatedAt": "2020-08-13T15:10:44.438Z",
+  "devdoc": {
+    "methods": {}
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}

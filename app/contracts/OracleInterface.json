@@ -1,0 +1,250 @@
+{
+  "contractName": "OracleInterface",
+  "abi": [
+    {
+      "inputs": [],
+      "name": "getLatestEthPrice",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.6.5+commit.f956cc89\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"name\":\"getLatestEthPrice\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"author\":\"Solidity Services\",\"methods\":{},\"title\":\"Galaxis: Oracle interface\"},\"userdoc\":{\"methods\":{},\"notice\":\"Oracle interface\"}},\"settings\":{\"compilationTarget\":{\"/home/dsz/git/galaxistest/galaxis/contracts/Oracle/OracleInterface.sol\":\"OracleInterface\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/home/dsz/git/galaxistest/galaxis/contracts/Oracle/OracleInterface.sol\":{\"keccak256\":\"0xc47b059d07b2a2b27974dc7203fe58bed0f5860809fe3748521f38fe06108d67\",\"urls\":[\"bzz-raw://bd38091ce1ca892c280e680a345198e3b3c803ca01296f27213c8ba0f7b3002e\",\"dweb:/ipfs/QmNexbcBR2Ck35rZD63x6gAehvwbLawVaULLHK4r4hKhd9\"]}},\"version\":1}",
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "immutableReferences": {},
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "pragma solidity ^0.6.0;\n\n/// @author Solidity Services\n/// @title Galaxis: Oracle interface\n/// @notice Oracle interface\ninterface OracleInterface {\n  function getLatestEthPrice() external returns (uint256);\n}\n",
+  "sourcePath": "/home/dsz/git/galaxistest/galaxis/contracts/Oracle/OracleInterface.sol",
+  "ast": {
+    "absolutePath": "/home/dsz/git/galaxistest/galaxis/contracts/Oracle/OracleInterface.sol",
+    "exportedSymbols": {
+      "OracleInterface": [
+        2971
+      ]
+    },
+    "id": 2972,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 2964,
+        "literals": [
+          "solidity",
+          "^",
+          "0.6",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:30"
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "documentation": {
+          "id": 2965,
+          "nodeType": "StructuredDocumentation",
+          "src": "25:96:30",
+          "text": "@author Solidity Services\n @title Galaxis: Oracle interface\n @notice Oracle interface"
+        },
+        "fullyImplemented": false,
+        "id": 2971,
+        "linearizedBaseContracts": [
+          2971
+        ],
+        "name": "OracleInterface",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": null,
+            "documentation": null,
+            "functionSelector": "30c0b9ec",
+            "id": 2970,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getLatestEthPrice",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 2966,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "177:2:30"
+            },
+            "returnParameters": {
+              "id": 2969,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2968,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 2970,
+                  "src": "198:7:30",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 2967,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "198:7:30",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "197:9:30"
+            },
+            "scope": 2971,
+            "src": "151:56:30",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "scope": 2972,
+        "src": "121:88:30"
+      }
+    ],
+    "src": "0:210:30"
+  },
+  "legacyAST": {
+    "absolutePath": "/home/dsz/git/galaxistest/galaxis/contracts/Oracle/OracleInterface.sol",
+    "exportedSymbols": {
+      "OracleInterface": [
+        2971
+      ]
+    },
+    "id": 2972,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 2964,
+        "literals": [
+          "solidity",
+          "^",
+          "0.6",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:30"
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "documentation": {
+          "id": 2965,
+          "nodeType": "StructuredDocumentation",
+          "src": "25:96:30",
+          "text": "@author Solidity Services\n @title Galaxis: Oracle interface\n @notice Oracle interface"
+        },
+        "fullyImplemented": false,
+        "id": 2971,
+        "linearizedBaseContracts": [
+          2971
+        ],
+        "name": "OracleInterface",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": null,
+            "documentation": null,
+            "functionSelector": "30c0b9ec",
+            "id": 2970,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getLatestEthPrice",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 2966,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "177:2:30"
+            },
+            "returnParameters": {
+              "id": 2969,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2968,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 2970,
+                  "src": "198:7:30",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 2967,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "198:7:30",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "197:9:30"
+            },
+            "scope": 2971,
+            "src": "151:56:30",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "scope": 2972,
+        "src": "121:88:30"
+      }
+    ],
+    "src": "0:210:30"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.6.5+commit.f956cc89.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.2.2-next.0",
+  "updatedAt": "2020-08-13T15:10:44.455Z",
+  "devdoc": {
+    "author": "Solidity Services",
+    "methods": {},
+    "title": "Galaxis: Oracle interface"
+  },
+  "userdoc": {
+    "methods": {},
+    "notice": "Oracle interface"
+  }
+}

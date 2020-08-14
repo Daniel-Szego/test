@@ -1,0 +1,958 @@
+{
+  "contractName": "GX_DEXManagerReference",
+  "abi": [
+    {
+      "inputs": [],
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "adminAddress",
+          "type": "address"
+        }
+      ],
+      "name": "GX_AdminAdded",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "adminAddress",
+          "type": "address"
+        }
+      ],
+      "name": "GX_AdminRemoved",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "DEXManagerAddress",
+          "type": "address"
+        }
+      ],
+      "name": "GX_DEXManagerSet",
+      "type": "event"
+    },
+    {
+      "inputs": [],
+      "name": "DEXManagerReference",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_newAdmin",
+          "type": "address"
+        }
+      ],
+      "name": "addAdmin",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_addressToCheck",
+          "type": "address"
+        }
+      ],
+      "name": "isAdmin",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_adminToDelete",
+          "type": "address"
+        }
+      ],
+      "name": "removeAdmin",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_DEXManagerAddress",
+          "type": "address"
+        }
+      ],
+      "name": "setDEXManager",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.6.5+commit.f956cc89\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"adminAddress\",\"type\":\"address\"}],\"name\":\"GX_AdminAdded\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"adminAddress\",\"type\":\"address\"}],\"name\":\"GX_AdminRemoved\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"DEXManagerAddress\",\"type\":\"address\"}],\"name\":\"GX_DEXManagerSet\",\"type\":\"event\"},{\"inputs\":[],\"name\":\"DEXManagerReference\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_newAdmin\",\"type\":\"address\"}],\"name\":\"addAdmin\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_addressToCheck\",\"type\":\"address\"}],\"name\":\"isAdmin\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_adminToDelete\",\"type\":\"address\"}],\"name\":\"removeAdmin\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_DEXManagerAddress\",\"type\":\"address\"}],\"name\":\"setDEXManager\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"author\":\"Solidity Services\",\"methods\":{\"addAdmin(address)\":{\"details\":\"...\",\"params\":{\"_newAdmin\":\"new admin of the contract\"}},\"constructor\":{\"details\":\"...\"},\"isAdmin(address)\":{\"details\":\"...\",\"params\":{\"_addressToCheck\":\"the address to be checked\"}},\"removeAdmin(address)\":{\"details\":\"...\",\"params\":{\"_adminToDelete\":\"removing the admin from the contract\"}},\"setDEXManager(address)\":{\"details\":\"...\",\"params\":{\"_DEXManagerAddress\":\"new reference\"}}},\"title\":\"Galaxis: Registered DEX reference\"},\"userdoc\":{\"methods\":{\"addAdmin(address)\":{\"notice\":\"TRANSACTIONSadding a new admin to the contract\"},\"constructor\":\"CONSTRUCTORfunctionality for known parites\",\"isAdmin(address)\":{\"notice\":\"VIEWSchecking if the address is admin\"},\"removeAdmin(address)\":{\"notice\":\"removing an admin from the contract\"},\"setDEXManager(address)\":{\"notice\":\"TRANSACTIONSsetting the exchange reference\"}},\"notice\":\"Simple helper functionalities for exchange reference\"}},\"settings\":{\"compilationTarget\":{\"/home/dsz/git/galaxistest/galaxis/contracts/Composition/GX_DEXManagerReference.sol\":\"GX_DEXManagerReference\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/home/dsz/git/galaxistest/galaxis/contracts/Composition/GX_DEXManagerReference.sol\":{\"keccak256\":\"0x37b1631d2af1477fe3a0ca1c21bfdeb9dcfcd6312c2d11d1bd09e4e2e160716b\",\"urls\":[\"bzz-raw://ec255392f566dfbacd6ffa930012ea2775f458587bfc13768b0c00fe3b7b0bd9\",\"dweb:/ipfs/QmZM5kwCNZmLSK4bo6YKmirqbwsf72MkfSRqXaWXhAVHyq\"]},\"/home/dsz/git/galaxistest/galaxis/contracts/Governance/GX_GovernanceAdmin.sol\":{\"keccak256\":\"0x366d9f22e06078cae2774e6a7a980195623956248862ab8be94c89591574a0da\",\"urls\":[\"bzz-raw://6771548bddcd894d9f3de922232c65e9f931fa74ec19d871e27920f5943dd57a\",\"dweb:/ipfs/QmcjkJRvPXAzGfWrByLjjwWqgYKTyhrNoZe8PK5ZwkMqGx\"]}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b50336000908152602081905260409020805460ff1916600117905561039d8061003a6000396000f3fe608060405234801561001057600080fd5b50600436106100575760003560e01c80631785f53c1461005c57806324d7806c1461008457806367fd6d07146100be57806370480275146100e257806396f9189014610108575b600080fd5b6100826004803603602081101561007257600080fd5b50356001600160a01b031661012e565b005b6100aa6004803603602081101561009a57600080fd5b50356001600160a01b03166101ca565b604080519115158252519081900360200190f35b6100c66101e8565b604080516001600160a01b039092168252519081900360200190f35b610082600480360360208110156100f857600080fd5b50356001600160a01b03166101f7565b6100826004803603602081101561011e57600080fd5b50356001600160a01b0316610296565b3360009081526020819052604090205460ff1615156001146101815760405162461bcd60e51b81526004018080602001828103825260348152602001806103346034913960400191505060405180910390fd5b6001600160a01b038116600081815260208190526040808220805460ff19169055517f6a35edfb19dff31b968882a3f9eeef54e0ca71bb9af2db6e085f409715d3c5479190a250565b6001600160a01b031660009081526020819052604090205460ff1690565b6001546001600160a01b031681565b3360009081526020819052604090205460ff16151560011461024a5760405162461bcd60e51b81526004018080602001828103825260348152602001806103346034913960400191505060405180910390fd5b6001600160a01b038116600081815260208190526040808220805460ff19166001179055517fd7f0afc2242fe9a5f45af6dea542902933e36c643299a53b1057b13cf8bcad809190a250565b3360009081526020819052604090205460ff1615156001146102e95760405162461bcd60e51b81526004018080602001828103825260348152602001806103346034913960400191505060405180910390fd5b600180546001600160a01b0319166001600160a01b0383169081179091556040517f101456e9dc0c87e1ecf3aa5305adf4634567685f40b0097eb396fd6d55abdcf990600090a25056fe47616c617869733a204163636573732064656e6965643a206e6f7420616e2061646d696e206f662074686520636f6e7472616374a26469706673582212203a5c14ee37e69966023bb7c461345937dc7be58f30103033127c7a2a48b7ede764736f6c63430006050033",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106100575760003560e01c80631785f53c1461005c57806324d7806c1461008457806367fd6d07146100be57806370480275146100e257806396f9189014610108575b600080fd5b6100826004803603602081101561007257600080fd5b50356001600160a01b031661012e565b005b6100aa6004803603602081101561009a57600080fd5b50356001600160a01b03166101ca565b604080519115158252519081900360200190f35b6100c66101e8565b604080516001600160a01b039092168252519081900360200190f35b610082600480360360208110156100f857600080fd5b50356001600160a01b03166101f7565b6100826004803603602081101561011e57600080fd5b50356001600160a01b0316610296565b3360009081526020819052604090205460ff1615156001146101815760405162461bcd60e51b81526004018080602001828103825260348152602001806103346034913960400191505060405180910390fd5b6001600160a01b038116600081815260208190526040808220805460ff19169055517f6a35edfb19dff31b968882a3f9eeef54e0ca71bb9af2db6e085f409715d3c5479190a250565b6001600160a01b031660009081526020819052604090205460ff1690565b6001546001600160a01b031681565b3360009081526020819052604090205460ff16151560011461024a5760405162461bcd60e51b81526004018080602001828103825260348152602001806103346034913960400191505060405180910390fd5b6001600160a01b038116600081815260208190526040808220805460ff19166001179055517fd7f0afc2242fe9a5f45af6dea542902933e36c643299a53b1057b13cf8bcad809190a250565b3360009081526020819052604090205460ff1615156001146102e95760405162461bcd60e51b81526004018080602001828103825260348152602001806103346034913960400191505060405180910390fd5b600180546001600160a01b0319166001600160a01b0383169081179091556040517f101456e9dc0c87e1ecf3aa5305adf4634567685f40b0097eb396fd6d55abdcf990600090a25056fe47616c617869733a204163636573732064656e6965643a206e6f7420616e2061646d696e206f662074686520636f6e7472616374a26469706673582212203a5c14ee37e69966023bb7c461345937dc7be58f30103033127c7a2a48b7ede764736f6c63430006050033",
+  "immutableReferences": {},
+  "sourceMap": "213:739:0:-:0;;;606:28;5:9:-1;2:2;;;27:1;24;17:12;2:2;-1:-1;653:10:23;646:6;:18;;;;;;;;;;:25;;-1:-1:-1;;646:25:23;667:4;646:25;;;213:739:0;;;;;;",
+  "deployedSourceMap": "213:739:0:-:0;;;;5:9:-1;2:2;;;27:1;24;17:12;2:2;213:739:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;12:1:-1;9;2:12;1304:155:23;;;;;;15:2:-1;10:3;7:11;4:2;;;31:1;28;21:12;4:2;-1:-1;1304:155:23;-1:-1:-1;;;;;1304:155:23;;:::i;:::-;;1603:116;;;;;;15:2:-1;10:3;7:11;4:2;;;31:1;28;21:12;4:2;-1:-1;1603:116:23;-1:-1:-1;;;;;1603:116:23;;:::i;:::-;;;;;;;;;;;;;;;;;;319:34:0;;;:::i;:::-;;;;-1:-1:-1;;;;;319:34:0;;;;;;;;;;;;;;1028:134:23;;;;;;15:2:-1;10:3;7:11;4:2;;;31:1;28;21:12;4:2;-1:-1;1028:134:23;-1:-1:-1;;;;;1028:134:23;;:::i;774:176:0:-;;;;;;15:2:-1;10:3;7:11;4:2;;;31:1;28;21:12;4:2;-1:-1;774:176:0;-1:-1:-1;;;;;774:176:0;;:::i;1304:155:23:-;787:10;780:6;:18;;;;;;;;;;;;;:26;;:18;:26;772:91;;;;-1:-1:-1;;;772:91:23;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;;;;1376:22:23;::::1;1401:5;1376:22:::0;;;::::1;::::0;;;;;;;:30;;-1:-1:-1;;1376:30:23::1;::::0;;1421:31;::::1;::::0;1401:5;1421:31:::1;1304:155:::0;:::o;1603:116::-;-1:-1:-1;;;;;1689:23:23;1666:4;1689:23;;;;;;;;;;;;;;1603:116::o;319:34:0:-;;;-1:-1:-1;;;;;319:34:0;;:::o;1028:134:23:-;787:10;780:6;:18;;;;;;;;;;;;;:26;;:18;:26;772:91;;;;-1:-1:-1;;;772:91:23;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;;;;1092:17:23;::::1;:6;:17:::0;;;::::1;::::0;;;;;;;:24;;-1:-1:-1;;1092:24:23::1;1112:4;1092:24;::::0;;1131;::::1;::::0;1092:6;1131:24:::1;1028:134:::0;:::o;774:176:0:-;787:10:23;780:6;:18;;;;;;;;;;;;;:26;;:18;:26;772:91;;;;-1:-1:-1;;;772:91:23;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;852:19:0::1;:40:::0;;-1:-1:-1;;;;;;852:40:0::1;-1:-1:-1::0;;;;;852:40:0;::::1;::::0;;::::1;::::0;;;907:36:::1;::::0;::::1;::::0;-1:-1:-1;;907:36:0::1;774:176:::0;:::o",
+  "source": "pragma solidity ^0.6.0;\n\nimport '../Governance/GX_GovernanceAdmin.sol';\n\n/// @author Solidity Services\n/// @title Galaxis: Registered DEX reference\n/// @notice Simple helper functionalities for exchange reference\ncontract GX_DEXManagerReference is GX_GovernanceAdmin {\n\n    /// @notice reference of the DEX Manager\n    address public DEXManagerReference;\n\n    /// EVENTS: user facing events\n    /// @notice event for setting the exchange reference\n    event GX_DEXManagerSet(address indexed DEXManagerAddress);\n\n    /// CONSTRUCTOR\n    \n    /// @notice functionality for known parites\n    /// @dev ...\n    constructor() public {\n    }\n\n    /// TRANSACTIONS\n\n    /// @notice setting the exchange reference\n    /// @dev ...\n    /// @param _DEXManagerAddress new reference\n    function setDEXManager(address _DEXManagerAddress) public onlyAdmin {\n        DEXManagerReference = _DEXManagerAddress;\n        emit GX_DEXManagerSet(_DEXManagerAddress);\n    }\n}",
+  "sourcePath": "/home/dsz/git/galaxistest/galaxis/contracts/Composition/GX_DEXManagerReference.sol",
+  "ast": {
+    "absolutePath": "/home/dsz/git/galaxistest/galaxis/contracts/Composition/GX_DEXManagerReference.sol",
+    "exportedSymbols": {
+      "GX_DEXManagerReference": [
+        35
+      ]
+    },
+    "id": 36,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 1,
+        "literals": [
+          "solidity",
+          "^",
+          "0.6",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:0"
+      },
+      {
+        "absolutePath": "/home/dsz/git/galaxistest/galaxis/contracts/Governance/GX_GovernanceAdmin.sol",
+        "file": "../Governance/GX_GovernanceAdmin.sol",
+        "id": 2,
+        "nodeType": "ImportDirective",
+        "scope": 36,
+        "sourceUnit": 2565,
+        "src": "25:46:0",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "abstract": false,
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 4,
+              "name": "GX_GovernanceAdmin",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 2564,
+              "src": "248:18:0",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_GX_GovernanceAdmin_$2564",
+                "typeString": "contract GX_GovernanceAdmin"
+              }
+            },
+            "id": 5,
+            "nodeType": "InheritanceSpecifier",
+            "src": "248:18:0"
+          }
+        ],
+        "contractDependencies": [
+          2564
+        ],
+        "contractKind": "contract",
+        "documentation": {
+          "id": 3,
+          "nodeType": "StructuredDocumentation",
+          "src": "73:140:0",
+          "text": "@author Solidity Services\n @title Galaxis: Registered DEX reference\n @notice Simple helper functionalities for exchange reference"
+        },
+        "fullyImplemented": true,
+        "id": 35,
+        "linearizedBaseContracts": [
+          35,
+          2564
+        ],
+        "name": "GX_DEXManagerReference",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "functionSelector": "67fd6d07",
+            "id": 7,
+            "name": "DEXManagerReference",
+            "nodeType": "VariableDeclaration",
+            "overrides": null,
+            "scope": 35,
+            "src": "319:34:0",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_address",
+              "typeString": "address"
+            },
+            "typeName": {
+              "id": 6,
+              "name": "address",
+              "nodeType": "ElementaryTypeName",
+              "src": "319:7:0",
+              "stateMutability": "nonpayable",
+              "typeDescriptions": {
+                "typeIdentifier": "t_address",
+                "typeString": "address"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "anonymous": false,
+            "documentation": {
+              "id": 8,
+              "nodeType": "StructuredDocumentation",
+              "src": "360:87:0",
+              "text": "EVENTS: user facing events\n @notice event for setting the exchange reference"
+            },
+            "id": 12,
+            "name": "GX_DEXManagerSet",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 11,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 10,
+                  "indexed": true,
+                  "name": "DEXManagerAddress",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 12,
+                  "src": "475:33:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 9,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "475:7:0",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "474:35:0"
+            },
+            "src": "452:58:0"
+          },
+          {
+            "body": {
+              "id": 16,
+              "nodeType": "Block",
+              "src": "627:7:0",
+              "statements": []
+            },
+            "documentation": {
+              "id": 13,
+              "nodeType": "StructuredDocumentation",
+              "src": "516:85:0",
+              "text": "CONSTRUCTOR\n @notice functionality for known parites\n @dev ..."
+            },
+            "id": 17,
+            "implemented": true,
+            "kind": "constructor",
+            "modifiers": [],
+            "name": "",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 14,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "617:2:0"
+            },
+            "returnParameters": {
+              "id": 15,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "627:0:0"
+            },
+            "scope": 35,
+            "src": "606:28:0",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 33,
+              "nodeType": "Block",
+              "src": "842:108:0",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 27,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 25,
+                      "name": "DEXManagerReference",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 7,
+                      "src": "852:19:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 26,
+                      "name": "_DEXManagerAddress",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 20,
+                      "src": "874:18:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "src": "852:40:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "id": 28,
+                  "nodeType": "ExpressionStatement",
+                  "src": "852:40:0"
+                },
+                {
+                  "eventCall": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 30,
+                        "name": "_DEXManagerAddress",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 20,
+                        "src": "924:18:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "id": 29,
+                      "name": "GX_DEXManagerSet",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 12,
+                      "src": "907:16:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_event_nonpayable$_t_address_$returns$__$",
+                        "typeString": "function (address)"
+                      }
+                    },
+                    "id": 31,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "907:36:0",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 32,
+                  "nodeType": "EmitStatement",
+                  "src": "902:41:0"
+                }
+              ]
+            },
+            "documentation": {
+              "id": 18,
+              "nodeType": "StructuredDocumentation",
+              "src": "640:129:0",
+              "text": "TRANSACTIONS\n @notice setting the exchange reference\n @dev ...\n @param _DEXManagerAddress new reference"
+            },
+            "functionSelector": "96f91890",
+            "id": 34,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [
+              {
+                "arguments": null,
+                "id": 23,
+                "modifierName": {
+                  "argumentTypes": null,
+                  "id": 22,
+                  "name": "onlyAdmin",
+                  "nodeType": "Identifier",
+                  "overloadedDeclarations": [],
+                  "referencedDeclaration": 2512,
+                  "src": "832:9:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_modifier$__$",
+                    "typeString": "modifier ()"
+                  }
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "832:9:0"
+              }
+            ],
+            "name": "setDEXManager",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 21,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 20,
+                  "name": "_DEXManagerAddress",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 34,
+                  "src": "797:26:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 19,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "797:7:0",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "796:28:0"
+            },
+            "returnParameters": {
+              "id": 24,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "842:0:0"
+            },
+            "scope": 35,
+            "src": "774:176:0",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "public"
+          }
+        ],
+        "scope": 36,
+        "src": "213:739:0"
+      }
+    ],
+    "src": "0:952:0"
+  },
+  "legacyAST": {
+    "absolutePath": "/home/dsz/git/galaxistest/galaxis/contracts/Composition/GX_DEXManagerReference.sol",
+    "exportedSymbols": {
+      "GX_DEXManagerReference": [
+        35
+      ]
+    },
+    "id": 36,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 1,
+        "literals": [
+          "solidity",
+          "^",
+          "0.6",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:0"
+      },
+      {
+        "absolutePath": "/home/dsz/git/galaxistest/galaxis/contracts/Governance/GX_GovernanceAdmin.sol",
+        "file": "../Governance/GX_GovernanceAdmin.sol",
+        "id": 2,
+        "nodeType": "ImportDirective",
+        "scope": 36,
+        "sourceUnit": 2565,
+        "src": "25:46:0",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "abstract": false,
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 4,
+              "name": "GX_GovernanceAdmin",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 2564,
+              "src": "248:18:0",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_GX_GovernanceAdmin_$2564",
+                "typeString": "contract GX_GovernanceAdmin"
+              }
+            },
+            "id": 5,
+            "nodeType": "InheritanceSpecifier",
+            "src": "248:18:0"
+          }
+        ],
+        "contractDependencies": [
+          2564
+        ],
+        "contractKind": "contract",
+        "documentation": {
+          "id": 3,
+          "nodeType": "StructuredDocumentation",
+          "src": "73:140:0",
+          "text": "@author Solidity Services\n @title Galaxis: Registered DEX reference\n @notice Simple helper functionalities for exchange reference"
+        },
+        "fullyImplemented": true,
+        "id": 35,
+        "linearizedBaseContracts": [
+          35,
+          2564
+        ],
+        "name": "GX_DEXManagerReference",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "functionSelector": "67fd6d07",
+            "id": 7,
+            "name": "DEXManagerReference",
+            "nodeType": "VariableDeclaration",
+            "overrides": null,
+            "scope": 35,
+            "src": "319:34:0",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_address",
+              "typeString": "address"
+            },
+            "typeName": {
+              "id": 6,
+              "name": "address",
+              "nodeType": "ElementaryTypeName",
+              "src": "319:7:0",
+              "stateMutability": "nonpayable",
+              "typeDescriptions": {
+                "typeIdentifier": "t_address",
+                "typeString": "address"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "anonymous": false,
+            "documentation": {
+              "id": 8,
+              "nodeType": "StructuredDocumentation",
+              "src": "360:87:0",
+              "text": "EVENTS: user facing events\n @notice event for setting the exchange reference"
+            },
+            "id": 12,
+            "name": "GX_DEXManagerSet",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 11,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 10,
+                  "indexed": true,
+                  "name": "DEXManagerAddress",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 12,
+                  "src": "475:33:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 9,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "475:7:0",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "474:35:0"
+            },
+            "src": "452:58:0"
+          },
+          {
+            "body": {
+              "id": 16,
+              "nodeType": "Block",
+              "src": "627:7:0",
+              "statements": []
+            },
+            "documentation": {
+              "id": 13,
+              "nodeType": "StructuredDocumentation",
+              "src": "516:85:0",
+              "text": "CONSTRUCTOR\n @notice functionality for known parites\n @dev ..."
+            },
+            "id": 17,
+            "implemented": true,
+            "kind": "constructor",
+            "modifiers": [],
+            "name": "",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 14,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "617:2:0"
+            },
+            "returnParameters": {
+              "id": 15,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "627:0:0"
+            },
+            "scope": 35,
+            "src": "606:28:0",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 33,
+              "nodeType": "Block",
+              "src": "842:108:0",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 27,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 25,
+                      "name": "DEXManagerReference",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 7,
+                      "src": "852:19:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 26,
+                      "name": "_DEXManagerAddress",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 20,
+                      "src": "874:18:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "src": "852:40:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "id": 28,
+                  "nodeType": "ExpressionStatement",
+                  "src": "852:40:0"
+                },
+                {
+                  "eventCall": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 30,
+                        "name": "_DEXManagerAddress",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 20,
+                        "src": "924:18:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "id": 29,
+                      "name": "GX_DEXManagerSet",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 12,
+                      "src": "907:16:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_event_nonpayable$_t_address_$returns$__$",
+                        "typeString": "function (address)"
+                      }
+                    },
+                    "id": 31,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "907:36:0",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 32,
+                  "nodeType": "EmitStatement",
+                  "src": "902:41:0"
+                }
+              ]
+            },
+            "documentation": {
+              "id": 18,
+              "nodeType": "StructuredDocumentation",
+              "src": "640:129:0",
+              "text": "TRANSACTIONS\n @notice setting the exchange reference\n @dev ...\n @param _DEXManagerAddress new reference"
+            },
+            "functionSelector": "96f91890",
+            "id": 34,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [
+              {
+                "arguments": null,
+                "id": 23,
+                "modifierName": {
+                  "argumentTypes": null,
+                  "id": 22,
+                  "name": "onlyAdmin",
+                  "nodeType": "Identifier",
+                  "overloadedDeclarations": [],
+                  "referencedDeclaration": 2512,
+                  "src": "832:9:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_modifier$__$",
+                    "typeString": "modifier ()"
+                  }
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "832:9:0"
+              }
+            ],
+            "name": "setDEXManager",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 21,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 20,
+                  "name": "_DEXManagerAddress",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 34,
+                  "src": "797:26:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 19,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "797:7:0",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "796:28:0"
+            },
+            "returnParameters": {
+              "id": 24,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "842:0:0"
+            },
+            "scope": 35,
+            "src": "774:176:0",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "public"
+          }
+        ],
+        "scope": 36,
+        "src": "213:739:0"
+      }
+    ],
+    "src": "0:952:0"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.6.5+commit.f956cc89.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.2.2-next.0",
+  "updatedAt": "2020-08-13T15:10:44.426Z",
+  "devdoc": {
+    "author": "Solidity Services",
+    "methods": {
+      "addAdmin(address)": {
+        "details": "...",
+        "params": {
+          "_newAdmin": "new admin of the contract"
+        }
+      },
+      "constructor": {
+        "details": "..."
+      },
+      "isAdmin(address)": {
+        "details": "...",
+        "params": {
+          "_addressToCheck": "the address to be checked"
+        }
+      },
+      "removeAdmin(address)": {
+        "details": "...",
+        "params": {
+          "_adminToDelete": "removing the admin from the contract"
+        }
+      },
+      "setDEXManager(address)": {
+        "details": "...",
+        "params": {
+          "_DEXManagerAddress": "new reference"
+        }
+      }
+    },
+    "title": "Galaxis: Registered DEX reference"
+  },
+  "userdoc": {
+    "methods": {
+      "addAdmin(address)": {
+        "notice": "TRANSACTIONSadding a new admin to the contract"
+      },
+      "constructor": "CONSTRUCTORfunctionality for known parites",
+      "isAdmin(address)": {
+        "notice": "VIEWSchecking if the address is admin"
+      },
+      "removeAdmin(address)": {
+        "notice": "removing an admin from the contract"
+      },
+      "setDEXManager(address)": {
+        "notice": "TRANSACTIONSsetting the exchange reference"
+      }
+    },
+    "notice": "Simple helper functionalities for exchange reference"
+  }
+}

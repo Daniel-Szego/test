@@ -1,0 +1,2452 @@
+{
+  "contractName": "GX_DEXManagerBase",
+  "abi": [
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "adminAddress",
+          "type": "address"
+        }
+      ],
+      "name": "GX_AdminAdded",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "adminAddress",
+          "type": "address"
+        }
+      ],
+      "name": "GX_AdminRemoved",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "uint8",
+          "name": "num",
+          "type": "uint8"
+        },
+        {
+          "indexed": false,
+          "internalType": "enum GX_DEXRegistry.DEXType",
+          "name": "dexType",
+          "type": "uint8"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "dexAddress",
+          "type": "address"
+        }
+      ],
+      "name": "GX_DEXAdded",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "uint8",
+          "name": "num",
+          "type": "uint8"
+        }
+      ],
+      "name": "GX_DEXRemoved",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "partyAddress",
+          "type": "address"
+        }
+      ],
+      "name": "GX_PartyAdded",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "partyAddress",
+          "type": "address"
+        }
+      ],
+      "name": "GX_PartyRemoved",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "uint8",
+          "name": "_dex",
+          "type": "uint8"
+        },
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "_tknOffer",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "_tknGet",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "_amount",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "_rate",
+          "type": "uint256"
+        }
+      ],
+      "name": "OrderPlaced",
+      "type": "event"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_newAdmin",
+          "type": "address"
+        }
+      ],
+      "name": "addAdmin",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint8",
+          "name": "_num",
+          "type": "uint8"
+        },
+        {
+          "internalType": "enum GX_DEXRegistry.DEXType",
+          "name": "_dexType",
+          "type": "uint8"
+        },
+        {
+          "internalType": "address",
+          "name": "_dexAddress",
+          "type": "address"
+        }
+      ],
+      "name": "addDEX",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_newParty",
+          "type": "address"
+        }
+      ],
+      "name": "addParty",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint8",
+          "name": "_nrToCheck",
+          "type": "uint8"
+        }
+      ],
+      "name": "getDEXInfo",
+      "outputs": [
+        {
+          "internalType": "enum GX_DEXRegistry.DEXType",
+          "name": "",
+          "type": "uint8"
+        },
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function",
+      "constant": true
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_addressToCheck",
+          "type": "address"
+        }
+      ],
+      "name": "isAdmin",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function",
+      "constant": true
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_addressToCheck",
+          "type": "address"
+        }
+      ],
+      "name": "isParty",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function",
+      "constant": true
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_adminToDelete",
+          "type": "address"
+        }
+      ],
+      "name": "removeAdmin",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint8",
+          "name": "_num",
+          "type": "uint8"
+        }
+      ],
+      "name": "removeDEX",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_partyToDelete",
+          "type": "address"
+        }
+      ],
+      "name": "removeParty",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint8",
+          "name": "_dex",
+          "type": "uint8"
+        },
+        {
+          "internalType": "address",
+          "name": "_tknOffer",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "_tknGet",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_amount",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_rate",
+          "type": "uint256"
+        }
+      ],
+      "name": "placeOrder",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_orderId",
+          "type": "uint256"
+        }
+      ],
+      "name": "cancelOrder",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint8",
+          "name": "_dex",
+          "type": "uint8"
+        },
+        {
+          "internalType": "address",
+          "name": "_tknOffer",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "_tknGet",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "getChangeRate",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.6.5+commit.f956cc89\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"adminAddress\",\"type\":\"address\"}],\"name\":\"GX_AdminAdded\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"adminAddress\",\"type\":\"address\"}],\"name\":\"GX_AdminRemoved\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"uint8\",\"name\":\"num\",\"type\":\"uint8\"},{\"indexed\":false,\"internalType\":\"enum GX_DEXRegistry.DEXType\",\"name\":\"dexType\",\"type\":\"uint8\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"dexAddress\",\"type\":\"address\"}],\"name\":\"GX_DEXAdded\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"uint8\",\"name\":\"num\",\"type\":\"uint8\"}],\"name\":\"GX_DEXRemoved\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"partyAddress\",\"type\":\"address\"}],\"name\":\"GX_PartyAdded\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"partyAddress\",\"type\":\"address\"}],\"name\":\"GX_PartyRemoved\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint8\",\"name\":\"_dex\",\"type\":\"uint8\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"_tknOffer\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"_tknGet\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"_amount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"_rate\",\"type\":\"uint256\"}],\"name\":\"OrderPlaced\",\"type\":\"event\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_newAdmin\",\"type\":\"address\"}],\"name\":\"addAdmin\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint8\",\"name\":\"_num\",\"type\":\"uint8\"},{\"internalType\":\"enum GX_DEXRegistry.DEXType\",\"name\":\"_dexType\",\"type\":\"uint8\"},{\"internalType\":\"address\",\"name\":\"_dexAddress\",\"type\":\"address\"}],\"name\":\"addDEX\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_newParty\",\"type\":\"address\"}],\"name\":\"addParty\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_orderId\",\"type\":\"uint256\"}],\"name\":\"cancelOrder\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint8\",\"name\":\"_dex\",\"type\":\"uint8\"},{\"internalType\":\"address\",\"name\":\"_tknOffer\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_tknGet\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"_amount\",\"type\":\"uint256\"}],\"name\":\"getChangeRate\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint8\",\"name\":\"_nrToCheck\",\"type\":\"uint8\"}],\"name\":\"getDEXInfo\",\"outputs\":[{\"internalType\":\"enum GX_DEXRegistry.DEXType\",\"name\":\"\",\"type\":\"uint8\"},{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_addressToCheck\",\"type\":\"address\"}],\"name\":\"isAdmin\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_addressToCheck\",\"type\":\"address\"}],\"name\":\"isParty\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint8\",\"name\":\"_dex\",\"type\":\"uint8\"},{\"internalType\":\"address\",\"name\":\"_tknOffer\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_tknGet\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"_amount\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_rate\",\"type\":\"uint256\"}],\"name\":\"placeOrder\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_adminToDelete\",\"type\":\"address\"}],\"name\":\"removeAdmin\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint8\",\"name\":\"_num\",\"type\":\"uint8\"}],\"name\":\"removeDEX\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_partyToDelete\",\"type\":\"address\"}],\"name\":\"removeParty\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"author\":\"Solidity Services\",\"methods\":{\"addAdmin(address)\":{\"details\":\"...\",\"params\":{\"_newAdmin\":\"new admin of the contract\"}},\"addDEX(uint8,uint8,address)\":{\"details\":\"...\",\"params\":{\"_dexAddress\":\"address of the dex or dex adapter\",\"_dexType\":\"typer of the dex\",\"_num\":\"name and number of the exchange\"}},\"addParty(address)\":{\"details\":\"...\",\"params\":{\"_newParty\":\"new party of the contract\"}},\"cancelOrder(uint256)\":{\"details\":\"...\",\"params\":{\"_orderId\":\"cancelling the order id\"}},\"getChangeRate(uint8,address,address,uint256)\":{\"details\":\"...\",\"params\":{\"_amount\":\"amount to echange\",\"_dex\":\"dex number\",\"_tknGet\":\"token to get\",\"_tknOffer\":\"token to offer\"}},\"getDEXInfo(uint8)\":{\"details\":\"...\",\"params\":{\"_nrToCheck\":\"nr to check\"}},\"isAdmin(address)\":{\"details\":\"...\",\"params\":{\"_addressToCheck\":\"the address to be checked\"}},\"isParty(address)\":{\"details\":\"...\",\"params\":{\"_addressToCheck\":\"the address to be checked\"}},\"placeOrder(uint8,address,address,uint256,uint256)\":{\"details\":\"...\",\"params\":{\"_amount\":\"amount to exchange\",\"_dex\":\"dex exchange or adapter number\",\"_rate\":\"rate for the expected exchnage\",\"_tknGet\":\"token to get\",\"_tknOffer\":\"token to offer\"}},\"removeAdmin(address)\":{\"details\":\"...\",\"params\":{\"_adminToDelete\":\"removing the admin from the contract\"}},\"removeDEX(uint8)\":{\"details\":\"...\",\"params\":{\"_num\":\"name and number of the exchange\"}},\"removeParty(address)\":{\"details\":\"...\",\"params\":{\"_partyToDelete\":\"removing the party from the contract\"}}},\"title\":\"Galaxis: DEX manager base\"},\"userdoc\":{\"methods\":{\"addAdmin(address)\":{\"notice\":\"TRANSACTIONSadding a new admin to the contract\"},\"addDEX(uint8,uint8,address)\":{\"notice\":\"TRANSACTIONSadding exchange to the known exchanges\"},\"addParty(address)\":{\"notice\":\"TRANSACTIONSadding a new party\"},\"cancelOrder(uint256)\":{\"notice\":\"placing order to an exchange\"},\"getChangeRate(uint8,address,address,uint256)\":{\"notice\":\"getting change rate for a given token change on an exchange\"},\"getDEXInfo(uint8)\":{\"notice\":\"VIEWSchecking the address of the exchange\"},\"isAdmin(address)\":{\"notice\":\"VIEWSchecking if the address is admin\"},\"isParty(address)\":{\"notice\":\"VIEWSchecking if the address is a trusted party\"},\"placeOrder(uint8,address,address,uint256,uint256)\":{\"notice\":\"placing order to an exchange\"},\"removeAdmin(address)\":{\"notice\":\"removing an admin from the contract\"},\"removeDEX(uint8)\":{\"notice\":\"removing exchange or exchange adapter from the known exchanges\"},\"removeParty(address)\":{\"notice\":\"removing a party from the contract\"}},\"notice\":\"Implementing an empty DEX Manager for hierarchy and tests\"}},\"settings\":{\"compilationTarget\":{\"/home/dsz/git/galaxistest/galaxis/contracts/DEXManager/GX_DEXManagerBase.sol\":\"GX_DEXManagerBase\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/home/dsz/git/galaxistest/galaxis/contracts/Composition/GX_DEXRegistry.sol\":{\"keccak256\":\"0x7ad37d1ca4c7f346092ac0b5e4554b8b91104d2e125ac982ea9ab246d63b5cd1\",\"urls\":[\"bzz-raw://75750cd3b19fcba5f3a2b86f4b532eb68e330cf85b1a0f5953f185e4c1a75dda\",\"dweb:/ipfs/QmPAXYDYUSki19DwSLPiMesf2iycFEGKwaBQSgMdUoMkSi\"]},\"/home/dsz/git/galaxistest/galaxis/contracts/Composition/GX_TrustedParties.sol\":{\"keccak256\":\"0x614a7d5b136e8453904d98866b2c875fa1251bffaa1945173dfe3af2d50c9d8b\",\"urls\":[\"bzz-raw://c7cfa0144e113a1857646820f98f71d1470fd6f4839e51fb7728d76f7c20638e\",\"dweb:/ipfs/QmeTyCiMYci3142CtZMVKVCbaZB38EZ3qV3w7gmW4WaNfH\"]},\"/home/dsz/git/galaxistest/galaxis/contracts/DEXManager/GX_DEXManagerBase.sol\":{\"keccak256\":\"0x9323da2f6e9dea9a79c4416a70fdc548462844b104acf522609059a6b8f033e6\",\"urls\":[\"bzz-raw://d9c3f51737338497b4c50e331680d812675f72723a5b5851d51fbbfb2aa81bc0\",\"dweb:/ipfs/QmTvaDKsz6Nh9yRu9RHzqPqYzaGqtCMzEubtmZFFPTrFJf\"]},\"/home/dsz/git/galaxistest/galaxis/contracts/FundManager/GX_GeneralOrderInterface.sol\":{\"keccak256\":\"0xa04b99fe67c87cb4e59c7e3e15fc5e8ef2618bc6e2ef71296c06a709518c2b1a\",\"urls\":[\"bzz-raw://51cb83162e91aa99217fe3b7ce8159b4b7bd1f7a2b7abdf2a16e62eb57560e55\",\"dweb:/ipfs/QmZ9gU82EuUYa1joGt8jYBUjiv1JQwPoExh3FLmt56kqUT\"]},\"/home/dsz/git/galaxistest/galaxis/contracts/Governance/GX_GovernanceAdmin.sol\":{\"keccak256\":\"0x366d9f22e06078cae2774e6a7a980195623956248862ab8be94c89591574a0da\",\"urls\":[\"bzz-raw://6771548bddcd894d9f3de922232c65e9f931fa74ec19d871e27920f5943dd57a\",\"dweb:/ipfs/QmcjkJRvPXAzGfWrByLjjwWqgYKTyhrNoZe8PK5ZwkMqGx\"]}},\"version\":1}",
+  "bytecode": "0x60806040908152336000908152602081905220805460ff191660011790556108958061002c6000396000f3fe608060405234801561001057600080fd5b50600436106100b45760003560e01c8063704802751161007157806370480275146101cf578063775fec62146101f55780639b5f292e1461023a5780639f19b1cb1461028d578063c1a42243146102c7578063fc78b2e8146102ed576100b4565b80631785f53c146100b957806318547152146100e157806324d7806c14610101578063288916eb1461013b578063373c3e761461018c578063514fcac7146101b2575b600080fd5b6100df600480360360208110156100cf57600080fd5b50356001600160a01b0316610313565b005b6100df600480360360208110156100f757600080fd5b503560ff166103af565b6101276004803603602081101561011757600080fd5b50356001600160a01b031661044b565b604080519115158252519081900360200190f35b61017a6004803603608081101561015157600080fd5b5060ff813516906001600160a01b03602082013581169160408101359091169060600135610469565b60408051918252519081900360200190f35b6100df600480360360208110156101a257600080fd5b50356001600160a01b0316610473565b6100df600480360360208110156101c857600080fd5b5035610515565b6100df600480360360208110156101e557600080fd5b50356001600160a01b0316610518565b6100df600480360360a081101561020b57600080fd5b5060ff813516906001600160a01b036020820135811691604081013590911690606081013590608001356105b7565b61025a6004803603602081101561025057600080fd5b503560ff16610618565b6040518083600281111561026a57fe5b60ff1681526001600160a01b039092166020830152506040805191829003019150f35b6100df600480360360608110156102a357600080fd5b50803560ff90811691602081013590911690604001356001600160a01b0316610642565b6100df600480360360208110156102dd57600080fd5b50356001600160a01b0316610771565b6101276004803603602081101561030357600080fd5b50356001600160a01b031661080d565b3360009081526020819052604090205460ff1615156001146103665760405162461bcd60e51b815260040180806020018281038252603481526020018061082c6034913960400191505060405180910390fd5b6001600160a01b038116600081815260208190526040808220805460ff19169055517f6a35edfb19dff31b968882a3f9eeef54e0ca71bb9af2db6e085f409715d3c5479190a250565b3360009081526020819052604090205460ff1615156001146104025760405162461bcd60e51b815260040180806020018281038252603481526020018061082c6034913960400191505060405180910390fd5b60ff811660008181526002602052604080822080546001600160a81b0319169055517fabb8cac8af599331750e1284d535d9920cec7b858a03251e27f5208591a9870e9190a250565b6001600160a01b031660009081526020819052604090205460ff1690565b6000949350505050565b3360009081526020819052604090205460ff1615156001146104c65760405162461bcd60e51b815260040180806020018281038252603481526020018061082c6034913960400191505060405180910390fd5b6001600160a01b0381166000818152600160208190526040808320805460ff1916909217909155517fa939b18300f53158576c00561d9810d163a1fd7971e0beb2deb3da9d6d6c5ae19190a250565b50565b3360009081526020819052604090205460ff16151560011461056b5760405162461bcd60e51b815260040180806020018281038252603481526020018061082c6034913960400191505060405180910390fd5b6001600160a01b038116600081815260208190526040808220805460ff19166001179055517fd7f0afc2242fe9a5f45af6dea542902933e36c643299a53b1057b13cf8bcad809190a250565b6040805160ff871681526001600160a01b038087166020830152851681830152606081018490526080810183905290517fa86848877ec87d996e71aa1c410df4a53ed959b6d90c4d85dae5ecb95b47fca89181900360a00190a15050505050565b60ff908116600090815260026020526040902054908116916101009091046001600160a01b031690565b3360009081526020819052604090205460ff1615156001146106955760405162461bcd60e51b815260040180806020018281038252603481526020018061082c6034913960400191505060405180910390fd5b60405180604001604052808360028111156106ac57fe5b81526001600160a01b03831660209182015260ff85166000908152600291829052604090208251815491929091839160ff199091169060019084908111156106f057fe5b0217905550602091909101518154610100600160a81b0319166101006001600160a01b0392831602179091556040519082169060ff8516907fb2adc6c11d1b970bf9414ad19866ff1fd17e3d64461e5e63265e6994264f72499085908082600281111561075957fe5b60ff16815260200191505060405180910390a3505050565b3360009081526020819052604090205460ff1615156001146107c45760405162461bcd60e51b815260040180806020018281038252603481526020018061082c6034913960400191505060405180910390fd5b6001600160a01b038116600081815260016020526040808220805460ff19169055517fdbe139b9dcaabbb09bc4b530bfb2f8d390bd0ac7cd6e9c87a80468cc8ca709df9190a250565b6001600160a01b031660009081526001602052604090205460ff169056fe47616c617869733a204163636573732064656e6965643a206e6f7420616e2061646d696e206f662074686520636f6e7472616374a2646970667358221220ed4466b03328fd56f694b2c48194bc86014362005ac70acf08adfa923e1fda1964736f6c63430006050033",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106100b45760003560e01c8063704802751161007157806370480275146101cf578063775fec62146101f55780639b5f292e1461023a5780639f19b1cb1461028d578063c1a42243146102c7578063fc78b2e8146102ed576100b4565b80631785f53c146100b957806318547152146100e157806324d7806c14610101578063288916eb1461013b578063373c3e761461018c578063514fcac7146101b2575b600080fd5b6100df600480360360208110156100cf57600080fd5b50356001600160a01b0316610313565b005b6100df600480360360208110156100f757600080fd5b503560ff166103af565b6101276004803603602081101561011757600080fd5b50356001600160a01b031661044b565b604080519115158252519081900360200190f35b61017a6004803603608081101561015157600080fd5b5060ff813516906001600160a01b03602082013581169160408101359091169060600135610469565b60408051918252519081900360200190f35b6100df600480360360208110156101a257600080fd5b50356001600160a01b0316610473565b6100df600480360360208110156101c857600080fd5b5035610515565b6100df600480360360208110156101e557600080fd5b50356001600160a01b0316610518565b6100df600480360360a081101561020b57600080fd5b5060ff813516906001600160a01b036020820135811691604081013590911690606081013590608001356105b7565b61025a6004803603602081101561025057600080fd5b503560ff16610618565b6040518083600281111561026a57fe5b60ff1681526001600160a01b039092166020830152506040805191829003019150f35b6100df600480360360608110156102a357600080fd5b50803560ff90811691602081013590911690604001356001600160a01b0316610642565b6100df600480360360208110156102dd57600080fd5b50356001600160a01b0316610771565b6101276004803603602081101561030357600080fd5b50356001600160a01b031661080d565b3360009081526020819052604090205460ff1615156001146103665760405162461bcd60e51b815260040180806020018281038252603481526020018061082c6034913960400191505060405180910390fd5b6001600160a01b038116600081815260208190526040808220805460ff19169055517f6a35edfb19dff31b968882a3f9eeef54e0ca71bb9af2db6e085f409715d3c5479190a250565b3360009081526020819052604090205460ff1615156001146104025760405162461bcd60e51b815260040180806020018281038252603481526020018061082c6034913960400191505060405180910390fd5b60ff811660008181526002602052604080822080546001600160a81b0319169055517fabb8cac8af599331750e1284d535d9920cec7b858a03251e27f5208591a9870e9190a250565b6001600160a01b031660009081526020819052604090205460ff1690565b6000949350505050565b3360009081526020819052604090205460ff1615156001146104c65760405162461bcd60e51b815260040180806020018281038252603481526020018061082c6034913960400191505060405180910390fd5b6001600160a01b0381166000818152600160208190526040808320805460ff1916909217909155517fa939b18300f53158576c00561d9810d163a1fd7971e0beb2deb3da9d6d6c5ae19190a250565b50565b3360009081526020819052604090205460ff16151560011461056b5760405162461bcd60e51b815260040180806020018281038252603481526020018061082c6034913960400191505060405180910390fd5b6001600160a01b038116600081815260208190526040808220805460ff19166001179055517fd7f0afc2242fe9a5f45af6dea542902933e36c643299a53b1057b13cf8bcad809190a250565b6040805160ff871681526001600160a01b038087166020830152851681830152606081018490526080810183905290517fa86848877ec87d996e71aa1c410df4a53ed959b6d90c4d85dae5ecb95b47fca89181900360a00190a15050505050565b60ff908116600090815260026020526040902054908116916101009091046001600160a01b031690565b3360009081526020819052604090205460ff1615156001146106955760405162461bcd60e51b815260040180806020018281038252603481526020018061082c6034913960400191505060405180910390fd5b60405180604001604052808360028111156106ac57fe5b81526001600160a01b03831660209182015260ff85166000908152600291829052604090208251815491929091839160ff199091169060019084908111156106f057fe5b0217905550602091909101518154610100600160a81b0319166101006001600160a01b0392831602179091556040519082169060ff8516907fb2adc6c11d1b970bf9414ad19866ff1fd17e3d64461e5e63265e6994264f72499085908082600281111561075957fe5b60ff16815260200191505060405180910390a3505050565b3360009081526020819052604090205460ff1615156001146107c45760405162461bcd60e51b815260040180806020018281038252603481526020018061082c6034913960400191505060405180910390fd5b6001600160a01b038116600081815260016020526040808220805460ff19169055517fdbe139b9dcaabbb09bc4b530bfb2f8d390bd0ac7cd6e9c87a80468cc8ca709df9190a250565b6001600160a01b031660009081526001602052604090205460ff169056fe47616c617869733a204163636573732064656e6965643a206e6f7420616e2061646d696e206f662074686520636f6e7472616374a2646970667358221220ed4466b03328fd56f694b2c48194bc86014362005ac70acf08adfa923e1fda1964736f6c63430006050033",
+  "immutableReferences": {},
+  "sourceMap": "356:1498:6:-:0;;;;;653:10:23;646:6;:18;;;;;;;;:25;;-1:-1:-1;;646:25:23;667:4;646:25;;;356:1498:6;;;;;;",
+  "deployedSourceMap": "356:1498:6:-:0;;;;5:9:-1;2:2;;;27:1;24;17:12;2:2;356:1498:6;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;12:1:-1;9;2:12;1304:155:23;;;;;;15:2:-1;10:3;7:11;4:2;;;31:1;28;21:12;4:2;-1:-1;1304:155:23;-1:-1:-1;;;;;1304:155:23;;:::i;:::-;;1601:116:1;;;;;;15:2:-1;10:3;7:11;4:2;;;31:1;28;21:12;4:2;-1:-1;1601:116:1;;;;:::i;1603::23:-;;;;;;15:2:-1;10:3;7:11;4:2;;;31:1;28;21:12;4:2;-1:-1;1603:116:23;-1:-1:-1;;;;;1603:116:23;;:::i;:::-;;;;;;;;;;;;;;;;;;1670:180:6;;;;;;15:3:-1;10;7:12;4:2;;;32:1;29;22:12;4:2;-1:-1;1670:180:6;;;;;-1:-1:-1;;;;;1670:180:6;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;809:135:4;;;;;;15:2:-1;10:3;7:11;4:2;;;31:1;28;21:12;4:2;-1:-1;809:135:4;-1:-1:-1;;;;;809:135:4;;:::i;1303:120:6:-;;;;;;15:2:-1;10:3;7:11;4:2;;;31:1;28;21:12;4:2;-1:-1;1303:120:6;;:::i;1028:134:23:-;;;;;;15:2:-1;10:3;7:11;4:2;;;31:1;28;21:12;4:2;-1:-1;1028:134:23;-1:-1:-1;;;;;1028:134:23;;:::i;919:264:6:-;;;;;;15:3:-1;10;7:12;4:2;;;32:1;29;22:12;4:2;-1:-1;919:264:6;;;;;-1:-1:-1;;;;;919:264:6;;;;;;;;;;;;;;;;;;;;;;;;:::i;1846:156:1:-;;;;;;15:2:-1;10:3;7:11;4:2;;;31:1;28;21:12;4:2;-1:-1;1846:156:1;;;;:::i;:::-;;;;;;;;;;;;;;;;;-1:-1:-1;;;;;1846:156:1;;;;;;;-1:-1:-1;1846:156:1;;;;;;;;;-1:-1:-1;1846:156:1;1248:199;;;;;;15:2:-1;10:3;7:11;4:2;;;31:1;28;21:12;4:2;-1:-1;1248:199:1;;;;;;;;;;;;;;;;;;-1:-1:-1;;;;;1248:199:1;;:::i;1085:156:4:-;;;;;;15:2:-1;10:3;7:11;4:2;;;31:1;28;21:12;4:2;-1:-1;1085:156:4;-1:-1:-1;;;;;1085:156:4;;:::i;1395:117::-;;;;;;15:2:-1;10:3;7:11;4:2;;;31:1;28;21:12;4:2;-1:-1;1395:117:4;-1:-1:-1;;;;;1395:117:4;;:::i;1304:155:23:-;787:10;780:6;:18;;;;;;;;;;;;;:26;;:18;:26;772:91;;;;-1:-1:-1;;;772:91:23;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;;;;1376:22:23;::::1;1401:5;1376:22:::0;;;::::1;::::0;;;;;;;:30;;-1:-1:-1;;1376:30:23::1;::::0;;1421:31;::::1;::::0;1401:5;1421:31:::1;1304:155:::0;:::o;1601:116:1:-;787:10:23;780:6;:18;;;;;;;;;;;;;:26;;:18;:26;772:91;;;;-1:-1:-1;;;772:91:23;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1666:10:1::1;::::0;::::1;;::::0;;;:4:::1;:10;::::0;;;;;1659:17;;-1:-1:-1;;;;;;1659:17:1;;;1691:19;::::1;::::0;1666:10;1691:19:::1;1601:116:::0;:::o;1603::23:-;-1:-1:-1;;;;;1689:23:23;1666:4;1689:23;;;;;;;;;;;;;;1603:116::o;1670:180:6:-;1779:4;1670:180;;;;;;:::o;809:135:4:-;787:10:23;780:6;:18;;;;;;;;;;;;;:26;;:18;:26;772:91;;;;-1:-1:-1;;;772:91:23;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;;;;873:18:4;::::1;;::::0;;;894:4:::1;873:18;::::0;;;;;;;:25;;-1:-1:-1;;873:25:4::1;::::0;;::::1;::::0;;;913:24;::::1;::::0;873:18;913:24:::1;809:135:::0;:::o;1303:120:6:-;;:::o;1028:134:23:-;787:10;780:6;:18;;;;;;;;;;;;;:26;;:18;:26;772:91;;;;-1:-1:-1;;;772:91:23;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;;;;1092:17:23;::::1;:6;:17:::0;;;::::1;::::0;;;;;;;:24;;-1:-1:-1;;1092:24:23::1;1112:4;1092:24;::::0;;1131;::::1;::::0;1092:6;1131:24:::1;1028:134:::0;:::o;919:264:6:-;1114:49;;;;;;;;-1:-1:-1;;;;;1114:49:6;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;919:264;;;;;:::o;1846:156:1:-;1941:16;;;;1905:7;1941:16;;;:4;:16;;;;;:24;;;;;;1967:27;;;-1:-1:-1;;;;;1967:27:1;;1846:156::o;1248:199::-;787:10:23;780:6;:18;;;;;;;;;;;;;:26;;:18;:26;772:91;;;;-1:-1:-1;;;772:91:23;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1355:30:1::1;;;;;;;;1364:8;1355:30;;;;;;;;::::0;;-1:-1:-1;;;;;1355:30:1;::::1;;::::0;;::::1;::::0;1342:10:::1;::::0;::::1;-1:-1:-1::0;1342:10:1;;;:4:::1;:10:::0;;;;;;;:43;;;;:10;;:43;;:10;;-1:-1:-1;;1342:43:1;;::::1;::::0;;;;;;::::1;;;;;;;;::::0;;-1:-1:-1;1342:43:1::1;::::0;;;::::1;::::0;;;-1:-1:-1;;;;;;1342:43:1::1;;-1:-1:-1::0;;;;;1342:43:1;;::::1;;;::::0;;;1400:40:::1;::::0;;;::::1;::::0;::::1;::::0;::::1;::::0;::::1;::::0;1418:8;;1400:40;1418:8;1400:40:::1;::::0;::::1;;;;;;;;;;;;;;;;;;;;;;1248:199:::0;;;:::o;1085:156:4:-;787:10:23;780:6;:18;;;;;;;;;;;;;:26;;:18;:26;772:91;;;;-1:-1:-1;;;772:91:23;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;;;;1157:23:4;::::1;1183:5;1157:23:::0;;;:7:::1;:23;::::0;;;;;:31;;-1:-1:-1;;1157:31:4::1;::::0;;1203;::::1;::::0;1183:5;1203:31:::1;1085:156:::0;:::o;1395:117::-;-1:-1:-1;;;;;1481:24:4;1458:4;1481:24;;;:7;:24;;;;;;;;;1395:117::o",
+  "source": "pragma solidity ^0.6.0;\n\nimport '../Governance/GX_GovernanceAdmin.sol';\nimport '../Composition/GX_TrustedParties.sol';\nimport '../Composition/GX_DEXRegistry.sol';\n\nimport '../FundManager/GX_GeneralOrderInterface.sol';\n\n/// @author Solidity Services\n/// @title Galaxis: DEX manager base\n/// @notice Implementing an empty DEX Manager for hierarchy and tests\ncontract GX_DEXManagerBase is GX_GeneralOrderInterface, GX_TrustedParties, GX_DEXRegistry {\n\n    /// EVENTS\n    /// @notice indicating that the order is placed on the given DEX\n    event OrderPlaced(uint8 _dex, address _tknOffer, address _tknGet, uint _amount, uint _rate);\n\n\n    /// @notice placing order to an exchange\n    /// @dev ...\n    /// @param _dex dex exchange or adapter number\n    /// @param _tknOffer token to offer\n    /// @param _tknGet token to get\n    /// @param _amount amount to exchange\n    /// @param _rate rate for the expected exchnage\n    function placeOrder(uint8 _dex, address _tknOffer, address _tknGet, uint _amount, uint _rate)\n        public override virtual {\n\n        // empty function for test purposes\n        \n        emit OrderPlaced(_dex,_tknOffer,_tknGet,_amount,_rate);\n        \n        }\n    \n    /// @notice placing order to an exchange\n    /// @dev ...\n    /// @param _orderId cancelling the order id\n    function cancelOrder(uint256 _orderId) public override virtual {\n\n            // empty function for test purposes\n\n    }\n\n    /// @notice getting change rate for a given token change on an exchange\n    /// @dev ...\n    /// @param _dex dex number\n    /// @param _tknOffer token to offer\n    /// @param _tknGet token to get\n    /// @param _amount amount to echange\n    function getChangeRate(uint8 _dex, address _tknOffer, address _tknGet, uint _amount) public virtual returns (uint){\n\n        // empty function at this stage\n        return 0;\n    }\n\n\n}",
+  "sourcePath": "/home/dsz/git/galaxistest/galaxis/contracts/DEXManager/GX_DEXManagerBase.sol",
+  "ast": {
+    "absolutePath": "/home/dsz/git/galaxistest/galaxis/contracts/DEXManager/GX_DEXManagerBase.sol",
+    "exportedSymbols": {
+      "GX_DEXManagerBase": [
+        588
+      ]
+    },
+    "id": 589,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 514,
+        "literals": [
+          "solidity",
+          "^",
+          "0.6",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:6"
+      },
+      {
+        "absolutePath": "/home/dsz/git/galaxistest/galaxis/contracts/Governance/GX_GovernanceAdmin.sol",
+        "file": "../Governance/GX_GovernanceAdmin.sol",
+        "id": 515,
+        "nodeType": "ImportDirective",
+        "scope": 589,
+        "sourceUnit": 2565,
+        "src": "25:46:6",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/home/dsz/git/galaxistest/galaxis/contracts/Composition/GX_TrustedParties.sol",
+        "file": "../Composition/GX_TrustedParties.sol",
+        "id": 516,
+        "nodeType": "ImportDirective",
+        "scope": 589,
+        "sourceUnit": 319,
+        "src": "72:46:6",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/home/dsz/git/galaxistest/galaxis/contracts/Composition/GX_DEXRegistry.sol",
+        "file": "../Composition/GX_DEXRegistry.sol",
+        "id": 517,
+        "nodeType": "ImportDirective",
+        "scope": 589,
+        "sourceUnit": 142,
+        "src": "119:43:6",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/home/dsz/git/galaxistest/galaxis/contracts/FundManager/GX_GeneralOrderInterface.sol",
+        "file": "../FundManager/GX_GeneralOrderInterface.sol",
+        "id": 518,
+        "nodeType": "ImportDirective",
+        "scope": 589,
+        "sourceUnit": 1721,
+        "src": "164:53:6",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "abstract": false,
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 520,
+              "name": "GX_GeneralOrderInterface",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 1720,
+              "src": "386:24:6",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_GX_GeneralOrderInterface_$1720",
+                "typeString": "contract GX_GeneralOrderInterface"
+              }
+            },
+            "id": 521,
+            "nodeType": "InheritanceSpecifier",
+            "src": "386:24:6"
+          },
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 522,
+              "name": "GX_TrustedParties",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 318,
+              "src": "412:17:6",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_GX_TrustedParties_$318",
+                "typeString": "contract GX_TrustedParties"
+              }
+            },
+            "id": 523,
+            "nodeType": "InheritanceSpecifier",
+            "src": "412:17:6"
+          },
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 524,
+              "name": "GX_DEXRegistry",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 141,
+              "src": "431:14:6",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_GX_DEXRegistry_$141",
+                "typeString": "contract GX_DEXRegistry"
+              }
+            },
+            "id": 525,
+            "nodeType": "InheritanceSpecifier",
+            "src": "431:14:6"
+          }
+        ],
+        "contractDependencies": [
+          141,
+          318,
+          1720,
+          2564
+        ],
+        "contractKind": "contract",
+        "documentation": {
+          "id": 519,
+          "nodeType": "StructuredDocumentation",
+          "src": "219:137:6",
+          "text": "@author Solidity Services\n @title Galaxis: DEX manager base\n @notice Implementing an empty DEX Manager for hierarchy and tests"
+        },
+        "fullyImplemented": true,
+        "id": 588,
+        "linearizedBaseContracts": [
+          588,
+          141,
+          318,
+          2564,
+          1720
+        ],
+        "name": "GX_DEXManagerBase",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "anonymous": false,
+            "documentation": {
+              "id": 526,
+              "nodeType": "StructuredDocumentation",
+              "src": "453:79:6",
+              "text": "EVENTS\n @notice indicating that the order is placed on the given DEX"
+            },
+            "id": 538,
+            "name": "OrderPlaced",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 537,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 528,
+                  "indexed": false,
+                  "name": "_dex",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 538,
+                  "src": "555:10:6",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint8",
+                    "typeString": "uint8"
+                  },
+                  "typeName": {
+                    "id": 527,
+                    "name": "uint8",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "555:5:6",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint8",
+                      "typeString": "uint8"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 530,
+                  "indexed": false,
+                  "name": "_tknOffer",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 538,
+                  "src": "567:17:6",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 529,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "567:7:6",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 532,
+                  "indexed": false,
+                  "name": "_tknGet",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 538,
+                  "src": "586:15:6",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 531,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "586:7:6",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 534,
+                  "indexed": false,
+                  "name": "_amount",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 538,
+                  "src": "603:12:6",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 533,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "603:4:6",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 536,
+                  "indexed": false,
+                  "name": "_rate",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 538,
+                  "src": "617:10:6",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 535,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "617:4:6",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "554:74:6"
+            },
+            "src": "537:92:6"
+          },
+          {
+            "baseFunctions": [
+              1713
+            ],
+            "body": {
+              "id": 561,
+              "nodeType": "Block",
+              "src": "1045:138:6",
+              "statements": [
+                {
+                  "eventCall": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 554,
+                        "name": "_dex",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 541,
+                        "src": "1126:4:6",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint8",
+                          "typeString": "uint8"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 555,
+                        "name": "_tknOffer",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 543,
+                        "src": "1131:9:6",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 556,
+                        "name": "_tknGet",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 545,
+                        "src": "1141:7:6",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 557,
+                        "name": "_amount",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 547,
+                        "src": "1149:7:6",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 558,
+                        "name": "_rate",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 549,
+                        "src": "1157:5:6",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_uint8",
+                          "typeString": "uint8"
+                        },
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      ],
+                      "id": 553,
+                      "name": "OrderPlaced",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 538,
+                      "src": "1114:11:6",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_event_nonpayable$_t_uint8_$_t_address_$_t_address_$_t_uint256_$_t_uint256_$returns$__$",
+                        "typeString": "function (uint8,address,address,uint256,uint256)"
+                      }
+                    },
+                    "id": 559,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1114:49:6",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 560,
+                  "nodeType": "EmitStatement",
+                  "src": "1109:54:6"
+                }
+              ]
+            },
+            "documentation": {
+              "id": 539,
+              "nodeType": "StructuredDocumentation",
+              "src": "636:278:6",
+              "text": "@notice placing order to an exchange\n @dev ...\n @param _dex dex exchange or adapter number\n @param _tknOffer token to offer\n @param _tknGet token to get\n @param _amount amount to exchange\n @param _rate rate for the expected exchnage"
+            },
+            "functionSelector": "775fec62",
+            "id": 562,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "placeOrder",
+            "nodeType": "FunctionDefinition",
+            "overrides": {
+              "id": 551,
+              "nodeType": "OverrideSpecifier",
+              "overrides": [],
+              "src": "1028:8:6"
+            },
+            "parameters": {
+              "id": 550,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 541,
+                  "name": "_dex",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 562,
+                  "src": "939:10:6",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint8",
+                    "typeString": "uint8"
+                  },
+                  "typeName": {
+                    "id": 540,
+                    "name": "uint8",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "939:5:6",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint8",
+                      "typeString": "uint8"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 543,
+                  "name": "_tknOffer",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 562,
+                  "src": "951:17:6",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 542,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "951:7:6",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 545,
+                  "name": "_tknGet",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 562,
+                  "src": "970:15:6",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 544,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "970:7:6",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 547,
+                  "name": "_amount",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 562,
+                  "src": "987:12:6",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 546,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "987:4:6",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 549,
+                  "name": "_rate",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 562,
+                  "src": "1001:10:6",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 548,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1001:4:6",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "938:74:6"
+            },
+            "returnParameters": {
+              "id": 552,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1045:0:6"
+            },
+            "scope": 588,
+            "src": "919:264:6",
+            "stateMutability": "nonpayable",
+            "virtual": true,
+            "visibility": "public"
+          },
+          {
+            "baseFunctions": [
+              1719
+            ],
+            "body": {
+              "id": 569,
+              "nodeType": "Block",
+              "src": "1366:57:6",
+              "statements": []
+            },
+            "documentation": {
+              "id": 563,
+              "nodeType": "StructuredDocumentation",
+              "src": "1193:105:6",
+              "text": "@notice placing order to an exchange\n @dev ...\n @param _orderId cancelling the order id"
+            },
+            "functionSelector": "514fcac7",
+            "id": 570,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "cancelOrder",
+            "nodeType": "FunctionDefinition",
+            "overrides": {
+              "id": 567,
+              "nodeType": "OverrideSpecifier",
+              "overrides": [],
+              "src": "1349:8:6"
+            },
+            "parameters": {
+              "id": 566,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 565,
+                  "name": "_orderId",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 570,
+                  "src": "1324:16:6",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 564,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1324:7:6",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1323:18:6"
+            },
+            "returnParameters": {
+              "id": 568,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1366:0:6"
+            },
+            "scope": 588,
+            "src": "1303:120:6",
+            "stateMutability": "nonpayable",
+            "virtual": true,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 586,
+              "nodeType": "Block",
+              "src": "1784:66:6",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "hexValue": "30",
+                    "id": 584,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": true,
+                    "kind": "number",
+                    "lValueRequested": false,
+                    "nodeType": "Literal",
+                    "src": "1842:1:6",
+                    "subdenomination": null,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_rational_0_by_1",
+                      "typeString": "int_const 0"
+                    },
+                    "value": "0"
+                  },
+                  "functionReturnParameters": 583,
+                  "id": 585,
+                  "nodeType": "Return",
+                  "src": "1835:8:6"
+                }
+              ]
+            },
+            "documentation": {
+              "id": 571,
+              "nodeType": "StructuredDocumentation",
+              "src": "1429:236:6",
+              "text": "@notice getting change rate for a given token change on an exchange\n @dev ...\n @param _dex dex number\n @param _tknOffer token to offer\n @param _tknGet token to get\n @param _amount amount to echange"
+            },
+            "functionSelector": "288916eb",
+            "id": 587,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getChangeRate",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 580,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 573,
+                  "name": "_dex",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 587,
+                  "src": "1693:10:6",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint8",
+                    "typeString": "uint8"
+                  },
+                  "typeName": {
+                    "id": 572,
+                    "name": "uint8",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1693:5:6",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint8",
+                      "typeString": "uint8"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 575,
+                  "name": "_tknOffer",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 587,
+                  "src": "1705:17:6",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 574,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1705:7:6",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 577,
+                  "name": "_tknGet",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 587,
+                  "src": "1724:15:6",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 576,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1724:7:6",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 579,
+                  "name": "_amount",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 587,
+                  "src": "1741:12:6",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 578,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1741:4:6",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1692:62:6"
+            },
+            "returnParameters": {
+              "id": 583,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 582,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 587,
+                  "src": "1779:4:6",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 581,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1779:4:6",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1778:6:6"
+            },
+            "scope": 588,
+            "src": "1670:180:6",
+            "stateMutability": "nonpayable",
+            "virtual": true,
+            "visibility": "public"
+          }
+        ],
+        "scope": 589,
+        "src": "356:1498:6"
+      }
+    ],
+    "src": "0:1854:6"
+  },
+  "legacyAST": {
+    "absolutePath": "/home/dsz/git/galaxistest/galaxis/contracts/DEXManager/GX_DEXManagerBase.sol",
+    "exportedSymbols": {
+      "GX_DEXManagerBase": [
+        588
+      ]
+    },
+    "id": 589,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 514,
+        "literals": [
+          "solidity",
+          "^",
+          "0.6",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:6"
+      },
+      {
+        "absolutePath": "/home/dsz/git/galaxistest/galaxis/contracts/Governance/GX_GovernanceAdmin.sol",
+        "file": "../Governance/GX_GovernanceAdmin.sol",
+        "id": 515,
+        "nodeType": "ImportDirective",
+        "scope": 589,
+        "sourceUnit": 2565,
+        "src": "25:46:6",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/home/dsz/git/galaxistest/galaxis/contracts/Composition/GX_TrustedParties.sol",
+        "file": "../Composition/GX_TrustedParties.sol",
+        "id": 516,
+        "nodeType": "ImportDirective",
+        "scope": 589,
+        "sourceUnit": 319,
+        "src": "72:46:6",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/home/dsz/git/galaxistest/galaxis/contracts/Composition/GX_DEXRegistry.sol",
+        "file": "../Composition/GX_DEXRegistry.sol",
+        "id": 517,
+        "nodeType": "ImportDirective",
+        "scope": 589,
+        "sourceUnit": 142,
+        "src": "119:43:6",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/home/dsz/git/galaxistest/galaxis/contracts/FundManager/GX_GeneralOrderInterface.sol",
+        "file": "../FundManager/GX_GeneralOrderInterface.sol",
+        "id": 518,
+        "nodeType": "ImportDirective",
+        "scope": 589,
+        "sourceUnit": 1721,
+        "src": "164:53:6",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "abstract": false,
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 520,
+              "name": "GX_GeneralOrderInterface",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 1720,
+              "src": "386:24:6",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_GX_GeneralOrderInterface_$1720",
+                "typeString": "contract GX_GeneralOrderInterface"
+              }
+            },
+            "id": 521,
+            "nodeType": "InheritanceSpecifier",
+            "src": "386:24:6"
+          },
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 522,
+              "name": "GX_TrustedParties",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 318,
+              "src": "412:17:6",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_GX_TrustedParties_$318",
+                "typeString": "contract GX_TrustedParties"
+              }
+            },
+            "id": 523,
+            "nodeType": "InheritanceSpecifier",
+            "src": "412:17:6"
+          },
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 524,
+              "name": "GX_DEXRegistry",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 141,
+              "src": "431:14:6",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_GX_DEXRegistry_$141",
+                "typeString": "contract GX_DEXRegistry"
+              }
+            },
+            "id": 525,
+            "nodeType": "InheritanceSpecifier",
+            "src": "431:14:6"
+          }
+        ],
+        "contractDependencies": [
+          141,
+          318,
+          1720,
+          2564
+        ],
+        "contractKind": "contract",
+        "documentation": {
+          "id": 519,
+          "nodeType": "StructuredDocumentation",
+          "src": "219:137:6",
+          "text": "@author Solidity Services\n @title Galaxis: DEX manager base\n @notice Implementing an empty DEX Manager for hierarchy and tests"
+        },
+        "fullyImplemented": true,
+        "id": 588,
+        "linearizedBaseContracts": [
+          588,
+          141,
+          318,
+          2564,
+          1720
+        ],
+        "name": "GX_DEXManagerBase",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "anonymous": false,
+            "documentation": {
+              "id": 526,
+              "nodeType": "StructuredDocumentation",
+              "src": "453:79:6",
+              "text": "EVENTS\n @notice indicating that the order is placed on the given DEX"
+            },
+            "id": 538,
+            "name": "OrderPlaced",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 537,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 528,
+                  "indexed": false,
+                  "name": "_dex",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 538,
+                  "src": "555:10:6",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint8",
+                    "typeString": "uint8"
+                  },
+                  "typeName": {
+                    "id": 527,
+                    "name": "uint8",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "555:5:6",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint8",
+                      "typeString": "uint8"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 530,
+                  "indexed": false,
+                  "name": "_tknOffer",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 538,
+                  "src": "567:17:6",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 529,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "567:7:6",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 532,
+                  "indexed": false,
+                  "name": "_tknGet",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 538,
+                  "src": "586:15:6",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 531,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "586:7:6",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 534,
+                  "indexed": false,
+                  "name": "_amount",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 538,
+                  "src": "603:12:6",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 533,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "603:4:6",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 536,
+                  "indexed": false,
+                  "name": "_rate",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 538,
+                  "src": "617:10:6",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 535,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "617:4:6",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "554:74:6"
+            },
+            "src": "537:92:6"
+          },
+          {
+            "baseFunctions": [
+              1713
+            ],
+            "body": {
+              "id": 561,
+              "nodeType": "Block",
+              "src": "1045:138:6",
+              "statements": [
+                {
+                  "eventCall": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 554,
+                        "name": "_dex",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 541,
+                        "src": "1126:4:6",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint8",
+                          "typeString": "uint8"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 555,
+                        "name": "_tknOffer",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 543,
+                        "src": "1131:9:6",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 556,
+                        "name": "_tknGet",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 545,
+                        "src": "1141:7:6",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 557,
+                        "name": "_amount",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 547,
+                        "src": "1149:7:6",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 558,
+                        "name": "_rate",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 549,
+                        "src": "1157:5:6",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_uint8",
+                          "typeString": "uint8"
+                        },
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      ],
+                      "id": 553,
+                      "name": "OrderPlaced",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 538,
+                      "src": "1114:11:6",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_event_nonpayable$_t_uint8_$_t_address_$_t_address_$_t_uint256_$_t_uint256_$returns$__$",
+                        "typeString": "function (uint8,address,address,uint256,uint256)"
+                      }
+                    },
+                    "id": 559,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1114:49:6",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 560,
+                  "nodeType": "EmitStatement",
+                  "src": "1109:54:6"
+                }
+              ]
+            },
+            "documentation": {
+              "id": 539,
+              "nodeType": "StructuredDocumentation",
+              "src": "636:278:6",
+              "text": "@notice placing order to an exchange\n @dev ...\n @param _dex dex exchange or adapter number\n @param _tknOffer token to offer\n @param _tknGet token to get\n @param _amount amount to exchange\n @param _rate rate for the expected exchnage"
+            },
+            "functionSelector": "775fec62",
+            "id": 562,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "placeOrder",
+            "nodeType": "FunctionDefinition",
+            "overrides": {
+              "id": 551,
+              "nodeType": "OverrideSpecifier",
+              "overrides": [],
+              "src": "1028:8:6"
+            },
+            "parameters": {
+              "id": 550,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 541,
+                  "name": "_dex",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 562,
+                  "src": "939:10:6",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint8",
+                    "typeString": "uint8"
+                  },
+                  "typeName": {
+                    "id": 540,
+                    "name": "uint8",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "939:5:6",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint8",
+                      "typeString": "uint8"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 543,
+                  "name": "_tknOffer",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 562,
+                  "src": "951:17:6",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 542,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "951:7:6",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 545,
+                  "name": "_tknGet",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 562,
+                  "src": "970:15:6",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 544,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "970:7:6",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 547,
+                  "name": "_amount",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 562,
+                  "src": "987:12:6",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 546,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "987:4:6",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 549,
+                  "name": "_rate",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 562,
+                  "src": "1001:10:6",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 548,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1001:4:6",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "938:74:6"
+            },
+            "returnParameters": {
+              "id": 552,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1045:0:6"
+            },
+            "scope": 588,
+            "src": "919:264:6",
+            "stateMutability": "nonpayable",
+            "virtual": true,
+            "visibility": "public"
+          },
+          {
+            "baseFunctions": [
+              1719
+            ],
+            "body": {
+              "id": 569,
+              "nodeType": "Block",
+              "src": "1366:57:6",
+              "statements": []
+            },
+            "documentation": {
+              "id": 563,
+              "nodeType": "StructuredDocumentation",
+              "src": "1193:105:6",
+              "text": "@notice placing order to an exchange\n @dev ...\n @param _orderId cancelling the order id"
+            },
+            "functionSelector": "514fcac7",
+            "id": 570,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "cancelOrder",
+            "nodeType": "FunctionDefinition",
+            "overrides": {
+              "id": 567,
+              "nodeType": "OverrideSpecifier",
+              "overrides": [],
+              "src": "1349:8:6"
+            },
+            "parameters": {
+              "id": 566,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 565,
+                  "name": "_orderId",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 570,
+                  "src": "1324:16:6",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 564,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1324:7:6",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1323:18:6"
+            },
+            "returnParameters": {
+              "id": 568,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1366:0:6"
+            },
+            "scope": 588,
+            "src": "1303:120:6",
+            "stateMutability": "nonpayable",
+            "virtual": true,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 586,
+              "nodeType": "Block",
+              "src": "1784:66:6",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "hexValue": "30",
+                    "id": 584,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": true,
+                    "kind": "number",
+                    "lValueRequested": false,
+                    "nodeType": "Literal",
+                    "src": "1842:1:6",
+                    "subdenomination": null,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_rational_0_by_1",
+                      "typeString": "int_const 0"
+                    },
+                    "value": "0"
+                  },
+                  "functionReturnParameters": 583,
+                  "id": 585,
+                  "nodeType": "Return",
+                  "src": "1835:8:6"
+                }
+              ]
+            },
+            "documentation": {
+              "id": 571,
+              "nodeType": "StructuredDocumentation",
+              "src": "1429:236:6",
+              "text": "@notice getting change rate for a given token change on an exchange\n @dev ...\n @param _dex dex number\n @param _tknOffer token to offer\n @param _tknGet token to get\n @param _amount amount to echange"
+            },
+            "functionSelector": "288916eb",
+            "id": 587,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getChangeRate",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 580,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 573,
+                  "name": "_dex",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 587,
+                  "src": "1693:10:6",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint8",
+                    "typeString": "uint8"
+                  },
+                  "typeName": {
+                    "id": 572,
+                    "name": "uint8",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1693:5:6",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint8",
+                      "typeString": "uint8"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 575,
+                  "name": "_tknOffer",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 587,
+                  "src": "1705:17:6",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 574,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1705:7:6",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 577,
+                  "name": "_tknGet",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 587,
+                  "src": "1724:15:6",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 576,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1724:7:6",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 579,
+                  "name": "_amount",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 587,
+                  "src": "1741:12:6",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 578,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1741:4:6",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1692:62:6"
+            },
+            "returnParameters": {
+              "id": 583,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 582,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 587,
+                  "src": "1779:4:6",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 581,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1779:4:6",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1778:6:6"
+            },
+            "scope": 588,
+            "src": "1670:180:6",
+            "stateMutability": "nonpayable",
+            "virtual": true,
+            "visibility": "public"
+          }
+        ],
+        "scope": 589,
+        "src": "356:1498:6"
+      }
+    ],
+    "src": "0:1854:6"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.6.5+commit.f956cc89.Emscripten.clang"
+  },
+  "networks": {
+    "5777": {
+      "events": {
+        "0xd7f0afc2242fe9a5f45af6dea542902933e36c643299a53b1057b13cf8bcad80": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "internalType": "address",
+              "name": "adminAddress",
+              "type": "address"
+            }
+          ],
+          "name": "GX_AdminAdded",
+          "type": "event"
+        },
+        "0x6a35edfb19dff31b968882a3f9eeef54e0ca71bb9af2db6e085f409715d3c547": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "internalType": "address",
+              "name": "adminAddress",
+              "type": "address"
+            }
+          ],
+          "name": "GX_AdminRemoved",
+          "type": "event"
+        },
+        "0xb2adc6c11d1b970bf9414ad19866ff1fd17e3d64461e5e63265e6994264f7249": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "internalType": "uint8",
+              "name": "num",
+              "type": "uint8"
+            },
+            {
+              "indexed": false,
+              "internalType": "enum GX_DEXRegistry.DEXType",
+              "name": "dexType",
+              "type": "uint8"
+            },
+            {
+              "indexed": true,
+              "internalType": "address",
+              "name": "dexAddress",
+              "type": "address"
+            }
+          ],
+          "name": "GX_DEXAdded",
+          "type": "event"
+        },
+        "0xabb8cac8af599331750e1284d535d9920cec7b858a03251e27f5208591a9870e": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "internalType": "uint8",
+              "name": "num",
+              "type": "uint8"
+            }
+          ],
+          "name": "GX_DEXRemoved",
+          "type": "event"
+        },
+        "0xa939b18300f53158576c00561d9810d163a1fd7971e0beb2deb3da9d6d6c5ae1": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "internalType": "address",
+              "name": "partyAddress",
+              "type": "address"
+            }
+          ],
+          "name": "GX_PartyAdded",
+          "type": "event"
+        },
+        "0xdbe139b9dcaabbb09bc4b530bfb2f8d390bd0ac7cd6e9c87a80468cc8ca709df": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "internalType": "address",
+              "name": "partyAddress",
+              "type": "address"
+            }
+          ],
+          "name": "GX_PartyRemoved",
+          "type": "event"
+        },
+        "0xa86848877ec87d996e71aa1c410df4a53ed959b6d90c4d85dae5ecb95b47fca8": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "internalType": "uint8",
+              "name": "_dex",
+              "type": "uint8"
+            },
+            {
+              "indexed": false,
+              "internalType": "address",
+              "name": "_tknOffer",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "internalType": "address",
+              "name": "_tknGet",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "_amount",
+              "type": "uint256"
+            },
+            {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "_rate",
+              "type": "uint256"
+            }
+          ],
+          "name": "OrderPlaced",
+          "type": "event"
+        }
+      },
+      "links": {},
+      "address": "0x0DcCF5772AaDEd14c8103e49aF3FbFD104fdb1Fd",
+      "transactionHash": "0xd125e4b8a0076c6c4be205fcb13063bc45d899cdd0e127985f2027f1fedcc014"
+    }
+  },
+  "schemaVersion": "3.2.2-next.0",
+  "updatedAt": "2020-08-13T15:10:49.120Z",
+  "networkType": "ethereum",
+  "devdoc": {
+    "author": "Solidity Services",
+    "methods": {
+      "addAdmin(address)": {
+        "details": "...",
+        "params": {
+          "_newAdmin": "new admin of the contract"
+        }
+      },
+      "addDEX(uint8,uint8,address)": {
+        "details": "...",
+        "params": {
+          "_dexAddress": "address of the dex or dex adapter",
+          "_dexType": "typer of the dex",
+          "_num": "name and number of the exchange"
+        }
+      },
+      "addParty(address)": {
+        "details": "...",
+        "params": {
+          "_newParty": "new party of the contract"
+        }
+      },
+      "cancelOrder(uint256)": {
+        "details": "...",
+        "params": {
+          "_orderId": "cancelling the order id"
+        }
+      },
+      "getChangeRate(uint8,address,address,uint256)": {
+        "details": "...",
+        "params": {
+          "_amount": "amount to echange",
+          "_dex": "dex number",
+          "_tknGet": "token to get",
+          "_tknOffer": "token to offer"
+        }
+      },
+      "getDEXInfo(uint8)": {
+        "details": "...",
+        "params": {
+          "_nrToCheck": "nr to check"
+        }
+      },
+      "isAdmin(address)": {
+        "details": "...",
+        "params": {
+          "_addressToCheck": "the address to be checked"
+        }
+      },
+      "isParty(address)": {
+        "details": "...",
+        "params": {
+          "_addressToCheck": "the address to be checked"
+        }
+      },
+      "placeOrder(uint8,address,address,uint256,uint256)": {
+        "details": "...",
+        "params": {
+          "_amount": "amount to exchange",
+          "_dex": "dex exchange or adapter number",
+          "_rate": "rate for the expected exchnage",
+          "_tknGet": "token to get",
+          "_tknOffer": "token to offer"
+        }
+      },
+      "removeAdmin(address)": {
+        "details": "...",
+        "params": {
+          "_adminToDelete": "removing the admin from the contract"
+        }
+      },
+      "removeDEX(uint8)": {
+        "details": "...",
+        "params": {
+          "_num": "name and number of the exchange"
+        }
+      },
+      "removeParty(address)": {
+        "details": "...",
+        "params": {
+          "_partyToDelete": "removing the party from the contract"
+        }
+      }
+    },
+    "title": "Galaxis: DEX manager base"
+  },
+  "userdoc": {
+    "methods": {
+      "addAdmin(address)": {
+        "notice": "TRANSACTIONSadding a new admin to the contract"
+      },
+      "addDEX(uint8,uint8,address)": {
+        "notice": "TRANSACTIONSadding exchange to the known exchanges"
+      },
+      "addParty(address)": {
+        "notice": "TRANSACTIONSadding a new party"
+      },
+      "cancelOrder(uint256)": {
+        "notice": "placing order to an exchange"
+      },
+      "getChangeRate(uint8,address,address,uint256)": {
+        "notice": "getting change rate for a given token change on an exchange"
+      },
+      "getDEXInfo(uint8)": {
+        "notice": "VIEWSchecking the address of the exchange"
+      },
+      "isAdmin(address)": {
+        "notice": "VIEWSchecking if the address is admin"
+      },
+      "isParty(address)": {
+        "notice": "VIEWSchecking if the address is a trusted party"
+      },
+      "placeOrder(uint8,address,address,uint256,uint256)": {
+        "notice": "placing order to an exchange"
+      },
+      "removeAdmin(address)": {
+        "notice": "removing an admin from the contract"
+      },
+      "removeDEX(uint8)": {
+        "notice": "removing exchange or exchange adapter from the known exchanges"
+      },
+      "removeParty(address)": {
+        "notice": "removing a party from the contract"
+      }
+    },
+    "notice": "Implementing an empty DEX Manager for hierarchy and tests"
+  }
+}
