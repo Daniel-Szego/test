@@ -1,0 +1,1288 @@
+{
+  "contractName": "GX_SharesReference",
+  "abi": [
+    {
+      "inputs": [],
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "adminAddress",
+          "type": "address"
+        }
+      ],
+      "name": "GX_AdminAdded",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "adminAddress",
+          "type": "address"
+        }
+      ],
+      "name": "GX_AdminRemoved",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "sharesAddress",
+          "type": "address"
+        }
+      ],
+      "name": "GX_SharesSet",
+      "type": "event"
+    },
+    {
+      "inputs": [],
+      "name": "SharesReference",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_newAdmin",
+          "type": "address"
+        }
+      ],
+      "name": "addAdmin",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_addressToCheck",
+          "type": "address"
+        }
+      ],
+      "name": "isAdmin",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_adminToDelete",
+          "type": "address"
+        }
+      ],
+      "name": "removeAdmin",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_SharesAddress",
+          "type": "address"
+        }
+      ],
+      "name": "setShares",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.6.5+commit.f956cc89\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"adminAddress\",\"type\":\"address\"}],\"name\":\"GX_AdminAdded\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"adminAddress\",\"type\":\"address\"}],\"name\":\"GX_AdminRemoved\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"sharesAddress\",\"type\":\"address\"}],\"name\":\"GX_SharesSet\",\"type\":\"event\"},{\"inputs\":[],\"name\":\"SharesReference\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_newAdmin\",\"type\":\"address\"}],\"name\":\"addAdmin\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_addressToCheck\",\"type\":\"address\"}],\"name\":\"isAdmin\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_adminToDelete\",\"type\":\"address\"}],\"name\":\"removeAdmin\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_SharesAddress\",\"type\":\"address\"}],\"name\":\"setShares\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"author\":\"Solidity Services\",\"methods\":{\"addAdmin(address)\":{\"details\":\"...\",\"params\":{\"_newAdmin\":\"new admin of the contract\"}},\"constructor\":{\"details\":\"...\"},\"isAdmin(address)\":{\"details\":\"...\",\"params\":{\"_addressToCheck\":\"the address to be checked\"}},\"removeAdmin(address)\":{\"details\":\"...\",\"params\":{\"_adminToDelete\":\"removing the admin from the contract\"}},\"setShares(address)\":{\"details\":\"...\",\"params\":{\"_SharesAddress\":\"new reference\"}}},\"title\":\"Galaxis: Registering shares as an external token\"},\"userdoc\":{\"methods\":{\"addAdmin(address)\":{\"notice\":\"TRANSACTIONSadding a new admin to the contract\"},\"constructor\":\"CONSTRUCTORfunctionality for known parites\",\"isAdmin(address)\":{\"notice\":\"VIEWSchecking if the address is admin\"},\"removeAdmin(address)\":{\"notice\":\"removing an admin from the contract\"},\"setShares(address)\":{\"notice\":\"TRANSACTIONSsetting the shares reference\"}},\"notice\":\"Registering shares as an external token\"}},\"settings\":{\"compilationTarget\":{\"/home/dsz/git/galaxistest/galaxis/contracts/Composition/GX_SharesReference.sol\":\"GX_SharesReference\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/home/dsz/git/galaxistest/galaxis/contracts/Composition/GX_SharesReference.sol\":{\"keccak256\":\"0xb855f5fde7366ed60a2d2833f7f09208fc60b6006022f7734353d8c6001359de\",\"urls\":[\"bzz-raw://9c198400669e5bc126c9f5239f6de893abf024780a154e42f55c3190ce01d687\",\"dweb:/ipfs/QmYaajd9DJW8x3b1qXDELdkUSmx32ebqhuUmjte8U5RxXD\"]},\"/home/dsz/git/galaxistest/galaxis/contracts/Governance/GX_GovernanceAdmin.sol\":{\"keccak256\":\"0x366d9f22e06078cae2774e6a7a980195623956248862ab8be94c89591574a0da\",\"urls\":[\"bzz-raw://6771548bddcd894d9f3de922232c65e9f931fa74ec19d871e27920f5943dd57a\",\"dweb:/ipfs/QmcjkJRvPXAzGfWrByLjjwWqgYKTyhrNoZe8PK5ZwkMqGx\"]}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b50336000908152602081905260409020805460ff191660011790556104138061003a6000396000f3fe608060405234801561001057600080fd5b50600436106100575760003560e01c80631785f53c1461005c57806324d7806c146100845780635212d4d2146100be578063570a023d146100e25780637048027514610108575b600080fd5b6100826004803603602081101561007257600080fd5b50356001600160a01b031661012e565b005b6100aa6004803603602081101561009a57600080fd5b50356001600160a01b03166101ca565b604080519115158252519081900360200190f35b6100c66101e8565b604080516001600160a01b039092168252519081900360200190f35b610082600480360360208110156100f857600080fd5b50356001600160a01b03166101f7565b6100826004803603602081101561011e57600080fd5b50356001600160a01b03166102dc565b3360009081526020819052604090205460ff1615156001146101815760405162461bcd60e51b81526004018080602001828103825260348152602001806103aa6034913960400191505060405180910390fd5b6001600160a01b038116600081815260208190526040808220805460ff19169055517f6a35edfb19dff31b968882a3f9eeef54e0ca71bb9af2db6e085f409715d3c5479190a250565b6001600160a01b031660009081526020819052604090205460ff1690565b6001546001600160a01b031681565b3360009081526020819052604090205460ff16151560011461024a5760405162461bcd60e51b81526004018080602001828103825260348152602001806103aa6034913960400191505060405180910390fd5b6001546001600160a01b0316156102925760405162461bcd60e51b815260040180806020018281038252602e81526020018061037c602e913960400191505060405180910390fd5b600180546001600160a01b0319166001600160a01b0383169081179091556040517f0b93a95d542a8b160e57395efb1d1fc97d35d02e8490fdcd59a458631f7f137c90600090a250565b3360009081526020819052604090205460ff16151560011461032f5760405162461bcd60e51b81526004018080602001828103825260348152602001806103aa6034913960400191505060405180910390fd5b6001600160a01b038116600081815260208190526040808220805460ff19166001179055517fd7f0afc2242fe9a5f45af6dea542902933e36c643299a53b1057b13cf8bcad809190a25056fe47616c617869733a20536861726573207265666572656e63652063616e20626520736574206f6e6c79206f6e636547616c617869733a204163636573732064656e6965643a206e6f7420616e2061646d696e206f662074686520636f6e7472616374a2646970667358221220438f5578c44f7ec5a7180413983ecdfdf5f14411328ef805c53f7d47c6b3ce3d64736f6c63430006050033",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106100575760003560e01c80631785f53c1461005c57806324d7806c146100845780635212d4d2146100be578063570a023d146100e25780637048027514610108575b600080fd5b6100826004803603602081101561007257600080fd5b50356001600160a01b031661012e565b005b6100aa6004803603602081101561009a57600080fd5b50356001600160a01b03166101ca565b604080519115158252519081900360200190f35b6100c66101e8565b604080516001600160a01b039092168252519081900360200190f35b610082600480360360208110156100f857600080fd5b50356001600160a01b03166101f7565b6100826004803603602081101561011e57600080fd5b50356001600160a01b03166102dc565b3360009081526020819052604090205460ff1615156001146101815760405162461bcd60e51b81526004018080602001828103825260348152602001806103aa6034913960400191505060405180910390fd5b6001600160a01b038116600081815260208190526040808220805460ff19169055517f6a35edfb19dff31b968882a3f9eeef54e0ca71bb9af2db6e085f409715d3c5479190a250565b6001600160a01b031660009081526020819052604090205460ff1690565b6001546001600160a01b031681565b3360009081526020819052604090205460ff16151560011461024a5760405162461bcd60e51b81526004018080602001828103825260348152602001806103aa6034913960400191505060405180910390fd5b6001546001600160a01b0316156102925760405162461bcd60e51b815260040180806020018281038252602e81526020018061037c602e913960400191505060405180910390fd5b600180546001600160a01b0319166001600160a01b0383169081179091556040517f0b93a95d542a8b160e57395efb1d1fc97d35d02e8490fdcd59a458631f7f137c90600090a250565b3360009081526020819052604090205460ff16151560011461032f5760405162461bcd60e51b81526004018080602001828103825260348152602001806103aa6034913960400191505060405180910390fd5b6001600160a01b038116600081815260208190526040808220805460ff19166001179055517fd7f0afc2242fe9a5f45af6dea542902933e36c643299a53b1057b13cf8bcad809190a25056fe47616c617869733a20536861726573207265666572656e63652063616e20626520736574206f6e6c79206f6e636547616c617869733a204163636573732064656e6965643a206e6f7420616e2061646d696e206f662074686520636f6e7472616374a2646970667358221220438f5578c44f7ec5a7180413983ecdfdf5f14411328ef805c53f7d47c6b3ce3d64736f6c63430006050033",
+  "immutableReferences": {},
+  "sourceMap": "215:792:3:-:0;;;594:28;5:9:-1;2:2;;;27:1;24;17:12;2:2;-1:-1;653:10:23;646:6;:18;;;;;;;;;;:25;;-1:-1:-1;;646:25:23;667:4;646:25;;;215:792:3;;;;;;",
+  "deployedSourceMap": "215:792:3:-:0;;;;5:9:-1;2:2;;;27:1;24;17:12;2:2;215:792:3;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;12:1:-1;9;2:12;1304:155:23;;;;;;15:2:-1;10:3;7:11;4:2;;;31:1;28;21:12;4:2;-1:-1;1304:155:23;-1:-1:-1;;;;;1304:155:23;;:::i;:::-;;1603:116;;;;;;15:2:-1;10:3;7:11;4:2;;;31:1;28;21:12;4:2;-1:-1;1603:116:23;-1:-1:-1;;;;;1603:116:23;;:::i;:::-;;;;;;;;;;;;;;;;;;321:30:3;;;:::i;:::-;;;;-1:-1:-1;;;;;321:30:3;;;;;;;;;;;;;;756:249;;;;;;15:2:-1;10:3;7:11;4:2;;;31:1;28;21:12;4:2;-1:-1;756:249:3;-1:-1:-1;;;;;756:249:3;;:::i;1028:134:23:-;;;;;;15:2:-1;10:3;7:11;4:2;;;31:1;28;21:12;4:2;-1:-1;1028:134:23;-1:-1:-1;;;;;1028:134:23;;:::i;1304:155::-;787:10;780:6;:18;;;;;;;;;;;;;:26;;:18;:26;772:91;;;;-1:-1:-1;;;772:91:23;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;;;;1376:22:23;::::1;1401:5;1376:22:::0;;;::::1;::::0;;;;;;;:30;;-1:-1:-1;;1376:30:23::1;::::0;;1421:31;::::1;::::0;1401:5;1421:31:::1;1304:155:::0;:::o;1603:116::-;-1:-1:-1;;;;;1689:23:23;1666:4;1689:23;;;;;;;;;;;;;;1603:116::o;321:30:3:-;;;-1:-1:-1;;;;;321:30:3;;:::o;756:249::-;787:10:23;780:6;:18;;;;;;;;;;;;;:26;;:18;:26;772:91;;;;-1:-1:-1;;;772:91:23;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;834:15:3::1;::::0;-1:-1:-1;;;;;834:15:3::1;:29:::0;826:87:::1;;;;-1:-1:-1::0;;;826:87:3::1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;923:15;:32:::0;;-1:-1:-1;;;;;;923:32:3::1;-1:-1:-1::0;;;;;923:32:3;::::1;::::0;;::::1;::::0;;;970:28:::1;::::0;::::1;::::0;-1:-1:-1;;970:28:3::1;756:249:::0;:::o;1028:134:23:-;787:10;780:6;:18;;;;;;;;;;;;;:26;;:18;:26;772:91;;;;-1:-1:-1;;;772:91:23;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;;;;1092:17:23;::::1;:6;:17:::0;;;::::1;::::0;;;;;;;:24;;-1:-1:-1;;1092:24:23::1;1112:4;1092:24;::::0;;1131;::::1;::::0;1092:6;1131:24:::1;1028:134:::0;:::o",
+  "source": "pragma solidity ^0.6.0;\n\nimport '../Governance/GX_GovernanceAdmin.sol';\n\n/// @author Solidity Services\n/// @title Galaxis: Registering shares as an external token\n/// @notice Registering shares as an external token\ncontract GX_SharesReference is GX_GovernanceAdmin {\n\n    /// @notice reference of the shares contract\n    address public SharesReference;\n\n    /// EVENTS: user facing events\n    /// @notice event for setting the shares reference\n    event GX_SharesSet(address indexed sharesAddress);\n\n    /// CONSTRUCTOR\n    \n    /// @notice functionality for known parites\n    /// @dev ...\n    constructor() public {\n    }\n\n    /// TRANSACTIONS\n\n    /// @notice setting the shares reference\n    /// @dev ...\n    /// @param _SharesAddress new reference\n    function setShares(address _SharesAddress) public onlyAdmin {\n        require(SharesReference == address(0),\"Galaxis: Shares reference can be set only once\");\n        SharesReference = _SharesAddress;\n        emit GX_SharesSet(_SharesAddress);\n    }\n}",
+  "sourcePath": "/home/dsz/git/galaxistest/galaxis/contracts/Composition/GX_SharesReference.sol",
+  "ast": {
+    "absolutePath": "/home/dsz/git/galaxistest/galaxis/contracts/Composition/GX_SharesReference.sol",
+    "exportedSymbols": {
+      "GX_SharesReference": [
+        241
+      ]
+    },
+    "id": 242,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 197,
+        "literals": [
+          "solidity",
+          "^",
+          "0.6",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:3"
+      },
+      {
+        "absolutePath": "/home/dsz/git/galaxistest/galaxis/contracts/Governance/GX_GovernanceAdmin.sol",
+        "file": "../Governance/GX_GovernanceAdmin.sol",
+        "id": 198,
+        "nodeType": "ImportDirective",
+        "scope": 242,
+        "sourceUnit": 2565,
+        "src": "25:46:3",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "abstract": false,
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 200,
+              "name": "GX_GovernanceAdmin",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 2564,
+              "src": "246:18:3",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_GX_GovernanceAdmin_$2564",
+                "typeString": "contract GX_GovernanceAdmin"
+              }
+            },
+            "id": 201,
+            "nodeType": "InheritanceSpecifier",
+            "src": "246:18:3"
+          }
+        ],
+        "contractDependencies": [
+          2564
+        ],
+        "contractKind": "contract",
+        "documentation": {
+          "id": 199,
+          "nodeType": "StructuredDocumentation",
+          "src": "73:142:3",
+          "text": "@author Solidity Services\n @title Galaxis: Registering shares as an external token\n @notice Registering shares as an external token"
+        },
+        "fullyImplemented": true,
+        "id": 241,
+        "linearizedBaseContracts": [
+          241,
+          2564
+        ],
+        "name": "GX_SharesReference",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "functionSelector": "5212d4d2",
+            "id": 203,
+            "name": "SharesReference",
+            "nodeType": "VariableDeclaration",
+            "overrides": null,
+            "scope": 241,
+            "src": "321:30:3",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_address",
+              "typeString": "address"
+            },
+            "typeName": {
+              "id": 202,
+              "name": "address",
+              "nodeType": "ElementaryTypeName",
+              "src": "321:7:3",
+              "stateMutability": "nonpayable",
+              "typeDescriptions": {
+                "typeIdentifier": "t_address",
+                "typeString": "address"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "anonymous": false,
+            "documentation": {
+              "id": 204,
+              "nodeType": "StructuredDocumentation",
+              "src": "358:85:3",
+              "text": "EVENTS: user facing events\n @notice event for setting the shares reference"
+            },
+            "id": 208,
+            "name": "GX_SharesSet",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 207,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 206,
+                  "indexed": true,
+                  "name": "sharesAddress",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 208,
+                  "src": "467:29:3",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 205,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "467:7:3",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "466:31:3"
+            },
+            "src": "448:50:3"
+          },
+          {
+            "body": {
+              "id": 212,
+              "nodeType": "Block",
+              "src": "615:7:3",
+              "statements": []
+            },
+            "documentation": {
+              "id": 209,
+              "nodeType": "StructuredDocumentation",
+              "src": "504:85:3",
+              "text": "CONSTRUCTOR\n @notice functionality for known parites\n @dev ..."
+            },
+            "id": 213,
+            "implemented": true,
+            "kind": "constructor",
+            "modifiers": [],
+            "name": "",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 210,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "605:2:3"
+            },
+            "returnParameters": {
+              "id": 211,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "615:0:3"
+            },
+            "scope": 241,
+            "src": "594:28:3",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 239,
+              "nodeType": "Block",
+              "src": "816:189:3",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "commonType": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        "id": 227,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "leftExpression": {
+                          "argumentTypes": null,
+                          "id": 222,
+                          "name": "SharesReference",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 203,
+                          "src": "834:15:3",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        },
+                        "nodeType": "BinaryOperation",
+                        "operator": "==",
+                        "rightExpression": {
+                          "argumentTypes": null,
+                          "arguments": [
+                            {
+                              "argumentTypes": null,
+                              "hexValue": "30",
+                              "id": 225,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": true,
+                              "kind": "number",
+                              "lValueRequested": false,
+                              "nodeType": "Literal",
+                              "src": "861:1:3",
+                              "subdenomination": null,
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_rational_0_by_1",
+                                "typeString": "int_const 0"
+                              },
+                              "value": "0"
+                            }
+                          ],
+                          "expression": {
+                            "argumentTypes": [
+                              {
+                                "typeIdentifier": "t_rational_0_by_1",
+                                "typeString": "int_const 0"
+                              }
+                            ],
+                            "id": 224,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": true,
+                            "lValueRequested": false,
+                            "nodeType": "ElementaryTypeNameExpression",
+                            "src": "853:7:3",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_type$_t_address_$",
+                              "typeString": "type(address)"
+                            },
+                            "typeName": {
+                              "id": 223,
+                              "name": "address",
+                              "nodeType": "ElementaryTypeName",
+                              "src": "853:7:3",
+                              "typeDescriptions": {
+                                "typeIdentifier": null,
+                                "typeString": null
+                              }
+                            }
+                          },
+                          "id": 226,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "kind": "typeConversion",
+                          "lValueRequested": false,
+                          "names": [],
+                          "nodeType": "FunctionCall",
+                          "src": "853:10:3",
+                          "tryCall": false,
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address_payable",
+                            "typeString": "address payable"
+                          }
+                        },
+                        "src": "834:29:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "47616c617869733a20536861726573207265666572656e63652063616e20626520736574206f6e6c79206f6e6365",
+                        "id": 228,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "864:48:3",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_6b4fd9ed38dcdfccce92969be7fc01f8fd83893c870203ba5cfea5a9921bce26",
+                          "typeString": "literal_string \"Galaxis: Shares reference can be set only once\""
+                        },
+                        "value": "Galaxis: Shares reference can be set only once"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        {
+                          "typeIdentifier": "t_stringliteral_6b4fd9ed38dcdfccce92969be7fc01f8fd83893c870203ba5cfea5a9921bce26",
+                          "typeString": "literal_string \"Galaxis: Shares reference can be set only once\""
+                        }
+                      ],
+                      "id": 221,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        -18,
+                        -18
+                      ],
+                      "referencedDeclaration": -18,
+                      "src": "826:7:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (bool,string memory) pure"
+                      }
+                    },
+                    "id": 229,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "826:87:3",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 230,
+                  "nodeType": "ExpressionStatement",
+                  "src": "826:87:3"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 233,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 231,
+                      "name": "SharesReference",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 203,
+                      "src": "923:15:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 232,
+                      "name": "_SharesAddress",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 216,
+                      "src": "941:14:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "src": "923:32:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "id": 234,
+                  "nodeType": "ExpressionStatement",
+                  "src": "923:32:3"
+                },
+                {
+                  "eventCall": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 236,
+                        "name": "_SharesAddress",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 216,
+                        "src": "983:14:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "id": 235,
+                      "name": "GX_SharesSet",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 208,
+                      "src": "970:12:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_event_nonpayable$_t_address_$returns$__$",
+                        "typeString": "function (address)"
+                      }
+                    },
+                    "id": 237,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "970:28:3",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 238,
+                  "nodeType": "EmitStatement",
+                  "src": "965:33:3"
+                }
+              ]
+            },
+            "documentation": {
+              "id": 214,
+              "nodeType": "StructuredDocumentation",
+              "src": "628:123:3",
+              "text": "TRANSACTIONS\n @notice setting the shares reference\n @dev ...\n @param _SharesAddress new reference"
+            },
+            "functionSelector": "570a023d",
+            "id": 240,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [
+              {
+                "arguments": null,
+                "id": 219,
+                "modifierName": {
+                  "argumentTypes": null,
+                  "id": 218,
+                  "name": "onlyAdmin",
+                  "nodeType": "Identifier",
+                  "overloadedDeclarations": [],
+                  "referencedDeclaration": 2512,
+                  "src": "806:9:3",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_modifier$__$",
+                    "typeString": "modifier ()"
+                  }
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "806:9:3"
+              }
+            ],
+            "name": "setShares",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 217,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 216,
+                  "name": "_SharesAddress",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 240,
+                  "src": "775:22:3",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 215,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "775:7:3",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "774:24:3"
+            },
+            "returnParameters": {
+              "id": 220,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "816:0:3"
+            },
+            "scope": 241,
+            "src": "756:249:3",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "public"
+          }
+        ],
+        "scope": 242,
+        "src": "215:792:3"
+      }
+    ],
+    "src": "0:1007:3"
+  },
+  "legacyAST": {
+    "absolutePath": "/home/dsz/git/galaxistest/galaxis/contracts/Composition/GX_SharesReference.sol",
+    "exportedSymbols": {
+      "GX_SharesReference": [
+        241
+      ]
+    },
+    "id": 242,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 197,
+        "literals": [
+          "solidity",
+          "^",
+          "0.6",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:3"
+      },
+      {
+        "absolutePath": "/home/dsz/git/galaxistest/galaxis/contracts/Governance/GX_GovernanceAdmin.sol",
+        "file": "../Governance/GX_GovernanceAdmin.sol",
+        "id": 198,
+        "nodeType": "ImportDirective",
+        "scope": 242,
+        "sourceUnit": 2565,
+        "src": "25:46:3",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "abstract": false,
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 200,
+              "name": "GX_GovernanceAdmin",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 2564,
+              "src": "246:18:3",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_GX_GovernanceAdmin_$2564",
+                "typeString": "contract GX_GovernanceAdmin"
+              }
+            },
+            "id": 201,
+            "nodeType": "InheritanceSpecifier",
+            "src": "246:18:3"
+          }
+        ],
+        "contractDependencies": [
+          2564
+        ],
+        "contractKind": "contract",
+        "documentation": {
+          "id": 199,
+          "nodeType": "StructuredDocumentation",
+          "src": "73:142:3",
+          "text": "@author Solidity Services\n @title Galaxis: Registering shares as an external token\n @notice Registering shares as an external token"
+        },
+        "fullyImplemented": true,
+        "id": 241,
+        "linearizedBaseContracts": [
+          241,
+          2564
+        ],
+        "name": "GX_SharesReference",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "functionSelector": "5212d4d2",
+            "id": 203,
+            "name": "SharesReference",
+            "nodeType": "VariableDeclaration",
+            "overrides": null,
+            "scope": 241,
+            "src": "321:30:3",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_address",
+              "typeString": "address"
+            },
+            "typeName": {
+              "id": 202,
+              "name": "address",
+              "nodeType": "ElementaryTypeName",
+              "src": "321:7:3",
+              "stateMutability": "nonpayable",
+              "typeDescriptions": {
+                "typeIdentifier": "t_address",
+                "typeString": "address"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "anonymous": false,
+            "documentation": {
+              "id": 204,
+              "nodeType": "StructuredDocumentation",
+              "src": "358:85:3",
+              "text": "EVENTS: user facing events\n @notice event for setting the shares reference"
+            },
+            "id": 208,
+            "name": "GX_SharesSet",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 207,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 206,
+                  "indexed": true,
+                  "name": "sharesAddress",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 208,
+                  "src": "467:29:3",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 205,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "467:7:3",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "466:31:3"
+            },
+            "src": "448:50:3"
+          },
+          {
+            "body": {
+              "id": 212,
+              "nodeType": "Block",
+              "src": "615:7:3",
+              "statements": []
+            },
+            "documentation": {
+              "id": 209,
+              "nodeType": "StructuredDocumentation",
+              "src": "504:85:3",
+              "text": "CONSTRUCTOR\n @notice functionality for known parites\n @dev ..."
+            },
+            "id": 213,
+            "implemented": true,
+            "kind": "constructor",
+            "modifiers": [],
+            "name": "",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 210,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "605:2:3"
+            },
+            "returnParameters": {
+              "id": 211,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "615:0:3"
+            },
+            "scope": 241,
+            "src": "594:28:3",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 239,
+              "nodeType": "Block",
+              "src": "816:189:3",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "commonType": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        "id": 227,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "leftExpression": {
+                          "argumentTypes": null,
+                          "id": 222,
+                          "name": "SharesReference",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 203,
+                          "src": "834:15:3",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        },
+                        "nodeType": "BinaryOperation",
+                        "operator": "==",
+                        "rightExpression": {
+                          "argumentTypes": null,
+                          "arguments": [
+                            {
+                              "argumentTypes": null,
+                              "hexValue": "30",
+                              "id": 225,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": true,
+                              "kind": "number",
+                              "lValueRequested": false,
+                              "nodeType": "Literal",
+                              "src": "861:1:3",
+                              "subdenomination": null,
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_rational_0_by_1",
+                                "typeString": "int_const 0"
+                              },
+                              "value": "0"
+                            }
+                          ],
+                          "expression": {
+                            "argumentTypes": [
+                              {
+                                "typeIdentifier": "t_rational_0_by_1",
+                                "typeString": "int_const 0"
+                              }
+                            ],
+                            "id": 224,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": true,
+                            "lValueRequested": false,
+                            "nodeType": "ElementaryTypeNameExpression",
+                            "src": "853:7:3",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_type$_t_address_$",
+                              "typeString": "type(address)"
+                            },
+                            "typeName": {
+                              "id": 223,
+                              "name": "address",
+                              "nodeType": "ElementaryTypeName",
+                              "src": "853:7:3",
+                              "typeDescriptions": {
+                                "typeIdentifier": null,
+                                "typeString": null
+                              }
+                            }
+                          },
+                          "id": 226,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "kind": "typeConversion",
+                          "lValueRequested": false,
+                          "names": [],
+                          "nodeType": "FunctionCall",
+                          "src": "853:10:3",
+                          "tryCall": false,
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address_payable",
+                            "typeString": "address payable"
+                          }
+                        },
+                        "src": "834:29:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "47616c617869733a20536861726573207265666572656e63652063616e20626520736574206f6e6c79206f6e6365",
+                        "id": 228,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "864:48:3",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_6b4fd9ed38dcdfccce92969be7fc01f8fd83893c870203ba5cfea5a9921bce26",
+                          "typeString": "literal_string \"Galaxis: Shares reference can be set only once\""
+                        },
+                        "value": "Galaxis: Shares reference can be set only once"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        {
+                          "typeIdentifier": "t_stringliteral_6b4fd9ed38dcdfccce92969be7fc01f8fd83893c870203ba5cfea5a9921bce26",
+                          "typeString": "literal_string \"Galaxis: Shares reference can be set only once\""
+                        }
+                      ],
+                      "id": 221,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        -18,
+                        -18
+                      ],
+                      "referencedDeclaration": -18,
+                      "src": "826:7:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (bool,string memory) pure"
+                      }
+                    },
+                    "id": 229,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "826:87:3",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 230,
+                  "nodeType": "ExpressionStatement",
+                  "src": "826:87:3"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 233,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 231,
+                      "name": "SharesReference",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 203,
+                      "src": "923:15:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 232,
+                      "name": "_SharesAddress",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 216,
+                      "src": "941:14:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "src": "923:32:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "id": 234,
+                  "nodeType": "ExpressionStatement",
+                  "src": "923:32:3"
+                },
+                {
+                  "eventCall": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 236,
+                        "name": "_SharesAddress",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 216,
+                        "src": "983:14:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "id": 235,
+                      "name": "GX_SharesSet",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 208,
+                      "src": "970:12:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_event_nonpayable$_t_address_$returns$__$",
+                        "typeString": "function (address)"
+                      }
+                    },
+                    "id": 237,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "970:28:3",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 238,
+                  "nodeType": "EmitStatement",
+                  "src": "965:33:3"
+                }
+              ]
+            },
+            "documentation": {
+              "id": 214,
+              "nodeType": "StructuredDocumentation",
+              "src": "628:123:3",
+              "text": "TRANSACTIONS\n @notice setting the shares reference\n @dev ...\n @param _SharesAddress new reference"
+            },
+            "functionSelector": "570a023d",
+            "id": 240,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [
+              {
+                "arguments": null,
+                "id": 219,
+                "modifierName": {
+                  "argumentTypes": null,
+                  "id": 218,
+                  "name": "onlyAdmin",
+                  "nodeType": "Identifier",
+                  "overloadedDeclarations": [],
+                  "referencedDeclaration": 2512,
+                  "src": "806:9:3",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_modifier$__$",
+                    "typeString": "modifier ()"
+                  }
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "806:9:3"
+              }
+            ],
+            "name": "setShares",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 217,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 216,
+                  "name": "_SharesAddress",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 240,
+                  "src": "775:22:3",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 215,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "775:7:3",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "774:24:3"
+            },
+            "returnParameters": {
+              "id": 220,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "816:0:3"
+            },
+            "scope": 241,
+            "src": "756:249:3",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "public"
+          }
+        ],
+        "scope": 242,
+        "src": "215:792:3"
+      }
+    ],
+    "src": "0:1007:3"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.6.5+commit.f956cc89.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.2.2-next.0",
+  "updatedAt": "2020-08-13T15:10:44.428Z",
+  "devdoc": {
+    "author": "Solidity Services",
+    "methods": {
+      "addAdmin(address)": {
+        "details": "...",
+        "params": {
+          "_newAdmin": "new admin of the contract"
+        }
+      },
+      "constructor": {
+        "details": "..."
+      },
+      "isAdmin(address)": {
+        "details": "...",
+        "params": {
+          "_addressToCheck": "the address to be checked"
+        }
+      },
+      "removeAdmin(address)": {
+        "details": "...",
+        "params": {
+          "_adminToDelete": "removing the admin from the contract"
+        }
+      },
+      "setShares(address)": {
+        "details": "...",
+        "params": {
+          "_SharesAddress": "new reference"
+        }
+      }
+    },
+    "title": "Galaxis: Registering shares as an external token"
+  },
+  "userdoc": {
+    "methods": {
+      "addAdmin(address)": {
+        "notice": "TRANSACTIONSadding a new admin to the contract"
+      },
+      "constructor": "CONSTRUCTORfunctionality for known parites",
+      "isAdmin(address)": {
+        "notice": "VIEWSchecking if the address is admin"
+      },
+      "removeAdmin(address)": {
+        "notice": "removing an admin from the contract"
+      },
+      "setShares(address)": {
+        "notice": "TRANSACTIONSsetting the shares reference"
+      }
+    },
+    "notice": "Registering shares as an external token"
+  }
+}

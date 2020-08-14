@@ -1,0 +1,53 @@
+{
+  "details": [
+    {
+      "title": "1. Fund Details",
+      "icon": "fa fa-file",
+      "active": true
+    },
+    {
+      "title": "2. Permission Setup",
+      "icon": "fa fa-file",
+      "active": false
+    },
+    {
+      "title": "3. Whitelist Setup",
+      "icon": "fa fa-file",
+      "active": false
+    }
+  ],
+  "permissions": [
+    {
+      "title": "1. Fund Details",
+      "icon": "fa fa-file",
+      "active": false
+    },
+    {
+      "title": "2. Permission Setup",
+      "icon": "fa fa-file",
+      "active": true
+    },
+    {
+      "title": "3. Whitelist Setup",
+      "icon": "fa fa-file",
+      "active": false
+    }
+  ],
+  "whitelist": [
+    {
+      "title": "1. Fund Details",
+      "icon": "fa fa-file",
+      "active": false
+    },
+    {
+      "title": "2. Permission Setup",
+      "icon": "fa fa-file",
+      "active": false
+    },
+    {
+      "title": "3. Whitelist Setup",
+      "icon": "fa fa-file",
+      "active": true
+    }
+  ]
+}

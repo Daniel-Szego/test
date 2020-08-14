@@ -1,0 +1,661 @@
+{
+  "contractName": "GX_GeneralOrderInterface",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "uint8",
+          "name": "_dex",
+          "type": "uint8"
+        },
+        {
+          "internalType": "address",
+          "name": "_tknOffer",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "_tknGet",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_amount",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_rate",
+          "type": "uint256"
+        }
+      ],
+      "name": "placeOrder",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_orderId",
+          "type": "uint256"
+        }
+      ],
+      "name": "cancelOrder",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.6.5+commit.f956cc89\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_orderId\",\"type\":\"uint256\"}],\"name\":\"cancelOrder\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint8\",\"name\":\"_dex\",\"type\":\"uint8\"},{\"internalType\":\"address\",\"name\":\"_tknOffer\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_tknGet\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"_amount\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_rate\",\"type\":\"uint256\"}],\"name\":\"placeOrder\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"author\":\"Solidity Services\",\"methods\":{\"cancelOrder(uint256)\":{\"details\":\"...\",\"params\":{\"_orderId\":\"cancelling the order id\"}},\"placeOrder(uint8,address,address,uint256,uint256)\":{\"details\":\"...\",\"params\":{\"_amount\":\"amount to exchange\",\"_dex\":\"dex exchange or adapter number\",\"_rate\":\"expected rate of the exchange\",\"_tknGet\":\"token to get\",\"_tknOffer\":\"token to offer\"}}},\"title\":\"Galaxis: Interface for basic orders\"},\"userdoc\":{\"methods\":{\"cancelOrder(uint256)\":{\"notice\":\"placing order to an exchange\"},\"placeOrder(uint8,address,address,uint256,uint256)\":{\"notice\":\"placing order to an exchange\"}},\"notice\":\"Interface for basic orders\"}},\"settings\":{\"compilationTarget\":{\"/home/dsz/git/galaxistest/galaxis/contracts/FundManager/GX_GeneralOrderInterface.sol\":\"GX_GeneralOrderInterface\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/home/dsz/git/galaxistest/galaxis/contracts/FundManager/GX_GeneralOrderInterface.sol\":{\"keccak256\":\"0xa04b99fe67c87cb4e59c7e3e15fc5e8ef2618bc6e2ef71296c06a709518c2b1a\",\"urls\":[\"bzz-raw://51cb83162e91aa99217fe3b7ce8159b4b7bd1f7a2b7abdf2a16e62eb57560e55\",\"dweb:/ipfs/QmZ9gU82EuUYa1joGt8jYBUjiv1JQwPoExh3FLmt56kqUT\"]}},\"version\":1}",
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "immutableReferences": {},
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "pragma solidity ^0.6.0;\n\n/// @author Solidity Services\n/// @title Galaxis: Interface for basic orders\n/// @notice Interface for basic orders\ninterface GX_GeneralOrderInterface {\n\n    /// @notice placing order to an exchange\n    /// @dev ...\n    /// @param _dex dex exchange or adapter number\n    /// @param _tknOffer token to offer\n    /// @param _tknGet token to get\n    /// @param _amount amount to exchange\n    /// @param _rate expected rate of the exchange\n    function placeOrder(uint8 _dex, address _tknOffer, address _tknGet, uint _amount, uint _rate) external virtual;\n\n    /// @notice placing order to an exchange\n    /// @dev ...\n    /// @param _orderId cancelling the order id\n    function cancelOrder(uint256 _orderId) external virtual;\n\n}",
+  "sourcePath": "/home/dsz/git/galaxistest/galaxis/contracts/FundManager/GX_GeneralOrderInterface.sol",
+  "ast": {
+    "absolutePath": "/home/dsz/git/galaxistest/galaxis/contracts/FundManager/GX_GeneralOrderInterface.sol",
+    "exportedSymbols": {
+      "GX_GeneralOrderInterface": [
+        1720
+      ]
+    },
+    "id": 1721,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 1698,
+        "literals": [
+          "solidity",
+          "^",
+          "0.6",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:17"
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "documentation": {
+          "id": 1699,
+          "nodeType": "StructuredDocumentation",
+          "src": "25:116:17",
+          "text": "@author Solidity Services\n @title Galaxis: Interface for basic orders\n @notice Interface for basic orders"
+        },
+        "fullyImplemented": false,
+        "id": 1720,
+        "linearizedBaseContracts": [
+          1720
+        ],
+        "name": "GX_GeneralOrderInterface",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": null,
+            "documentation": {
+              "id": 1700,
+              "nodeType": "StructuredDocumentation",
+              "src": "183:277:17",
+              "text": "@notice placing order to an exchange\n @dev ...\n @param _dex dex exchange or adapter number\n @param _tknOffer token to offer\n @param _tknGet token to get\n @param _amount amount to exchange\n @param _rate expected rate of the exchange"
+            },
+            "functionSelector": "775fec62",
+            "id": 1713,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "placeOrder",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 1711,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1702,
+                  "name": "_dex",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 1713,
+                  "src": "485:10:17",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint8",
+                    "typeString": "uint8"
+                  },
+                  "typeName": {
+                    "id": 1701,
+                    "name": "uint8",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "485:5:17",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint8",
+                      "typeString": "uint8"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 1704,
+                  "name": "_tknOffer",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 1713,
+                  "src": "497:17:17",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 1703,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "497:7:17",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 1706,
+                  "name": "_tknGet",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 1713,
+                  "src": "516:15:17",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 1705,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "516:7:17",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 1708,
+                  "name": "_amount",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 1713,
+                  "src": "533:12:17",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 1707,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "533:4:17",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 1710,
+                  "name": "_rate",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 1713,
+                  "src": "547:10:17",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 1709,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "547:4:17",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "484:74:17"
+            },
+            "returnParameters": {
+              "id": 1712,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "575:0:17"
+            },
+            "scope": 1720,
+            "src": "465:111:17",
+            "stateMutability": "nonpayable",
+            "virtual": true,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": {
+              "id": 1714,
+              "nodeType": "StructuredDocumentation",
+              "src": "582:105:17",
+              "text": "@notice placing order to an exchange\n @dev ...\n @param _orderId cancelling the order id"
+            },
+            "functionSelector": "514fcac7",
+            "id": 1719,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "cancelOrder",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 1717,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1716,
+                  "name": "_orderId",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 1719,
+                  "src": "713:16:17",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 1715,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "713:7:17",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "712:18:17"
+            },
+            "returnParameters": {
+              "id": 1718,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "747:0:17"
+            },
+            "scope": 1720,
+            "src": "692:56:17",
+            "stateMutability": "nonpayable",
+            "virtual": true,
+            "visibility": "external"
+          }
+        ],
+        "scope": 1721,
+        "src": "141:610:17"
+      }
+    ],
+    "src": "0:751:17"
+  },
+  "legacyAST": {
+    "absolutePath": "/home/dsz/git/galaxistest/galaxis/contracts/FundManager/GX_GeneralOrderInterface.sol",
+    "exportedSymbols": {
+      "GX_GeneralOrderInterface": [
+        1720
+      ]
+    },
+    "id": 1721,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 1698,
+        "literals": [
+          "solidity",
+          "^",
+          "0.6",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:17"
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "documentation": {
+          "id": 1699,
+          "nodeType": "StructuredDocumentation",
+          "src": "25:116:17",
+          "text": "@author Solidity Services\n @title Galaxis: Interface for basic orders\n @notice Interface for basic orders"
+        },
+        "fullyImplemented": false,
+        "id": 1720,
+        "linearizedBaseContracts": [
+          1720
+        ],
+        "name": "GX_GeneralOrderInterface",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": null,
+            "documentation": {
+              "id": 1700,
+              "nodeType": "StructuredDocumentation",
+              "src": "183:277:17",
+              "text": "@notice placing order to an exchange\n @dev ...\n @param _dex dex exchange or adapter number\n @param _tknOffer token to offer\n @param _tknGet token to get\n @param _amount amount to exchange\n @param _rate expected rate of the exchange"
+            },
+            "functionSelector": "775fec62",
+            "id": 1713,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "placeOrder",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 1711,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1702,
+                  "name": "_dex",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 1713,
+                  "src": "485:10:17",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint8",
+                    "typeString": "uint8"
+                  },
+                  "typeName": {
+                    "id": 1701,
+                    "name": "uint8",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "485:5:17",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint8",
+                      "typeString": "uint8"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 1704,
+                  "name": "_tknOffer",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 1713,
+                  "src": "497:17:17",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 1703,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "497:7:17",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 1706,
+                  "name": "_tknGet",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 1713,
+                  "src": "516:15:17",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 1705,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "516:7:17",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 1708,
+                  "name": "_amount",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 1713,
+                  "src": "533:12:17",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 1707,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "533:4:17",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 1710,
+                  "name": "_rate",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 1713,
+                  "src": "547:10:17",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 1709,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "547:4:17",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "484:74:17"
+            },
+            "returnParameters": {
+              "id": 1712,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "575:0:17"
+            },
+            "scope": 1720,
+            "src": "465:111:17",
+            "stateMutability": "nonpayable",
+            "virtual": true,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": {
+              "id": 1714,
+              "nodeType": "StructuredDocumentation",
+              "src": "582:105:17",
+              "text": "@notice placing order to an exchange\n @dev ...\n @param _orderId cancelling the order id"
+            },
+            "functionSelector": "514fcac7",
+            "id": 1719,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "cancelOrder",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 1717,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1716,
+                  "name": "_orderId",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 1719,
+                  "src": "713:16:17",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 1715,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "713:7:17",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "712:18:17"
+            },
+            "returnParameters": {
+              "id": 1718,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "747:0:17"
+            },
+            "scope": 1720,
+            "src": "692:56:17",
+            "stateMutability": "nonpayable",
+            "virtual": true,
+            "visibility": "external"
+          }
+        ],
+        "scope": 1721,
+        "src": "141:610:17"
+      }
+    ],
+    "src": "0:751:17"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.6.5+commit.f956cc89.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.2.2-next.0",
+  "updatedAt": "2020-08-13T15:10:44.444Z",
+  "devdoc": {
+    "author": "Solidity Services",
+    "methods": {
+      "cancelOrder(uint256)": {
+        "details": "...",
+        "params": {
+          "_orderId": "cancelling the order id"
+        }
+      },
+      "placeOrder(uint8,address,address,uint256,uint256)": {
+        "details": "...",
+        "params": {
+          "_amount": "amount to exchange",
+          "_dex": "dex exchange or adapter number",
+          "_rate": "expected rate of the exchange",
+          "_tknGet": "token to get",
+          "_tknOffer": "token to offer"
+        }
+      }
+    },
+    "title": "Galaxis: Interface for basic orders"
+  },
+  "userdoc": {
+    "methods": {
+      "cancelOrder(uint256)": {
+        "notice": "placing order to an exchange"
+      },
+      "placeOrder(uint8,address,address,uint256,uint256)": {
+        "notice": "placing order to an exchange"
+      }
+    },
+    "notice": "Interface for basic orders"
+  }
+}

@@ -1,0 +1,2749 @@
+{
+  "contractName": "GX_DEXRegistry",
+  "abi": [
+    {
+      "inputs": [],
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "adminAddress",
+          "type": "address"
+        }
+      ],
+      "name": "GX_AdminAdded",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "adminAddress",
+          "type": "address"
+        }
+      ],
+      "name": "GX_AdminRemoved",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "uint8",
+          "name": "num",
+          "type": "uint8"
+        },
+        {
+          "indexed": false,
+          "internalType": "enum GX_DEXRegistry.DEXType",
+          "name": "dexType",
+          "type": "uint8"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "dexAddress",
+          "type": "address"
+        }
+      ],
+      "name": "GX_DEXAdded",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "uint8",
+          "name": "num",
+          "type": "uint8"
+        }
+      ],
+      "name": "GX_DEXRemoved",
+      "type": "event"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_newAdmin",
+          "type": "address"
+        }
+      ],
+      "name": "addAdmin",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_addressToCheck",
+          "type": "address"
+        }
+      ],
+      "name": "isAdmin",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_adminToDelete",
+          "type": "address"
+        }
+      ],
+      "name": "removeAdmin",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint8",
+          "name": "_num",
+          "type": "uint8"
+        },
+        {
+          "internalType": "enum GX_DEXRegistry.DEXType",
+          "name": "_dexType",
+          "type": "uint8"
+        },
+        {
+          "internalType": "address",
+          "name": "_dexAddress",
+          "type": "address"
+        }
+      ],
+      "name": "addDEX",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint8",
+          "name": "_num",
+          "type": "uint8"
+        }
+      ],
+      "name": "removeDEX",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint8",
+          "name": "_nrToCheck",
+          "type": "uint8"
+        }
+      ],
+      "name": "getDEXInfo",
+      "outputs": [
+        {
+          "internalType": "enum GX_DEXRegistry.DEXType",
+          "name": "",
+          "type": "uint8"
+        },
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.6.5+commit.f956cc89\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"adminAddress\",\"type\":\"address\"}],\"name\":\"GX_AdminAdded\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"adminAddress\",\"type\":\"address\"}],\"name\":\"GX_AdminRemoved\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"uint8\",\"name\":\"num\",\"type\":\"uint8\"},{\"indexed\":false,\"internalType\":\"enum GX_DEXRegistry.DEXType\",\"name\":\"dexType\",\"type\":\"uint8\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"dexAddress\",\"type\":\"address\"}],\"name\":\"GX_DEXAdded\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"uint8\",\"name\":\"num\",\"type\":\"uint8\"}],\"name\":\"GX_DEXRemoved\",\"type\":\"event\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_newAdmin\",\"type\":\"address\"}],\"name\":\"addAdmin\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint8\",\"name\":\"_num\",\"type\":\"uint8\"},{\"internalType\":\"enum GX_DEXRegistry.DEXType\",\"name\":\"_dexType\",\"type\":\"uint8\"},{\"internalType\":\"address\",\"name\":\"_dexAddress\",\"type\":\"address\"}],\"name\":\"addDEX\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint8\",\"name\":\"_nrToCheck\",\"type\":\"uint8\"}],\"name\":\"getDEXInfo\",\"outputs\":[{\"internalType\":\"enum GX_DEXRegistry.DEXType\",\"name\":\"\",\"type\":\"uint8\"},{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_addressToCheck\",\"type\":\"address\"}],\"name\":\"isAdmin\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_adminToDelete\",\"type\":\"address\"}],\"name\":\"removeAdmin\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint8\",\"name\":\"_num\",\"type\":\"uint8\"}],\"name\":\"removeDEX\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"author\":\"Solidity Services\",\"methods\":{\"addAdmin(address)\":{\"details\":\"...\",\"params\":{\"_newAdmin\":\"new admin of the contract\"}},\"addDEX(uint8,uint8,address)\":{\"details\":\"...\",\"params\":{\"_dexAddress\":\"address of the dex or dex adapter\",\"_dexType\":\"typer of the dex\",\"_num\":\"name and number of the exchange\"}},\"constructor\":{\"details\":\"...\"},\"getDEXInfo(uint8)\":{\"details\":\"...\",\"params\":{\"_nrToCheck\":\"nr to check\"}},\"isAdmin(address)\":{\"details\":\"...\",\"params\":{\"_addressToCheck\":\"the address to be checked\"}},\"removeAdmin(address)\":{\"details\":\"...\",\"params\":{\"_adminToDelete\":\"removing the admin from the contract\"}},\"removeDEX(uint8)\":{\"details\":\"...\",\"params\":{\"_num\":\"name and number of the exchange\"}}},\"title\":\"Galaxis: Registered DEX-s\"},\"userdoc\":{\"methods\":{\"addAdmin(address)\":{\"notice\":\"TRANSACTIONSadding a new admin to the contract\"},\"addDEX(uint8,uint8,address)\":{\"notice\":\"TRANSACTIONSadding exchange to the known exchanges\"},\"constructor\":\"CONSTRUCTORfunctionality for known parites\",\"getDEXInfo(uint8)\":{\"notice\":\"VIEWSchecking the address of the exchange\"},\"isAdmin(address)\":{\"notice\":\"VIEWSchecking if the address is admin\"},\"removeAdmin(address)\":{\"notice\":\"removing an admin from the contract\"},\"removeDEX(uint8)\":{\"notice\":\"removing exchange or exchange adapter from the known exchanges\"}},\"notice\":\"Simple helper functionalities for registered DEX-s\"}},\"settings\":{\"compilationTarget\":{\"/home/dsz/git/galaxistest/galaxis/contracts/Composition/GX_DEXRegistry.sol\":\"GX_DEXRegistry\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/home/dsz/git/galaxistest/galaxis/contracts/Composition/GX_DEXRegistry.sol\":{\"keccak256\":\"0x7ad37d1ca4c7f346092ac0b5e4554b8b91104d2e125ac982ea9ab246d63b5cd1\",\"urls\":[\"bzz-raw://75750cd3b19fcba5f3a2b86f4b532eb68e330cf85b1a0f5953f185e4c1a75dda\",\"dweb:/ipfs/QmPAXYDYUSki19DwSLPiMesf2iycFEGKwaBQSgMdUoMkSi\"]},\"/home/dsz/git/galaxistest/galaxis/contracts/Governance/GX_GovernanceAdmin.sol\":{\"keccak256\":\"0x366d9f22e06078cae2774e6a7a980195623956248862ab8be94c89591574a0da\",\"urls\":[\"bzz-raw://6771548bddcd894d9f3de922232c65e9f931fa74ec19d871e27920f5943dd57a\",\"dweb:/ipfs/QmcjkJRvPXAzGfWrByLjjwWqgYKTyhrNoZe8PK5ZwkMqGx\"]}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b50336000908152602081905260409020805460ff191660011790556105528061003a6000396000f3fe608060405234801561001057600080fd5b50600436106100625760003560e01c80631785f53c14610067578063185471521461008f57806324d7806c146100af57806370480275146100e95780639b5f292e1461010f5780639f19b1cb14610162575b600080fd5b61008d6004803603602081101561007d57600080fd5b50356001600160a01b031661019c565b005b61008d600480360360208110156100a557600080fd5b503560ff16610238565b6100d5600480360360208110156100c557600080fd5b50356001600160a01b03166102d4565b604080519115158252519081900360200190f35b61008d600480360360208110156100ff57600080fd5b50356001600160a01b03166102f2565b61012f6004803603602081101561012557600080fd5b503560ff16610391565b6040518083600281111561013f57fe5b60ff1681526001600160a01b039092166020830152506040805191829003019150f35b61008d6004803603606081101561017857600080fd5b50803560ff90811691602081013590911690604001356001600160a01b03166103bb565b3360009081526020819052604090205460ff1615156001146101ef5760405162461bcd60e51b81526004018080602001828103825260348152602001806104e96034913960400191505060405180910390fd5b6001600160a01b038116600081815260208190526040808220805460ff19169055517f6a35edfb19dff31b968882a3f9eeef54e0ca71bb9af2db6e085f409715d3c5479190a250565b3360009081526020819052604090205460ff16151560011461028b5760405162461bcd60e51b81526004018080602001828103825260348152602001806104e96034913960400191505060405180910390fd5b60ff811660008181526001602052604080822080546001600160a81b0319169055517fabb8cac8af599331750e1284d535d9920cec7b858a03251e27f5208591a9870e9190a250565b6001600160a01b031660009081526020819052604090205460ff1690565b3360009081526020819052604090205460ff1615156001146103455760405162461bcd60e51b81526004018080602001828103825260348152602001806104e96034913960400191505060405180910390fd5b6001600160a01b038116600081815260208190526040808220805460ff19166001179055517fd7f0afc2242fe9a5f45af6dea542902933e36c643299a53b1057b13cf8bcad809190a250565b60ff908116600090815260016020526040902054908116916101009091046001600160a01b031690565b3360009081526020819052604090205460ff16151560011461040e5760405162461bcd60e51b81526004018080602001828103825260348152602001806104e96034913960400191505060405180910390fd5b604051806040016040528083600281111561042557fe5b81526001600160a01b03831660209182015260ff85166000908152600191829052604090208251815491929091839160ff199091169083600281111561046757fe5b0217905550602091909101518154610100600160a81b0319166101006001600160a01b0392831602179091556040519082169060ff8516907fb2adc6c11d1b970bf9414ad19866ff1fd17e3d64461e5e63265e6994264f7249908590808260028111156104d057fe5b60ff16815260200191505060405180910390a350505056fe47616c617869733a204163636573732064656e6965643a206e6f7420616e2061646d696e206f662074686520636f6e7472616374a264697066735822122011bda4c21c49222804122e3b727b85025da03a21586dd0ebb358113ff7e7890764736f6c63430006050033",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106100625760003560e01c80631785f53c14610067578063185471521461008f57806324d7806c146100af57806370480275146100e95780639b5f292e1461010f5780639f19b1cb14610162575b600080fd5b61008d6004803603602081101561007d57600080fd5b50356001600160a01b031661019c565b005b61008d600480360360208110156100a557600080fd5b503560ff16610238565b6100d5600480360360208110156100c557600080fd5b50356001600160a01b03166102d4565b604080519115158252519081900360200190f35b61008d600480360360208110156100ff57600080fd5b50356001600160a01b03166102f2565b61012f6004803603602081101561012557600080fd5b503560ff16610391565b6040518083600281111561013f57fe5b60ff1681526001600160a01b039092166020830152506040805191829003019150f35b61008d6004803603606081101561017857600080fd5b50803560ff90811691602081013590911690604001356001600160a01b03166103bb565b3360009081526020819052604090205460ff1615156001146101ef5760405162461bcd60e51b81526004018080602001828103825260348152602001806104e96034913960400191505060405180910390fd5b6001600160a01b038116600081815260208190526040808220805460ff19169055517f6a35edfb19dff31b968882a3f9eeef54e0ca71bb9af2db6e085f409715d3c5479190a250565b3360009081526020819052604090205460ff16151560011461028b5760405162461bcd60e51b81526004018080602001828103825260348152602001806104e96034913960400191505060405180910390fd5b60ff811660008181526001602052604080822080546001600160a81b0319169055517fabb8cac8af599331750e1284d535d9920cec7b858a03251e27f5208591a9870e9190a250565b6001600160a01b031660009081526020819052604090205460ff1690565b3360009081526020819052604090205460ff1615156001146103455760405162461bcd60e51b81526004018080602001828103825260348152602001806104e96034913960400191505060405180910390fd5b6001600160a01b038116600081815260208190526040808220805460ff19166001179055517fd7f0afc2242fe9a5f45af6dea542902933e36c643299a53b1057b13cf8bcad809190a250565b60ff908116600090815260016020526040902054908116916101009091046001600160a01b031690565b3360009081526020819052604090205460ff16151560011461040e5760405162461bcd60e51b81526004018080602001828103825260348152602001806104e96034913960400191505060405180910390fd5b604051806040016040528083600281111561042557fe5b81526001600160a01b03831660209182015260ff85166000908152600191829052604090208251815491929091839160ff199091169083600281111561046757fe5b0217905550602091909101518154610100600160a81b0319166101006001600160a01b0392831602179091556040519082169060ff8516907fb2adc6c11d1b970bf9414ad19866ff1fd17e3d64461e5e63265e6994264f7249908590808260028111156104d057fe5b60ff16815260200191505060405180910390a350505056fe47616c617869733a204163636573732064656e6965643a206e6f7420616e2061646d696e206f662074686520636f6e7472616374a264697066735822122011bda4c21c49222804122e3b727b85025da03a21586dd0ebb358113ff7e7890764736f6c63430006050033",
+  "immutableReferences": {},
+  "sourceMap": "203:1801:1:-:0;;;965:28;5:9:-1;2:2;;;27:1;24;17:12;2:2;-1:-1;653:10:23;646:6;:18;;;;;;;;;;:25;;-1:-1:-1;;646:25:23;667:4;646:25;;;203:1801:1;;;;;;",
+  "deployedSourceMap": "203:1801:1:-:0;;;;5:9:-1;2:2;;;27:1;24;17:12;2:2;203:1801:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;12:1:-1;9;2:12;1304:155:23;;;;;;15:2:-1;10:3;7:11;4:2;;;31:1;28;21:12;4:2;-1:-1;1304:155:23;-1:-1:-1;;;;;1304:155:23;;:::i;:::-;;1601:116:1;;;;;;15:2:-1;10:3;7:11;4:2;;;31:1;28;21:12;4:2;-1:-1;1601:116:1;;;;:::i;1603::23:-;;;;;;15:2:-1;10:3;7:11;4:2;;;31:1;28;21:12;4:2;-1:-1;1603:116:23;-1:-1:-1;;;;;1603:116:23;;:::i;:::-;;;;;;;;;;;;;;;;;;1028:134;;;;;;15:2:-1;10:3;7:11;4:2;;;31:1;28;21:12;4:2;-1:-1;1028:134:23;-1:-1:-1;;;;;1028:134:23;;:::i;1846:156:1:-;;;;;;15:2:-1;10:3;7:11;4:2;;;31:1;28;21:12;4:2;-1:-1;1846:156:1;;;;:::i;:::-;;;;;;;;;;;;;;;;;-1:-1:-1;;;;;1846:156:1;;;;;;;-1:-1:-1;1846:156:1;;;;;;;;;-1:-1:-1;1846:156:1;1248:199;;;;;;15:2:-1;10:3;7:11;4:2;;;31:1;28;21:12;4:2;-1:-1;1248:199:1;;;;;;;;;;;;;;;;;;-1:-1:-1;;;;;1248:199:1;;:::i;1304:155:23:-;787:10;780:6;:18;;;;;;;;;;;;;:26;;:18;:26;772:91;;;;-1:-1:-1;;;772:91:23;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;;;;1376:22:23;::::1;1401:5;1376:22:::0;;;::::1;::::0;;;;;;;:30;;-1:-1:-1;;1376:30:23::1;::::0;;1421:31;::::1;::::0;1401:5;1421:31:::1;1304:155:::0;:::o;1601:116:1:-;787:10:23;780:6;:18;;;;;;;;;;;;;:26;;:18;:26;772:91;;;;-1:-1:-1;;;772:91:23;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1666:10:1::1;::::0;::::1;;::::0;;;:4:::1;:10;::::0;;;;;1659:17;;-1:-1:-1;;;;;;1659:17:1;;;1691:19;::::1;::::0;1666:10;1691:19:::1;1601:116:::0;:::o;1603::23:-;-1:-1:-1;;;;;1689:23:23;1666:4;1689:23;;;;;;;;;;;;;;1603:116::o;1028:134::-;787:10;780:6;:18;;;;;;;;;;;;;:26;;:18;:26;772:91;;;;-1:-1:-1;;;772:91:23;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;;;;1092:17:23;::::1;:6;:17:::0;;;::::1;::::0;;;;;;;:24;;-1:-1:-1;;1092:24:23::1;1112:4;1092:24;::::0;;1131;::::1;::::0;1092:6;1131:24:::1;1028:134:::0;:::o;1846:156:1:-;1941:16;;;;1905:7;1941:16;;;:4;:16;;;;;:24;;;;;;1967:27;;;-1:-1:-1;;;;;1967:27:1;;1846:156::o;1248:199::-;787:10:23;780:6;:18;;;;;;;;;;;;;:26;;:18;:26;772:91;;;;-1:-1:-1;;;772:91:23;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1355:30:1::1;;;;;;;;1364:8;1355:30;;;;;;;;::::0;;-1:-1:-1;;;;;1355:30:1;::::1;;::::0;;::::1;::::0;1342:10:::1;::::0;::::1;-1:-1:-1::0;1342:10:1;;;:4:::1;:10:::0;;;;;;;:43;;;;:10;;:43;;:10;;-1:-1:-1;;1342:43:1;;::::1;::::0;;::::1;::::0;::::1;;;;;;;;::::0;;-1:-1:-1;1342:43:1::1;::::0;;;::::1;::::0;;;-1:-1:-1;;;;;;1342:43:1::1;;-1:-1:-1::0;;;;;1342:43:1;;::::1;;;::::0;;;1400:40:::1;::::0;;;::::1;::::0;::::1;::::0;::::1;::::0;::::1;::::0;1418:8;;1400:40;1418:8;1400:40:::1;::::0;::::1;;;;;;;;;;;;;;;;;;;;;;1248:199:::0;;;:::o",
+  "source": "pragma solidity ^0.6.0;\n\nimport '../Governance/GX_GovernanceAdmin.sol';\n\n/// @author Solidity Services\n/// @title Galaxis: Registered DEX-s\n/// @notice Simple helper functionalities for registered DEX-s\ncontract GX_DEXRegistry is GX_GovernanceAdmin {\n\n    /// ENUMS\n    /// @notice supported dex types\n    enum DEXType {Kyber, ZeroX, Uniswap}\n\n    /// STRUCTS\n    struct DEXInfos {\n        DEXType dexType;\n        address dexAddress;\n    }\n\n    // addresses of the decentralized exchanges or exchange adapters\n    mapping(uint8 => DEXInfos) dexs;\n\n\n    /// Exchanges\n    // 0: Kyber\n    // 1: Uniswap\n    // 2: 0x\n    ///\n\n    /// EVENTS: user facing events\n    /// @notice event for adding a DEX\n    event GX_DEXAdded(uint8 indexed num, DEXType dexType, address indexed dexAddress);\n    /// @notice event for removing a DEX\n    event GX_DEXRemoved(uint8 indexed num);\n\n    /// CONSTRUCTOR\n    \n    /// @notice functionality for known parites\n    /// @dev ...\n    constructor() public {\n    }\n\n    /// TRANSACTIONS\n\n\n    /// @notice adding exchange to the known exchanges\n    /// @dev ...\n    /// @param _num name and number of the exchange\n    /// @param _dexType typer of the dex\n    /// @param _dexAddress address of the dex or dex adapter\n    function addDEX(uint8 _num, DEXType _dexType, address _dexAddress) public onlyAdmin {\n        dexs[_num] = DEXInfos(_dexType,_dexAddress);\n        emit GX_DEXAdded(_num, _dexType, _dexAddress);\n    }\n\n    /// @notice removing exchange or exchange adapter from the known exchanges\n    /// @dev ...\n    /// @param _num name and number of the exchange\n    function removeDEX(uint8 _num) public onlyAdmin {\n        delete dexs[_num];\n        emit GX_DEXRemoved(_num);\n    }\n\n    /// VIEWS\n\n    /// @notice checking the address of the exchange\n    /// @dev ...\n    /// @param _nrToCheck nr to check\n    function getDEXInfo(uint8 _nrToCheck) public view returns (DEXType, address) {\n        return (dexs[_nrToCheck].dexType, dexs[_nrToCheck].dexAddress);\n    }\n}",
+  "sourcePath": "/home/dsz/git/galaxistest/galaxis/contracts/Composition/GX_DEXRegistry.sol",
+  "ast": {
+    "absolutePath": "/home/dsz/git/galaxistest/galaxis/contracts/Composition/GX_DEXRegistry.sol",
+    "exportedSymbols": {
+      "GX_DEXRegistry": [
+        141
+      ]
+    },
+    "id": 142,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 37,
+        "literals": [
+          "solidity",
+          "^",
+          "0.6",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:1"
+      },
+      {
+        "absolutePath": "/home/dsz/git/galaxistest/galaxis/contracts/Governance/GX_GovernanceAdmin.sol",
+        "file": "../Governance/GX_GovernanceAdmin.sol",
+        "id": 38,
+        "nodeType": "ImportDirective",
+        "scope": 142,
+        "sourceUnit": 2565,
+        "src": "25:46:1",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "abstract": false,
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 40,
+              "name": "GX_GovernanceAdmin",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 2564,
+              "src": "230:18:1",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_GX_GovernanceAdmin_$2564",
+                "typeString": "contract GX_GovernanceAdmin"
+              }
+            },
+            "id": 41,
+            "nodeType": "InheritanceSpecifier",
+            "src": "230:18:1"
+          }
+        ],
+        "contractDependencies": [
+          2564
+        ],
+        "contractKind": "contract",
+        "documentation": {
+          "id": 39,
+          "nodeType": "StructuredDocumentation",
+          "src": "73:130:1",
+          "text": "@author Solidity Services\n @title Galaxis: Registered DEX-s\n @notice Simple helper functionalities for registered DEX-s"
+        },
+        "fullyImplemented": true,
+        "id": 141,
+        "linearizedBaseContracts": [
+          141,
+          2564
+        ],
+        "name": "GX_DEXRegistry",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "canonicalName": "GX_DEXRegistry.DEXType",
+            "id": 45,
+            "members": [
+              {
+                "id": 42,
+                "name": "Kyber",
+                "nodeType": "EnumValue",
+                "src": "320:5:1"
+              },
+              {
+                "id": 43,
+                "name": "ZeroX",
+                "nodeType": "EnumValue",
+                "src": "327:5:1"
+              },
+              {
+                "id": 44,
+                "name": "Uniswap",
+                "nodeType": "EnumValue",
+                "src": "334:7:1"
+              }
+            ],
+            "name": "DEXType",
+            "nodeType": "EnumDefinition",
+            "src": "306:36:1"
+          },
+          {
+            "canonicalName": "GX_DEXRegistry.DEXInfos",
+            "id": 50,
+            "members": [
+              {
+                "constant": false,
+                "id": 47,
+                "name": "dexType",
+                "nodeType": "VariableDeclaration",
+                "overrides": null,
+                "scope": 50,
+                "src": "390:15:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_enum$_DEXType_$45",
+                  "typeString": "enum GX_DEXRegistry.DEXType"
+                },
+                "typeName": {
+                  "contractScope": null,
+                  "id": 46,
+                  "name": "DEXType",
+                  "nodeType": "UserDefinedTypeName",
+                  "referencedDeclaration": 45,
+                  "src": "390:7:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_enum$_DEXType_$45",
+                    "typeString": "enum GX_DEXRegistry.DEXType"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 49,
+                "name": "dexAddress",
+                "nodeType": "VariableDeclaration",
+                "overrides": null,
+                "scope": 50,
+                "src": "415:18:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                },
+                "typeName": {
+                  "id": 48,
+                  "name": "address",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "415:7:1",
+                  "stateMutability": "nonpayable",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              }
+            ],
+            "name": "DEXInfos",
+            "nodeType": "StructDefinition",
+            "scope": 141,
+            "src": "364:76:1",
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 54,
+            "name": "dexs",
+            "nodeType": "VariableDeclaration",
+            "overrides": null,
+            "scope": 141,
+            "src": "515:31:1",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_uint8_$_t_struct$_DEXInfos_$50_storage_$",
+              "typeString": "mapping(uint8 => struct GX_DEXRegistry.DEXInfos)"
+            },
+            "typeName": {
+              "id": 53,
+              "keyType": {
+                "id": 51,
+                "name": "uint8",
+                "nodeType": "ElementaryTypeName",
+                "src": "523:5:1",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint8",
+                  "typeString": "uint8"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "515:26:1",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_uint8_$_t_struct$_DEXInfos_$50_storage_$",
+                "typeString": "mapping(uint8 => struct GX_DEXRegistry.DEXInfos)"
+              },
+              "valueType": {
+                "contractScope": null,
+                "id": 52,
+                "name": "DEXInfos",
+                "nodeType": "UserDefinedTypeName",
+                "referencedDeclaration": 50,
+                "src": "532:8:1",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_struct$_DEXInfos_$50_storage_ptr",
+                  "typeString": "struct GX_DEXRegistry.DEXInfos"
+                }
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          },
+          {
+            "anonymous": false,
+            "documentation": {
+              "id": 55,
+              "nodeType": "StructuredDocumentation",
+              "src": "619:78:1",
+              "text": "\n EVENTS: user facing events\n @notice event for adding a DEX"
+            },
+            "id": 63,
+            "name": "GX_DEXAdded",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 62,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 57,
+                  "indexed": true,
+                  "name": "num",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 63,
+                  "src": "720:17:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint8",
+                    "typeString": "uint8"
+                  },
+                  "typeName": {
+                    "id": 56,
+                    "name": "uint8",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "720:5:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint8",
+                      "typeString": "uint8"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 59,
+                  "indexed": false,
+                  "name": "dexType",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 63,
+                  "src": "739:15:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_enum$_DEXType_$45",
+                    "typeString": "enum GX_DEXRegistry.DEXType"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 58,
+                    "name": "DEXType",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 45,
+                    "src": "739:7:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_enum$_DEXType_$45",
+                      "typeString": "enum GX_DEXRegistry.DEXType"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 61,
+                  "indexed": true,
+                  "name": "dexAddress",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 63,
+                  "src": "756:26:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 60,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "756:7:1",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "719:64:1"
+            },
+            "src": "702:82:1"
+          },
+          {
+            "anonymous": false,
+            "documentation": {
+              "id": 64,
+              "nodeType": "StructuredDocumentation",
+              "src": "789:36:1",
+              "text": "@notice event for removing a DEX"
+            },
+            "id": 68,
+            "name": "GX_DEXRemoved",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 67,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 66,
+                  "indexed": true,
+                  "name": "num",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 68,
+                  "src": "850:17:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint8",
+                    "typeString": "uint8"
+                  },
+                  "typeName": {
+                    "id": 65,
+                    "name": "uint8",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "850:5:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint8",
+                      "typeString": "uint8"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "849:19:1"
+            },
+            "src": "830:39:1"
+          },
+          {
+            "body": {
+              "id": 72,
+              "nodeType": "Block",
+              "src": "986:7:1",
+              "statements": []
+            },
+            "documentation": {
+              "id": 69,
+              "nodeType": "StructuredDocumentation",
+              "src": "875:85:1",
+              "text": "CONSTRUCTOR\n @notice functionality for known parites\n @dev ..."
+            },
+            "id": 73,
+            "implemented": true,
+            "kind": "constructor",
+            "modifiers": [],
+            "name": "",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 70,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "976:2:1"
+            },
+            "returnParameters": {
+              "id": 71,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "986:0:1"
+            },
+            "scope": 141,
+            "src": "965:28:1",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 100,
+              "nodeType": "Block",
+              "src": "1332:115:1",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 92,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "baseExpression": {
+                        "argumentTypes": null,
+                        "id": 85,
+                        "name": "dexs",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 54,
+                        "src": "1342:4:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_mapping$_t_uint8_$_t_struct$_DEXInfos_$50_storage_$",
+                          "typeString": "mapping(uint8 => struct GX_DEXRegistry.DEXInfos storage ref)"
+                        }
+                      },
+                      "id": 87,
+                      "indexExpression": {
+                        "argumentTypes": null,
+                        "id": 86,
+                        "name": "_num",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 76,
+                        "src": "1347:4:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint8",
+                          "typeString": "uint8"
+                        }
+                      },
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "nodeType": "IndexAccess",
+                      "src": "1342:10:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_DEXInfos_$50_storage",
+                        "typeString": "struct GX_DEXRegistry.DEXInfos storage ref"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "arguments": [
+                        {
+                          "argumentTypes": null,
+                          "id": 89,
+                          "name": "_dexType",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 78,
+                          "src": "1364:8:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_enum$_DEXType_$45",
+                            "typeString": "enum GX_DEXRegistry.DEXType"
+                          }
+                        },
+                        {
+                          "argumentTypes": null,
+                          "id": 90,
+                          "name": "_dexAddress",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 80,
+                          "src": "1373:11:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": [
+                          {
+                            "typeIdentifier": "t_enum$_DEXType_$45",
+                            "typeString": "enum GX_DEXRegistry.DEXType"
+                          },
+                          {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        ],
+                        "id": 88,
+                        "name": "DEXInfos",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 50,
+                        "src": "1355:8:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_struct$_DEXInfos_$50_storage_ptr_$",
+                          "typeString": "type(struct GX_DEXRegistry.DEXInfos storage pointer)"
+                        }
+                      },
+                      "id": 91,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "structConstructorCall",
+                      "lValueRequested": false,
+                      "names": [],
+                      "nodeType": "FunctionCall",
+                      "src": "1355:30:1",
+                      "tryCall": false,
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_DEXInfos_$50_memory_ptr",
+                        "typeString": "struct GX_DEXRegistry.DEXInfos memory"
+                      }
+                    },
+                    "src": "1342:43:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_DEXInfos_$50_storage",
+                      "typeString": "struct GX_DEXRegistry.DEXInfos storage ref"
+                    }
+                  },
+                  "id": 93,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1342:43:1"
+                },
+                {
+                  "eventCall": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 95,
+                        "name": "_num",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 76,
+                        "src": "1412:4:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint8",
+                          "typeString": "uint8"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 96,
+                        "name": "_dexType",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 78,
+                        "src": "1418:8:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_enum$_DEXType_$45",
+                          "typeString": "enum GX_DEXRegistry.DEXType"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 97,
+                        "name": "_dexAddress",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 80,
+                        "src": "1428:11:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_uint8",
+                          "typeString": "uint8"
+                        },
+                        {
+                          "typeIdentifier": "t_enum$_DEXType_$45",
+                          "typeString": "enum GX_DEXRegistry.DEXType"
+                        },
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "id": 94,
+                      "name": "GX_DEXAdded",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 63,
+                      "src": "1400:11:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_event_nonpayable$_t_uint8_$_t_enum$_DEXType_$45_$_t_address_$returns$__$",
+                        "typeString": "function (uint8,enum GX_DEXRegistry.DEXType,address)"
+                      }
+                    },
+                    "id": 98,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1400:40:1",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 99,
+                  "nodeType": "EmitStatement",
+                  "src": "1395:45:1"
+                }
+              ]
+            },
+            "documentation": {
+              "id": 74,
+              "nodeType": "StructuredDocumentation",
+              "src": "999:244:1",
+              "text": "TRANSACTIONS\n @notice adding exchange to the known exchanges\n @dev ...\n @param _num name and number of the exchange\n @param _dexType typer of the dex\n @param _dexAddress address of the dex or dex adapter"
+            },
+            "functionSelector": "9f19b1cb",
+            "id": 101,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [
+              {
+                "arguments": null,
+                "id": 83,
+                "modifierName": {
+                  "argumentTypes": null,
+                  "id": 82,
+                  "name": "onlyAdmin",
+                  "nodeType": "Identifier",
+                  "overloadedDeclarations": [],
+                  "referencedDeclaration": 2512,
+                  "src": "1322:9:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_modifier$__$",
+                    "typeString": "modifier ()"
+                  }
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "1322:9:1"
+              }
+            ],
+            "name": "addDEX",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 81,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 76,
+                  "name": "_num",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 101,
+                  "src": "1264:10:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint8",
+                    "typeString": "uint8"
+                  },
+                  "typeName": {
+                    "id": 75,
+                    "name": "uint8",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1264:5:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint8",
+                      "typeString": "uint8"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 78,
+                  "name": "_dexType",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 101,
+                  "src": "1276:16:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_enum$_DEXType_$45",
+                    "typeString": "enum GX_DEXRegistry.DEXType"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 77,
+                    "name": "DEXType",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 45,
+                    "src": "1276:7:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_enum$_DEXType_$45",
+                      "typeString": "enum GX_DEXRegistry.DEXType"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 80,
+                  "name": "_dexAddress",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 101,
+                  "src": "1294:19:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 79,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1294:7:1",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1263:51:1"
+            },
+            "returnParameters": {
+              "id": 84,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1332:0:1"
+            },
+            "scope": 141,
+            "src": "1248:199:1",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 118,
+              "nodeType": "Block",
+              "src": "1649:68:1",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 112,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "UnaryOperation",
+                    "operator": "delete",
+                    "prefix": true,
+                    "src": "1659:17:1",
+                    "subExpression": {
+                      "argumentTypes": null,
+                      "baseExpression": {
+                        "argumentTypes": null,
+                        "id": 109,
+                        "name": "dexs",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 54,
+                        "src": "1666:4:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_mapping$_t_uint8_$_t_struct$_DEXInfos_$50_storage_$",
+                          "typeString": "mapping(uint8 => struct GX_DEXRegistry.DEXInfos storage ref)"
+                        }
+                      },
+                      "id": 111,
+                      "indexExpression": {
+                        "argumentTypes": null,
+                        "id": 110,
+                        "name": "_num",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 104,
+                        "src": "1671:4:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint8",
+                          "typeString": "uint8"
+                        }
+                      },
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "nodeType": "IndexAccess",
+                      "src": "1666:10:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_DEXInfos_$50_storage",
+                        "typeString": "struct GX_DEXRegistry.DEXInfos storage ref"
+                      }
+                    },
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 113,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1659:17:1"
+                },
+                {
+                  "eventCall": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 115,
+                        "name": "_num",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 104,
+                        "src": "1705:4:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint8",
+                          "typeString": "uint8"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_uint8",
+                          "typeString": "uint8"
+                        }
+                      ],
+                      "id": 114,
+                      "name": "GX_DEXRemoved",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 68,
+                      "src": "1691:13:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_event_nonpayable$_t_uint8_$returns$__$",
+                        "typeString": "function (uint8)"
+                      }
+                    },
+                    "id": 116,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1691:19:1",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 117,
+                  "nodeType": "EmitStatement",
+                  "src": "1686:24:1"
+                }
+              ]
+            },
+            "documentation": {
+              "id": 102,
+              "nodeType": "StructuredDocumentation",
+              "src": "1453:143:1",
+              "text": "@notice removing exchange or exchange adapter from the known exchanges\n @dev ...\n @param _num name and number of the exchange"
+            },
+            "functionSelector": "18547152",
+            "id": 119,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [
+              {
+                "arguments": null,
+                "id": 107,
+                "modifierName": {
+                  "argumentTypes": null,
+                  "id": 106,
+                  "name": "onlyAdmin",
+                  "nodeType": "Identifier",
+                  "overloadedDeclarations": [],
+                  "referencedDeclaration": 2512,
+                  "src": "1639:9:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_modifier$__$",
+                    "typeString": "modifier ()"
+                  }
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "1639:9:1"
+              }
+            ],
+            "name": "removeDEX",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 105,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 104,
+                  "name": "_num",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 119,
+                  "src": "1620:10:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint8",
+                    "typeString": "uint8"
+                  },
+                  "typeName": {
+                    "id": 103,
+                    "name": "uint8",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1620:5:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint8",
+                      "typeString": "uint8"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1619:12:1"
+            },
+            "returnParameters": {
+              "id": 108,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1649:0:1"
+            },
+            "scope": 141,
+            "src": "1601:116:1",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 139,
+              "nodeType": "Block",
+              "src": "1923:79:1",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "components": [
+                      {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "baseExpression": {
+                            "argumentTypes": null,
+                            "id": 129,
+                            "name": "dexs",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 54,
+                            "src": "1941:4:1",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_mapping$_t_uint8_$_t_struct$_DEXInfos_$50_storage_$",
+                              "typeString": "mapping(uint8 => struct GX_DEXRegistry.DEXInfos storage ref)"
+                            }
+                          },
+                          "id": 131,
+                          "indexExpression": {
+                            "argumentTypes": null,
+                            "id": 130,
+                            "name": "_nrToCheck",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 122,
+                            "src": "1946:10:1",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_uint8",
+                              "typeString": "uint8"
+                            }
+                          },
+                          "isConstant": false,
+                          "isLValue": true,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "nodeType": "IndexAccess",
+                          "src": "1941:16:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_struct$_DEXInfos_$50_storage",
+                            "typeString": "struct GX_DEXRegistry.DEXInfos storage ref"
+                          }
+                        },
+                        "id": 132,
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "dexType",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 47,
+                        "src": "1941:24:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_enum$_DEXType_$45",
+                          "typeString": "enum GX_DEXRegistry.DEXType"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "baseExpression": {
+                            "argumentTypes": null,
+                            "id": 133,
+                            "name": "dexs",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 54,
+                            "src": "1967:4:1",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_mapping$_t_uint8_$_t_struct$_DEXInfos_$50_storage_$",
+                              "typeString": "mapping(uint8 => struct GX_DEXRegistry.DEXInfos storage ref)"
+                            }
+                          },
+                          "id": 135,
+                          "indexExpression": {
+                            "argumentTypes": null,
+                            "id": 134,
+                            "name": "_nrToCheck",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 122,
+                            "src": "1972:10:1",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_uint8",
+                              "typeString": "uint8"
+                            }
+                          },
+                          "isConstant": false,
+                          "isLValue": true,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "nodeType": "IndexAccess",
+                          "src": "1967:16:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_struct$_DEXInfos_$50_storage",
+                            "typeString": "struct GX_DEXRegistry.DEXInfos storage ref"
+                          }
+                        },
+                        "id": 136,
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "dexAddress",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 49,
+                        "src": "1967:27:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "id": 137,
+                    "isConstant": false,
+                    "isInlineArray": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "TupleExpression",
+                    "src": "1940:55:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$_t_enum$_DEXType_$45_$_t_address_$",
+                      "typeString": "tuple(enum GX_DEXRegistry.DEXType,address)"
+                    }
+                  },
+                  "functionReturnParameters": 128,
+                  "id": 138,
+                  "nodeType": "Return",
+                  "src": "1933:62:1"
+                }
+              ]
+            },
+            "documentation": {
+              "id": 120,
+              "nodeType": "StructuredDocumentation",
+              "src": "1723:118:1",
+              "text": "VIEWS\n @notice checking the address of the exchange\n @dev ...\n @param _nrToCheck nr to check"
+            },
+            "functionSelector": "9b5f292e",
+            "id": 140,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getDEXInfo",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 123,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 122,
+                  "name": "_nrToCheck",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 140,
+                  "src": "1866:16:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint8",
+                    "typeString": "uint8"
+                  },
+                  "typeName": {
+                    "id": 121,
+                    "name": "uint8",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1866:5:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint8",
+                      "typeString": "uint8"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1865:18:1"
+            },
+            "returnParameters": {
+              "id": 128,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 125,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 140,
+                  "src": "1905:7:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_enum$_DEXType_$45",
+                    "typeString": "enum GX_DEXRegistry.DEXType"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 124,
+                    "name": "DEXType",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 45,
+                    "src": "1905:7:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_enum$_DEXType_$45",
+                      "typeString": "enum GX_DEXRegistry.DEXType"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 127,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 140,
+                  "src": "1914:7:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 126,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1914:7:1",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1904:18:1"
+            },
+            "scope": 141,
+            "src": "1846:156:1",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "public"
+          }
+        ],
+        "scope": 142,
+        "src": "203:1801:1"
+      }
+    ],
+    "src": "0:2004:1"
+  },
+  "legacyAST": {
+    "absolutePath": "/home/dsz/git/galaxistest/galaxis/contracts/Composition/GX_DEXRegistry.sol",
+    "exportedSymbols": {
+      "GX_DEXRegistry": [
+        141
+      ]
+    },
+    "id": 142,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 37,
+        "literals": [
+          "solidity",
+          "^",
+          "0.6",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:1"
+      },
+      {
+        "absolutePath": "/home/dsz/git/galaxistest/galaxis/contracts/Governance/GX_GovernanceAdmin.sol",
+        "file": "../Governance/GX_GovernanceAdmin.sol",
+        "id": 38,
+        "nodeType": "ImportDirective",
+        "scope": 142,
+        "sourceUnit": 2565,
+        "src": "25:46:1",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "abstract": false,
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 40,
+              "name": "GX_GovernanceAdmin",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 2564,
+              "src": "230:18:1",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_GX_GovernanceAdmin_$2564",
+                "typeString": "contract GX_GovernanceAdmin"
+              }
+            },
+            "id": 41,
+            "nodeType": "InheritanceSpecifier",
+            "src": "230:18:1"
+          }
+        ],
+        "contractDependencies": [
+          2564
+        ],
+        "contractKind": "contract",
+        "documentation": {
+          "id": 39,
+          "nodeType": "StructuredDocumentation",
+          "src": "73:130:1",
+          "text": "@author Solidity Services\n @title Galaxis: Registered DEX-s\n @notice Simple helper functionalities for registered DEX-s"
+        },
+        "fullyImplemented": true,
+        "id": 141,
+        "linearizedBaseContracts": [
+          141,
+          2564
+        ],
+        "name": "GX_DEXRegistry",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "canonicalName": "GX_DEXRegistry.DEXType",
+            "id": 45,
+            "members": [
+              {
+                "id": 42,
+                "name": "Kyber",
+                "nodeType": "EnumValue",
+                "src": "320:5:1"
+              },
+              {
+                "id": 43,
+                "name": "ZeroX",
+                "nodeType": "EnumValue",
+                "src": "327:5:1"
+              },
+              {
+                "id": 44,
+                "name": "Uniswap",
+                "nodeType": "EnumValue",
+                "src": "334:7:1"
+              }
+            ],
+            "name": "DEXType",
+            "nodeType": "EnumDefinition",
+            "src": "306:36:1"
+          },
+          {
+            "canonicalName": "GX_DEXRegistry.DEXInfos",
+            "id": 50,
+            "members": [
+              {
+                "constant": false,
+                "id": 47,
+                "name": "dexType",
+                "nodeType": "VariableDeclaration",
+                "overrides": null,
+                "scope": 50,
+                "src": "390:15:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_enum$_DEXType_$45",
+                  "typeString": "enum GX_DEXRegistry.DEXType"
+                },
+                "typeName": {
+                  "contractScope": null,
+                  "id": 46,
+                  "name": "DEXType",
+                  "nodeType": "UserDefinedTypeName",
+                  "referencedDeclaration": 45,
+                  "src": "390:7:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_enum$_DEXType_$45",
+                    "typeString": "enum GX_DEXRegistry.DEXType"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 49,
+                "name": "dexAddress",
+                "nodeType": "VariableDeclaration",
+                "overrides": null,
+                "scope": 50,
+                "src": "415:18:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                },
+                "typeName": {
+                  "id": 48,
+                  "name": "address",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "415:7:1",
+                  "stateMutability": "nonpayable",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              }
+            ],
+            "name": "DEXInfos",
+            "nodeType": "StructDefinition",
+            "scope": 141,
+            "src": "364:76:1",
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 54,
+            "name": "dexs",
+            "nodeType": "VariableDeclaration",
+            "overrides": null,
+            "scope": 141,
+            "src": "515:31:1",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_uint8_$_t_struct$_DEXInfos_$50_storage_$",
+              "typeString": "mapping(uint8 => struct GX_DEXRegistry.DEXInfos)"
+            },
+            "typeName": {
+              "id": 53,
+              "keyType": {
+                "id": 51,
+                "name": "uint8",
+                "nodeType": "ElementaryTypeName",
+                "src": "523:5:1",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint8",
+                  "typeString": "uint8"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "515:26:1",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_uint8_$_t_struct$_DEXInfos_$50_storage_$",
+                "typeString": "mapping(uint8 => struct GX_DEXRegistry.DEXInfos)"
+              },
+              "valueType": {
+                "contractScope": null,
+                "id": 52,
+                "name": "DEXInfos",
+                "nodeType": "UserDefinedTypeName",
+                "referencedDeclaration": 50,
+                "src": "532:8:1",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_struct$_DEXInfos_$50_storage_ptr",
+                  "typeString": "struct GX_DEXRegistry.DEXInfos"
+                }
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          },
+          {
+            "anonymous": false,
+            "documentation": {
+              "id": 55,
+              "nodeType": "StructuredDocumentation",
+              "src": "619:78:1",
+              "text": "\n EVENTS: user facing events\n @notice event for adding a DEX"
+            },
+            "id": 63,
+            "name": "GX_DEXAdded",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 62,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 57,
+                  "indexed": true,
+                  "name": "num",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 63,
+                  "src": "720:17:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint8",
+                    "typeString": "uint8"
+                  },
+                  "typeName": {
+                    "id": 56,
+                    "name": "uint8",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "720:5:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint8",
+                      "typeString": "uint8"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 59,
+                  "indexed": false,
+                  "name": "dexType",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 63,
+                  "src": "739:15:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_enum$_DEXType_$45",
+                    "typeString": "enum GX_DEXRegistry.DEXType"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 58,
+                    "name": "DEXType",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 45,
+                    "src": "739:7:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_enum$_DEXType_$45",
+                      "typeString": "enum GX_DEXRegistry.DEXType"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 61,
+                  "indexed": true,
+                  "name": "dexAddress",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 63,
+                  "src": "756:26:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 60,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "756:7:1",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "719:64:1"
+            },
+            "src": "702:82:1"
+          },
+          {
+            "anonymous": false,
+            "documentation": {
+              "id": 64,
+              "nodeType": "StructuredDocumentation",
+              "src": "789:36:1",
+              "text": "@notice event for removing a DEX"
+            },
+            "id": 68,
+            "name": "GX_DEXRemoved",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 67,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 66,
+                  "indexed": true,
+                  "name": "num",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 68,
+                  "src": "850:17:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint8",
+                    "typeString": "uint8"
+                  },
+                  "typeName": {
+                    "id": 65,
+                    "name": "uint8",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "850:5:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint8",
+                      "typeString": "uint8"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "849:19:1"
+            },
+            "src": "830:39:1"
+          },
+          {
+            "body": {
+              "id": 72,
+              "nodeType": "Block",
+              "src": "986:7:1",
+              "statements": []
+            },
+            "documentation": {
+              "id": 69,
+              "nodeType": "StructuredDocumentation",
+              "src": "875:85:1",
+              "text": "CONSTRUCTOR\n @notice functionality for known parites\n @dev ..."
+            },
+            "id": 73,
+            "implemented": true,
+            "kind": "constructor",
+            "modifiers": [],
+            "name": "",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 70,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "976:2:1"
+            },
+            "returnParameters": {
+              "id": 71,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "986:0:1"
+            },
+            "scope": 141,
+            "src": "965:28:1",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 100,
+              "nodeType": "Block",
+              "src": "1332:115:1",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 92,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "baseExpression": {
+                        "argumentTypes": null,
+                        "id": 85,
+                        "name": "dexs",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 54,
+                        "src": "1342:4:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_mapping$_t_uint8_$_t_struct$_DEXInfos_$50_storage_$",
+                          "typeString": "mapping(uint8 => struct GX_DEXRegistry.DEXInfos storage ref)"
+                        }
+                      },
+                      "id": 87,
+                      "indexExpression": {
+                        "argumentTypes": null,
+                        "id": 86,
+                        "name": "_num",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 76,
+                        "src": "1347:4:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint8",
+                          "typeString": "uint8"
+                        }
+                      },
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "nodeType": "IndexAccess",
+                      "src": "1342:10:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_DEXInfos_$50_storage",
+                        "typeString": "struct GX_DEXRegistry.DEXInfos storage ref"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "arguments": [
+                        {
+                          "argumentTypes": null,
+                          "id": 89,
+                          "name": "_dexType",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 78,
+                          "src": "1364:8:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_enum$_DEXType_$45",
+                            "typeString": "enum GX_DEXRegistry.DEXType"
+                          }
+                        },
+                        {
+                          "argumentTypes": null,
+                          "id": 90,
+                          "name": "_dexAddress",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 80,
+                          "src": "1373:11:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": [
+                          {
+                            "typeIdentifier": "t_enum$_DEXType_$45",
+                            "typeString": "enum GX_DEXRegistry.DEXType"
+                          },
+                          {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        ],
+                        "id": 88,
+                        "name": "DEXInfos",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 50,
+                        "src": "1355:8:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_struct$_DEXInfos_$50_storage_ptr_$",
+                          "typeString": "type(struct GX_DEXRegistry.DEXInfos storage pointer)"
+                        }
+                      },
+                      "id": 91,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "structConstructorCall",
+                      "lValueRequested": false,
+                      "names": [],
+                      "nodeType": "FunctionCall",
+                      "src": "1355:30:1",
+                      "tryCall": false,
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_DEXInfos_$50_memory_ptr",
+                        "typeString": "struct GX_DEXRegistry.DEXInfos memory"
+                      }
+                    },
+                    "src": "1342:43:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_DEXInfos_$50_storage",
+                      "typeString": "struct GX_DEXRegistry.DEXInfos storage ref"
+                    }
+                  },
+                  "id": 93,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1342:43:1"
+                },
+                {
+                  "eventCall": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 95,
+                        "name": "_num",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 76,
+                        "src": "1412:4:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint8",
+                          "typeString": "uint8"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 96,
+                        "name": "_dexType",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 78,
+                        "src": "1418:8:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_enum$_DEXType_$45",
+                          "typeString": "enum GX_DEXRegistry.DEXType"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 97,
+                        "name": "_dexAddress",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 80,
+                        "src": "1428:11:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_uint8",
+                          "typeString": "uint8"
+                        },
+                        {
+                          "typeIdentifier": "t_enum$_DEXType_$45",
+                          "typeString": "enum GX_DEXRegistry.DEXType"
+                        },
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "id": 94,
+                      "name": "GX_DEXAdded",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 63,
+                      "src": "1400:11:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_event_nonpayable$_t_uint8_$_t_enum$_DEXType_$45_$_t_address_$returns$__$",
+                        "typeString": "function (uint8,enum GX_DEXRegistry.DEXType,address)"
+                      }
+                    },
+                    "id": 98,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1400:40:1",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 99,
+                  "nodeType": "EmitStatement",
+                  "src": "1395:45:1"
+                }
+              ]
+            },
+            "documentation": {
+              "id": 74,
+              "nodeType": "StructuredDocumentation",
+              "src": "999:244:1",
+              "text": "TRANSACTIONS\n @notice adding exchange to the known exchanges\n @dev ...\n @param _num name and number of the exchange\n @param _dexType typer of the dex\n @param _dexAddress address of the dex or dex adapter"
+            },
+            "functionSelector": "9f19b1cb",
+            "id": 101,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [
+              {
+                "arguments": null,
+                "id": 83,
+                "modifierName": {
+                  "argumentTypes": null,
+                  "id": 82,
+                  "name": "onlyAdmin",
+                  "nodeType": "Identifier",
+                  "overloadedDeclarations": [],
+                  "referencedDeclaration": 2512,
+                  "src": "1322:9:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_modifier$__$",
+                    "typeString": "modifier ()"
+                  }
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "1322:9:1"
+              }
+            ],
+            "name": "addDEX",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 81,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 76,
+                  "name": "_num",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 101,
+                  "src": "1264:10:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint8",
+                    "typeString": "uint8"
+                  },
+                  "typeName": {
+                    "id": 75,
+                    "name": "uint8",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1264:5:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint8",
+                      "typeString": "uint8"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 78,
+                  "name": "_dexType",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 101,
+                  "src": "1276:16:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_enum$_DEXType_$45",
+                    "typeString": "enum GX_DEXRegistry.DEXType"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 77,
+                    "name": "DEXType",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 45,
+                    "src": "1276:7:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_enum$_DEXType_$45",
+                      "typeString": "enum GX_DEXRegistry.DEXType"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 80,
+                  "name": "_dexAddress",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 101,
+                  "src": "1294:19:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 79,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1294:7:1",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1263:51:1"
+            },
+            "returnParameters": {
+              "id": 84,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1332:0:1"
+            },
+            "scope": 141,
+            "src": "1248:199:1",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 118,
+              "nodeType": "Block",
+              "src": "1649:68:1",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 112,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "UnaryOperation",
+                    "operator": "delete",
+                    "prefix": true,
+                    "src": "1659:17:1",
+                    "subExpression": {
+                      "argumentTypes": null,
+                      "baseExpression": {
+                        "argumentTypes": null,
+                        "id": 109,
+                        "name": "dexs",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 54,
+                        "src": "1666:4:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_mapping$_t_uint8_$_t_struct$_DEXInfos_$50_storage_$",
+                          "typeString": "mapping(uint8 => struct GX_DEXRegistry.DEXInfos storage ref)"
+                        }
+                      },
+                      "id": 111,
+                      "indexExpression": {
+                        "argumentTypes": null,
+                        "id": 110,
+                        "name": "_num",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 104,
+                        "src": "1671:4:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint8",
+                          "typeString": "uint8"
+                        }
+                      },
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "nodeType": "IndexAccess",
+                      "src": "1666:10:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_DEXInfos_$50_storage",
+                        "typeString": "struct GX_DEXRegistry.DEXInfos storage ref"
+                      }
+                    },
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 113,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1659:17:1"
+                },
+                {
+                  "eventCall": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 115,
+                        "name": "_num",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 104,
+                        "src": "1705:4:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint8",
+                          "typeString": "uint8"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_uint8",
+                          "typeString": "uint8"
+                        }
+                      ],
+                      "id": 114,
+                      "name": "GX_DEXRemoved",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 68,
+                      "src": "1691:13:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_event_nonpayable$_t_uint8_$returns$__$",
+                        "typeString": "function (uint8)"
+                      }
+                    },
+                    "id": 116,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1691:19:1",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 117,
+                  "nodeType": "EmitStatement",
+                  "src": "1686:24:1"
+                }
+              ]
+            },
+            "documentation": {
+              "id": 102,
+              "nodeType": "StructuredDocumentation",
+              "src": "1453:143:1",
+              "text": "@notice removing exchange or exchange adapter from the known exchanges\n @dev ...\n @param _num name and number of the exchange"
+            },
+            "functionSelector": "18547152",
+            "id": 119,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [
+              {
+                "arguments": null,
+                "id": 107,
+                "modifierName": {
+                  "argumentTypes": null,
+                  "id": 106,
+                  "name": "onlyAdmin",
+                  "nodeType": "Identifier",
+                  "overloadedDeclarations": [],
+                  "referencedDeclaration": 2512,
+                  "src": "1639:9:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_modifier$__$",
+                    "typeString": "modifier ()"
+                  }
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "1639:9:1"
+              }
+            ],
+            "name": "removeDEX",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 105,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 104,
+                  "name": "_num",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 119,
+                  "src": "1620:10:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint8",
+                    "typeString": "uint8"
+                  },
+                  "typeName": {
+                    "id": 103,
+                    "name": "uint8",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1620:5:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint8",
+                      "typeString": "uint8"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1619:12:1"
+            },
+            "returnParameters": {
+              "id": 108,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1649:0:1"
+            },
+            "scope": 141,
+            "src": "1601:116:1",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 139,
+              "nodeType": "Block",
+              "src": "1923:79:1",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "components": [
+                      {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "baseExpression": {
+                            "argumentTypes": null,
+                            "id": 129,
+                            "name": "dexs",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 54,
+                            "src": "1941:4:1",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_mapping$_t_uint8_$_t_struct$_DEXInfos_$50_storage_$",
+                              "typeString": "mapping(uint8 => struct GX_DEXRegistry.DEXInfos storage ref)"
+                            }
+                          },
+                          "id": 131,
+                          "indexExpression": {
+                            "argumentTypes": null,
+                            "id": 130,
+                            "name": "_nrToCheck",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 122,
+                            "src": "1946:10:1",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_uint8",
+                              "typeString": "uint8"
+                            }
+                          },
+                          "isConstant": false,
+                          "isLValue": true,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "nodeType": "IndexAccess",
+                          "src": "1941:16:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_struct$_DEXInfos_$50_storage",
+                            "typeString": "struct GX_DEXRegistry.DEXInfos storage ref"
+                          }
+                        },
+                        "id": 132,
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "dexType",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 47,
+                        "src": "1941:24:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_enum$_DEXType_$45",
+                          "typeString": "enum GX_DEXRegistry.DEXType"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "baseExpression": {
+                            "argumentTypes": null,
+                            "id": 133,
+                            "name": "dexs",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 54,
+                            "src": "1967:4:1",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_mapping$_t_uint8_$_t_struct$_DEXInfos_$50_storage_$",
+                              "typeString": "mapping(uint8 => struct GX_DEXRegistry.DEXInfos storage ref)"
+                            }
+                          },
+                          "id": 135,
+                          "indexExpression": {
+                            "argumentTypes": null,
+                            "id": 134,
+                            "name": "_nrToCheck",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 122,
+                            "src": "1972:10:1",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_uint8",
+                              "typeString": "uint8"
+                            }
+                          },
+                          "isConstant": false,
+                          "isLValue": true,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "nodeType": "IndexAccess",
+                          "src": "1967:16:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_struct$_DEXInfos_$50_storage",
+                            "typeString": "struct GX_DEXRegistry.DEXInfos storage ref"
+                          }
+                        },
+                        "id": 136,
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "dexAddress",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 49,
+                        "src": "1967:27:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "id": 137,
+                    "isConstant": false,
+                    "isInlineArray": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "TupleExpression",
+                    "src": "1940:55:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$_t_enum$_DEXType_$45_$_t_address_$",
+                      "typeString": "tuple(enum GX_DEXRegistry.DEXType,address)"
+                    }
+                  },
+                  "functionReturnParameters": 128,
+                  "id": 138,
+                  "nodeType": "Return",
+                  "src": "1933:62:1"
+                }
+              ]
+            },
+            "documentation": {
+              "id": 120,
+              "nodeType": "StructuredDocumentation",
+              "src": "1723:118:1",
+              "text": "VIEWS\n @notice checking the address of the exchange\n @dev ...\n @param _nrToCheck nr to check"
+            },
+            "functionSelector": "9b5f292e",
+            "id": 140,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getDEXInfo",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 123,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 122,
+                  "name": "_nrToCheck",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 140,
+                  "src": "1866:16:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint8",
+                    "typeString": "uint8"
+                  },
+                  "typeName": {
+                    "id": 121,
+                    "name": "uint8",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1866:5:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint8",
+                      "typeString": "uint8"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1865:18:1"
+            },
+            "returnParameters": {
+              "id": 128,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 125,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 140,
+                  "src": "1905:7:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_enum$_DEXType_$45",
+                    "typeString": "enum GX_DEXRegistry.DEXType"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 124,
+                    "name": "DEXType",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 45,
+                    "src": "1905:7:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_enum$_DEXType_$45",
+                      "typeString": "enum GX_DEXRegistry.DEXType"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 127,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 140,
+                  "src": "1914:7:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 126,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1914:7:1",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1904:18:1"
+            },
+            "scope": 141,
+            "src": "1846:156:1",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "public"
+          }
+        ],
+        "scope": 142,
+        "src": "203:1801:1"
+      }
+    ],
+    "src": "0:2004:1"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.6.5+commit.f956cc89.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.2.2-next.0",
+  "updatedAt": "2020-08-13T15:10:44.427Z",
+  "devdoc": {
+    "author": "Solidity Services",
+    "methods": {
+      "addAdmin(address)": {
+        "details": "...",
+        "params": {
+          "_newAdmin": "new admin of the contract"
+        }
+      },
+      "addDEX(uint8,uint8,address)": {
+        "details": "...",
+        "params": {
+          "_dexAddress": "address of the dex or dex adapter",
+          "_dexType": "typer of the dex",
+          "_num": "name and number of the exchange"
+        }
+      },
+      "constructor": {
+        "details": "..."
+      },
+      "getDEXInfo(uint8)": {
+        "details": "...",
+        "params": {
+          "_nrToCheck": "nr to check"
+        }
+      },
+      "isAdmin(address)": {
+        "details": "...",
+        "params": {
+          "_addressToCheck": "the address to be checked"
+        }
+      },
+      "removeAdmin(address)": {
+        "details": "...",
+        "params": {
+          "_adminToDelete": "removing the admin from the contract"
+        }
+      },
+      "removeDEX(uint8)": {
+        "details": "...",
+        "params": {
+          "_num": "name and number of the exchange"
+        }
+      }
+    },
+    "title": "Galaxis: Registered DEX-s"
+  },
+  "userdoc": {
+    "methods": {
+      "addAdmin(address)": {
+        "notice": "TRANSACTIONSadding a new admin to the contract"
+      },
+      "addDEX(uint8,uint8,address)": {
+        "notice": "TRANSACTIONSadding exchange to the known exchanges"
+      },
+      "constructor": "CONSTRUCTORfunctionality for known parites",
+      "getDEXInfo(uint8)": {
+        "notice": "VIEWSchecking the address of the exchange"
+      },
+      "isAdmin(address)": {
+        "notice": "VIEWSchecking if the address is admin"
+      },
+      "removeAdmin(address)": {
+        "notice": "removing an admin from the contract"
+      },
+      "removeDEX(uint8)": {
+        "notice": "removing exchange or exchange adapter from the known exchanges"
+      }
+    },
+    "notice": "Simple helper functionalities for registered DEX-s"
+  }
+}

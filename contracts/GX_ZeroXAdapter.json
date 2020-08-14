@@ -1,0 +1,120 @@
+{
+  "contractName": "GX_ZeroXAdapter",
+  "abi": [],
+  "metadata": "{\"compiler\":{\"version\":\"0.6.5+commit.f956cc89\"},\"language\":\"Solidity\",\"output\":{\"abi\":[],\"devdoc\":{\"author\":\"Solidity Services\",\"methods\":{},\"title\":\"Galaxis: 0x adapter\"},\"userdoc\":{\"methods\":{},\"notice\":\"Handles communication with 0x\"}},\"settings\":{\"compilationTarget\":{\"/home/dsz/git/galaxistest/galaxis/contracts/DexAdapters/GX_ZeroXAdapter.sol\":\"GX_ZeroXAdapter\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/home/dsz/git/galaxistest/galaxis/contracts/DexAdapters/GX_ZeroXAdapter.sol\":{\"keccak256\":\"0x6f3c3945ae997b672d33ef7462b45c27dc53662e175dc835b265842bc37fd788\",\"urls\":[\"bzz-raw://9fa7b45202681550cfc82478aa977524343eafa98bec2b00d55ab535615cfbed\",\"dweb:/ipfs/QmTKxjvMFrN6QyZY27E2WWr7UohvXkqG8F12FrJsabGCXT\"]}},\"version\":1}",
+  "bytecode": "0x6080604052348015600f57600080fd5b50603f80601d6000396000f3fe6080604052600080fdfea2646970667358221220c8c29255c961aee673d5f66263c6dd28aae9832b153b8657ab3c41786026600d64736f6c63430006050033",
+  "deployedBytecode": "0x6080604052600080fdfea2646970667358221220c8c29255c961aee673d5f66263c6dd28aae9832b153b8657ab3c41786026600d64736f6c63430006050033",
+  "immutableReferences": {},
+  "sourceMap": "206:32:10:-:0;;;;5:9:-1;2:2;;;27:1;24;17:12;2:2;206:32:10;;;;;;;",
+  "deployedSourceMap": "206:32:10:-:0;;;12:1:-1;9;2:12",
+  "source": "pragma solidity ^0.6.0;\n\n// https://jefflau.dev/interacting-with-the-0x-smart-contracts-via-solidity/\n\n/// @author Solidity Services\n/// @title Galaxis: 0x adapter\n/// @notice Handles communication with 0x\ncontract GX_ZeroXAdapter {\n\n\n\n\n}\n",
+  "sourcePath": "/home/dsz/git/galaxistest/galaxis/contracts/DexAdapters/GX_ZeroXAdapter.sol",
+  "ast": {
+    "absolutePath": "/home/dsz/git/galaxistest/galaxis/contracts/DexAdapters/GX_ZeroXAdapter.sol",
+    "exportedSymbols": {
+      "GX_ZeroXAdapter": [
+        985
+      ]
+    },
+    "id": 986,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 983,
+        "literals": [
+          "solidity",
+          "^",
+          "0.6",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:10"
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": {
+          "id": 984,
+          "nodeType": "StructuredDocumentation",
+          "src": "103:103:10",
+          "text": "@author Solidity Services\n @title Galaxis: 0x adapter\n @notice Handles communication with 0x"
+        },
+        "fullyImplemented": true,
+        "id": 985,
+        "linearizedBaseContracts": [
+          985
+        ],
+        "name": "GX_ZeroXAdapter",
+        "nodeType": "ContractDefinition",
+        "nodes": [],
+        "scope": 986,
+        "src": "206:32:10"
+      }
+    ],
+    "src": "0:239:10"
+  },
+  "legacyAST": {
+    "absolutePath": "/home/dsz/git/galaxistest/galaxis/contracts/DexAdapters/GX_ZeroXAdapter.sol",
+    "exportedSymbols": {
+      "GX_ZeroXAdapter": [
+        985
+      ]
+    },
+    "id": 986,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 983,
+        "literals": [
+          "solidity",
+          "^",
+          "0.6",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:10"
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": {
+          "id": 984,
+          "nodeType": "StructuredDocumentation",
+          "src": "103:103:10",
+          "text": "@author Solidity Services\n @title Galaxis: 0x adapter\n @notice Handles communication with 0x"
+        },
+        "fullyImplemented": true,
+        "id": 985,
+        "linearizedBaseContracts": [
+          985
+        ],
+        "name": "GX_ZeroXAdapter",
+        "nodeType": "ContractDefinition",
+        "nodes": [],
+        "scope": 986,
+        "src": "206:32:10"
+      }
+    ],
+    "src": "0:239:10"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.6.5+commit.f956cc89.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.2.2-next.0",
+  "updatedAt": "2020-08-13T15:10:44.436Z",
+  "devdoc": {
+    "author": "Solidity Services",
+    "methods": {},
+    "title": "Galaxis: 0x adapter"
+  },
+  "userdoc": {
+    "methods": {},
+    "notice": "Handles communication with 0x"
+  }
+}

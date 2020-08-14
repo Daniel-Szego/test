@@ -1,0 +1,84 @@
+@import "fonts";
+
+// Font awesome
+$fa-font-path: "../assets/fonts/font-awesome" !default;
+
+@import '~@fortawesome/fontawesome-free/scss/fontawesome';
+@import '~@fortawesome/fontawesome-free/scss/regular';
+@import '~@fortawesome/fontawesome-free/scss/solid';
+@import '~@fortawesome/fontawesome-free/scss/brands';
+
+@tailwind base;
+
+@tailwind components;
+
+@tailwind utilities;
+
+@import "typography";
+@import "buttons";
+
+// Form
+@import "form/steps";
+@import "form/inputs";
+
+
+.navbar {
+  height: 70px;
+  @apply .relative .flex .items-center .shadow;
+
+  .brand {
+    width: 250px;
+    @apply .flex .items-center .justify-center;
+  }
+
+  .notification-toggle {
+    @apply .w-12 .h-12 .mr-3 .border .border-pale-grey-three .shadow .rounded .relative;
+
+    i {
+      @apply .text-xl .w-full .h-full  .inline-flex .items-center .justify-center;
+    }
+
+    .counter {
+      position: absolute;
+      top: 4px;
+      right: 4px;
+
+      @apply .w-5 .h-5 .rounded-full .bg-coral .text-white .text-xs .inline-flex .items-center .justify-center .border-2 .border-white;
+    }
+  }
+
+  .user-toggle {
+    @apply .h-12 .px-3 .flex .items-center .border .border-pale-grey-three .shadow .rounded .text-base .text-dark-blue-grey .font-medium;
+
+    img {
+      @apply .h-10 .w-10 .rounded-full .mr-3;
+    }
+  }
+}
+
+.container {
+  max-width: 1110px;
+}
+
+
+.aside-link {
+  @apply .block .rounded .py-2 .px-5 .text-lg .font-normal .leading-none .text-slate;
+
+  &.router-link-active {
+    @apply .bg-pale-grey-four .text-iris ;
+  }
+}
+
+.object-select {
+  @apply .input;
+
+  .options {
+    z-index: 9999;
+    @apply .border .border-pale-grey-three .text-dark-blue-grey .rounded .shadow .w-full .top-0 .left-0 .bg-white;
+
+    .option {
+      z-index: 9999;
+      @apply .py-3 .px-3;
+    }
+  }
+}

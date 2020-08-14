@@ -1,0 +1,142 @@
+{
+  "contractName": "GX_DEXAdapterBase",
+  "abi": [],
+  "metadata": "{\"compiler\":{\"version\":\"0.6.5+commit.f956cc89\"},\"language\":\"Solidity\",\"output\":{\"abi\":[],\"devdoc\":{\"author\":\"Solidity Services\",\"methods\":{},\"title\":\"Galaxis: DEX Adapter interface\"},\"userdoc\":{\"methods\":{},\"notice\":\"Base DEX Adapter\"}},\"settings\":{\"compilationTarget\":{\"/home/dsz/git/galaxistest/galaxis/contracts/DexAdapters/GX_DEXAdapterBase.sol\":\"GX_DEXAdapterBase\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/home/dsz/git/galaxistest/galaxis/contracts/DexAdapters/GX_DEXAdapterBase.sol\":{\"keccak256\":\"0x9cd6bbda6ac66da58669ae488b7b7ded565b08b0b8f145c10534c0a222de6222\",\"urls\":[\"bzz-raw://25d343c0566b72b3a2ae8b939f40bb2b8f1ffdfd0f5ec301f557ca0d35c53f8a\",\"dweb:/ipfs/QmT6zguP6ZAZ8BA7YeoX5vvdb4FnKMjouTSrTgWpNj98iS\"]},\"@openzeppelin/contracts/token/ERC20/IERC20.sol\":{\"keccak256\":\"0x6cc1cb934a3ac2137a7dcaed018af9e235392236ceecfd3687259702b9c767ad\",\"urls\":[\"bzz-raw://0055fa88138cd1c3c6440370f8580f85857f8fe9dec41c99af9eafbeb8d9c3ce\",\"dweb:/ipfs/QmX1xDh8vwGLLCH8ti45eXjQ7Wcxv1FEGTR3jkFnd5Nv6F\"]}},\"version\":1}",
+  "bytecode": "0x6080604052348015600f57600080fd5b50603f80601d6000396000f3fe6080604052600080fdfea264697066735822122011960ecb868e9872c162458af94778b893049a9a6b82c808aa7ed4add77b968664736f6c63430006050033",
+  "deployedBytecode": "0x6080604052600080fdfea264697066735822122011960ecb868e9872c162458af94778b893049a9a6b82c808aa7ed4add77b968664736f6c63430006050033",
+  "immutableReferences": {},
+  "sourceMap": "184:33:7:-:0;;;;5:9:-1;2:2;;;27:1;24;17:12;2:2;184:33:7;;;;;;;",
+  "deployedSourceMap": "184:33:7:-:0;;;12:1:-1;9;2:12",
+  "source": "pragma solidity ^0.6.0;\n\nimport \"@openzeppelin/contracts/token/ERC20/IERC20.sol\";\n\n/// @author Solidity Services\n/// @title Galaxis: DEX Adapter interface\n/// @notice Base DEX Adapter\ncontract GX_DEXAdapterBase {\n\n\n\n}",
+  "sourcePath": "/home/dsz/git/galaxistest/galaxis/contracts/DexAdapters/GX_DEXAdapterBase.sol",
+  "ast": {
+    "absolutePath": "/home/dsz/git/galaxistest/galaxis/contracts/DexAdapters/GX_DEXAdapterBase.sol",
+    "exportedSymbols": {
+      "GX_DEXAdapterBase": [
+        593
+      ]
+    },
+    "id": 594,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 590,
+        "literals": [
+          "solidity",
+          "^",
+          "0.6",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:7"
+      },
+      {
+        "absolutePath": "@openzeppelin/contracts/token/ERC20/IERC20.sol",
+        "file": "@openzeppelin/contracts/token/ERC20/IERC20.sol",
+        "id": 591,
+        "nodeType": "ImportDirective",
+        "scope": 594,
+        "sourceUnit": 4189,
+        "src": "25:56:7",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": {
+          "id": 592,
+          "nodeType": "StructuredDocumentation",
+          "src": "83:101:7",
+          "text": "@author Solidity Services\n @title Galaxis: DEX Adapter interface\n @notice Base DEX Adapter"
+        },
+        "fullyImplemented": true,
+        "id": 593,
+        "linearizedBaseContracts": [
+          593
+        ],
+        "name": "GX_DEXAdapterBase",
+        "nodeType": "ContractDefinition",
+        "nodes": [],
+        "scope": 594,
+        "src": "184:33:7"
+      }
+    ],
+    "src": "0:217:7"
+  },
+  "legacyAST": {
+    "absolutePath": "/home/dsz/git/galaxistest/galaxis/contracts/DexAdapters/GX_DEXAdapterBase.sol",
+    "exportedSymbols": {
+      "GX_DEXAdapterBase": [
+        593
+      ]
+    },
+    "id": 594,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 590,
+        "literals": [
+          "solidity",
+          "^",
+          "0.6",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:7"
+      },
+      {
+        "absolutePath": "@openzeppelin/contracts/token/ERC20/IERC20.sol",
+        "file": "@openzeppelin/contracts/token/ERC20/IERC20.sol",
+        "id": 591,
+        "nodeType": "ImportDirective",
+        "scope": 594,
+        "sourceUnit": 4189,
+        "src": "25:56:7",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": {
+          "id": 592,
+          "nodeType": "StructuredDocumentation",
+          "src": "83:101:7",
+          "text": "@author Solidity Services\n @title Galaxis: DEX Adapter interface\n @notice Base DEX Adapter"
+        },
+        "fullyImplemented": true,
+        "id": 593,
+        "linearizedBaseContracts": [
+          593
+        ],
+        "name": "GX_DEXAdapterBase",
+        "nodeType": "ContractDefinition",
+        "nodes": [],
+        "scope": 594,
+        "src": "184:33:7"
+      }
+    ],
+    "src": "0:217:7"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.6.5+commit.f956cc89.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.2.2-next.0",
+  "updatedAt": "2020-08-13T15:10:44.432Z",
+  "devdoc": {
+    "author": "Solidity Services",
+    "methods": {},
+    "title": "Galaxis: DEX Adapter interface"
+  },
+  "userdoc": {
+    "methods": {},
+    "notice": "Base DEX Adapter"
+  }
+}

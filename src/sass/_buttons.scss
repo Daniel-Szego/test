@@ -1,0 +1,7 @@
+.button {
+    @apply .px-3 .py-2 .rounded .shadow .uppercase .font-bold .text-base;
+
+    span {
+        @apply .mr-2;
+    }
+}
